@@ -1,0 +1,52 @@
+.dropdownTrigger{
+  position : relative;
+
+  input {
+    display: block;
+    width: 100%;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+  }
+
+  .plusminus{
+    position : relative;
+    &:before , &:after {
+      content: "";
+      display: block;
+      background-color: #666;
+      position: absolute;		
+      top: 12px; right: 0;
+      transition: .35s;
+      width: 15px;
+      height: 3px;
+    }
+    &:before {		
+      transform: translatey(-50%);
+    }
+    &:after {
+      transform: translatey(-50%) rotate(90deg);
+    }
+  }
+  input:checked~ .plusminus{
+    &:before{ 
+      transform: translatey(-50%) rotate(-90deg);
+      opacity: 0;
+    }
+    &:after {
+      transform: translatey(-50%) rotate(0);
+    }
+  }
+  input:checked~ .dropdownItems{
+    display: block;
+  }
+  
+  .dropdownItems{
+    display: none;
+    font-size: 16px;
+  }
+}
