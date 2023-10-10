@@ -8,6 +8,12 @@ Rails.application.routes.draw do
 
       resources :about_sekai, only: [:index]
 
+      resources :seminars, only: [:show] do
+        collection do
+          post 'search'
+        end
+      end
+
     end
   end
 

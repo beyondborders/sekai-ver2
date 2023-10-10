@@ -1,0 +1,1 @@
+attributes page: :current_page, pages: :total_pages, items: :page_count, count: :total_count

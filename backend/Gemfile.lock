@@ -137,6 +137,7 @@ GEM
     nokogiri (1.15.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
+    pagy (6.1.0)
     psych (5.1.0)
       stringio
     public_suffix (5.0.3)
@@ -177,6 +178,10 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    ransack (4.0.0)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
     rdoc (6.5.0)
       psych (>= 4.0.0)
     regexp_parser (2.8.1)
@@ -227,9 +232,11 @@ DEPENDENCIES
   carrierwave (~> 3.0)
   debug
   mysql2 (~> 0.5)
+  pagy
   puma (~> 5.0)
   rabl
   rails (~> 7.0.8)
+  ransack
   schema_to_scaffold
   selenium-webdriver
   sprockets-rails
