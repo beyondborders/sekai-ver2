@@ -14,6 +14,12 @@ Rails.application.routes.draw do
         end
       end
 
+      resources :property_materials, only: [:show] do
+        collection do
+          post 'search'
+        end
+      end
+
     end
   end
 
