@@ -30,6 +30,24 @@ services:
     env_file: .env
     command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3001 -b '0.0.0.0'"
 
+  frontend:
+    platform: linux/arm64
+    image: node:18-alpine
+    ports:
+      - "3000:3000"
+    links:
+      - "backend:bb"
+    depends_on:
+      - backend
+    volumes:
+      #the host repos are mapped to the container's repos
+      - ./frontend/:/sekai
+    # env_file: .env
+    working_dir: /sekai
+    environment:
+      - NODE_ENV=development
+    command: /bin/sh -c "yarn dev --port 3000"
+
 volumes:
   db_data:
     driver: local
