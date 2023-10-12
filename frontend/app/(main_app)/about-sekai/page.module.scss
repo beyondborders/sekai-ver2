@@ -1,0 +1,439 @@
+@import "@/css/utils.scss";
+
+.FV {
+  position: relative;
+  width: 100%;
+  height: 600px;
+
+  @include breakpoint(laptop) {
+    height: 700px;
+  }
+
+  img {
+    object-position: -146px 0;
+
+    @include breakpoint(laptop) {
+      object-position: 0 0;
+    }
+  }
+}
+
+.FVtext {
+  position: relative;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  padding-top: 52px;
+
+  @include breakpoint(laptop) {
+    position: absolute;
+    padding-top: 0;
+    top: 104px;
+    right: 176px;
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .biggest {
+    font-size: 20px;
+    font-weight: 600;
+
+    @include breakpoint(laptop) {
+      font-size: 42px;
+    }
+  }
+
+  .bigger {
+    font-size: 16px;
+    font-weight: 600;
+
+    @include breakpoint(laptop) {
+      font-size: 26px;
+    }
+  }
+}
+
+.h2 {
+  padding-bottom: 24px;
+  font-size: 24px;
+  text-align: center;
+
+  @include breakpoint(laptop) {
+    padding-bottom: 60px;
+    font-size: 38px;
+  }
+}
+
+.section2Container,
+.section3Container,
+.section4Container,
+.section5Container {
+  padding: 60px 24px;
+
+  @include breakpoint(laptop) {
+    padding: 120px 0;
+  }
+}
+
+.section2Container {
+  background: linear-gradient(180deg, #e9eef2 0%, rgba(202, 213, 225, 1) 100%);
+
+  .section2BoxContainer {
+    display: block;
+
+    @include breakpoint(laptop) {
+      display: flex;
+      gap: 0 24px;
+    }
+
+    .section2Box {
+      display: flex;
+      background: white;
+      box-shadow: #c3c0c0 2px 2px 10px;
+      margin-top: 16px;
+
+      @include breakpoint(laptop) {
+        display: block;
+        margin-top: 0px;
+      }
+
+      .imageContainer {
+        width: 100px;
+
+        @include breakpoint(laptop) {
+          width: auto;
+        }
+      }
+
+      .text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        padding: 0 12px;
+        font-size: 14px;
+
+        @include breakpoint(laptop) {
+          padding: 24px;
+          text-align: center;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.section3Container {
+  @include breakpoint(laptop) {
+    max-width: 1320px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  input {
+    display: none;
+  }
+
+  .tab2:checked,
+  .tab3:checked,
+  .tab4:checked,
+  .tab5:checked {
+    ~.section3Content .part1 {
+      @include breakpoint(laptop) {
+        display: none;
+      }
+    }
+  }
+
+  label {
+    display: none;
+
+    @include breakpoint(laptop) {
+      display: inline-block;
+      position: relative;
+      font-size: 24px;
+      padding: 12px 24px;
+      gap: 24px;
+      width: 20%;
+      background-color: #c9cfdc;
+      color: #e8ecf3;
+      cursor: pointer;
+    }
+  }
+
+  .tab1~.tab1label {
+    background-color: #f8f8f8;
+    color: #80663a;
+  }
+
+  .tab2:checked~label,
+  .tab3:checked~label,
+  .tab4:checked~label,
+  .tab5:checked~label {
+    background-color: #c9cfdc;
+    color: #e8ecf3;
+  }
+
+  .tab2:checked~.tab2label,
+  .tab3:checked~.tab3label,
+  .tab4:checked~.tab4label,
+  .tab5:checked~.tab5label {
+    background-color: #f8f8f8;
+    color: #80663a;
+  }
+
+  .tab1:checked~.section3Content .part1,
+  .tab2:checked~.section3Content .part2,
+  .tab3:checked~.section3Content .part3,
+  .tab4:checked~.section3Content .part4,
+  .tab5:checked~.section3Content .part5 {
+    display: block;
+  }
+
+  .section3Content {
+    background-color: #f8f8f8;
+    text-align: left;
+
+    @include breakpoint(laptop) {
+      padding: 48px 124px;
+    }
+
+    .title {
+      font-size: 20px;
+      color: #80663a;
+      text-align: center;
+
+      @include breakpoint(laptop) {
+        font-size: 30px;
+      }
+    }
+
+    .part1 {
+      display: block;
+    }
+
+    .part2,
+    .part3,
+    .part4,
+    .part5 {
+      @include breakpoint(laptop) {
+        display: none;
+      }
+    }
+
+    .part1 {
+      .mainContent {
+        display: flex;
+      }
+
+      .part1desc {
+        width: 150px;
+      }
+    }
+
+    .part2 {
+      .malaysiaAssetBox {
+        display: inline-block;
+        background: #7b93ae;
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        margin-right: 8px;
+      }
+
+      .assetDetailsBox {
+        padding-left: 30px;
+      }
+
+      .cambodiaAssetBox {
+        display: inline-block;
+        background: #d9ac58;
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        margin-right: 8px;
+      }
+
+      .othersAssetBox {
+        display: inline-block;
+        background: #e3dcb7;
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        margin-right: 8px;
+      }
+
+      .assetTitle {
+        font-weight: bold;
+        font-size: 22px;
+
+        @include breakpoint(laptop) {
+          font-size: 24px;
+        }
+      }
+
+      .assetFontSmall {
+        font-size: 10px;
+      }
+
+      .assetImgContainer {
+        width: 100%;
+
+        @include breakpoint(laptop) {
+          width: 360px;
+        }
+      }
+    }
+
+    .part3 {
+      .part3Content {
+        font-size: 18px;
+        margin-top: 12px;
+
+        @include breakpoint(laptop) {
+          font-size: 21px;
+          margin-top: 24px;
+        }
+
+        .red {
+          color: #cd5a5d;
+        }
+
+        .sm {
+          font-size: 12px;
+        }
+      }
+
+      .part3Img {}
+    }
+
+    .part4,
+    .part5 {
+      .text {
+        font-size: 18px;
+
+        @include breakpoint(laptop) {
+          font-size: 19px;
+          margin-right: 24px;
+        }
+      }
+    }
+  }
+}
+
+.blueButtonContainer{
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.section4Container{
+  background-color: #f9f8f5;
+  .contentContainer{
+    @include breakpoint(laptop) {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
+  .content{
+    &:not(:first-child){
+      margin-top: 24px;
+      @include breakpoint(laptop) {
+        margin-top: 48px;
+      }
+    }
+    .title{
+      display: inline-block;
+      font-size: 20px;
+      color: #80663a;
+      border-bottom: 1px solid #80663a;
+      padding: 0px 8px 4px 0;
+      font-weight: 500;
+      @include breakpoint(laptop) {
+        font-size: 24px;
+      }
+    }
+    .description{
+      margin-top: 12px;
+      font-size: 14px;
+      @include breakpoint(laptop) {
+        font-size: 19px;
+      }
+    }
+  }
+}
+
+.section5Container{
+  .missionText{
+    font-size: 20px;
+    color: #307ad6;
+    margin-top: 32px;
+    text-align: center;
+    font-weight: 500;
+    @include breakpoint(laptop) {
+      margin-top: 48px;
+      font-size: 32px;
+      text-align: left;
+    }
+  }
+  .missionTextBig{
+    font-size: 24px;
+    margin-top: 32px;
+    font-weight: 500;
+    @include breakpoint(laptop) {
+      font-size: 36px;
+    }
+  }
+
+  .missionDesc{
+    @include breakpoint(laptop) {
+      font-size: 18px;
+    }
+  }
+  .endoImg{
+    max-width: 200px;
+    min-width: none;
+    margin: 0 auto;
+    @include breakpoint(laptop) {
+      max-width: none;
+      min-width: 240px;
+    }
+  }
+  .endoText{
+    margin-left: 24px;
+    margin-top: 24px;
+    @include breakpoint(laptop) {
+      margin-left: 48px;
+      margin-top: 0;
+      text-align: center;
+      font-size: 26px;
+      text-align: left;
+    }
+  }
+  .endoTextSmall{
+    margin-left: 24px;
+    margin-top: 24px;
+    @include breakpoint(laptop) {
+      margin-left: 48px;
+      font-size: 20px;
+    }
+  }
+  .companyInfo{
+    display: flex;
+    padding: 12px 0;
+    border-bottom: 2px dotted #ccc;
+    align-items: center;
+    font-weight: normal;
+    font-size: 11px;
+    @include breakpoint(laptop) {
+      padding: 16px 0;
+      font-size: 20px;
+    }
+  }
+  .companyInfoTitle{
+    min-width: 125px;
+    @include breakpoint(laptop) {
+      min-width: 300px;
+      margin-left: 8px;
+    }
+  }
+}
