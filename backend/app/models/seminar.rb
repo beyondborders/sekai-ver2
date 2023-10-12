@@ -8,8 +8,8 @@ class Seminar < ApplicationRecord
     # joins(:seminar_schedules).order("seminar_schedules.start_at DESC")
     joins(:seminar_schedules).order(Arel.sql("coalesce(seminar_schedules.start_at, seminars.start_at)").desc)
   }
-  
-  # https://docs.google.com/document/d/1R1fN6s4J0wN6jodEX02b-iqaaEkRpsEhPFhaPiSDffQ/edit
+
+  # https://docs.google.com/document/d/1R1fN6s4J0wN6jodEX02b-iqaaEkRpsEhPFhaPiSDffQ
   scope :by_closest_date, lambda {
     left_outer_joins(:seminar_schedules).order(Arel.sql("CASE WHEN seminar_schedules.start_at > NOW() THEN 0 ELSE 1 END ASC, CASE WHEN seminar_schedules.start_at <= NOW() THEN seminar_schedules.start_at END DESC"))
   }
@@ -36,7 +36,7 @@ class Seminar < ApplicationRecord
   end
 
   def self.ransackable_attributes(auth_object = nil)
-    ["capacity", "content", "created_at", "currency_code", "fee", "fee_remarks", "finish_at", "form_pattern", "has_form", "keywords", "language_code", "organizer_id", "partner_id", "publish_date", "remaining_slot", "seminar_email_content", "slug", "speaker_detail", "speaker_name", "start_at", "summary", "time_remarks", "title", "updated_at", "venue", "venue_access", "venue_address", "venue_link", "venue_name", "zoho_form_id"]
+    ["keywords", "language_code", "organizer_id", "partner_id", "publish_date", "remaining_slot","speaker_detail", "speaker_name", "start_at", "time_remarks", "title", "updated_at", "venue", "venue_access", "venue_address", "venue_link", "venue_name"]
   end
   
 end
