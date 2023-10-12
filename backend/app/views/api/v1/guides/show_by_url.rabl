@@ -1,0 +1,2 @@
+object @guide
+attributes :id, :area, :comment, :country, :created_at, :description, :guide_type, :guide_url, :image_url, :image_url_thumbnail, :image_url_thumbnail_webp, :label, :locale,:location, :main_title, :nearest_station, :number_of_floors, :number_of_rooms, :order,:post_image_url, :post_image_url_mobile, :post_image_url_webp, :price, :recommended,:room_type, :scheduled_for_completed, :shared_facilities, :show, :show_back_popup,:show_details_table, :size, :subtitle, :surrounding_environment, :updated_at, :url, :video_url

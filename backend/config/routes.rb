@@ -14,17 +14,10 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :property_materials, only: [:show] do
-        collection do
-          post 'search'
-        end
-      end
+      match '/property_materials/search', to: 'property_materials#search', via: :post
 
-      resources :guides, only: [:show] do
-        collection do
-          post 'search'
-        end
-      end
+      match '/guides/search', to: 'guides#search', via: :post
+      match '/guides/url', to: 'guides#show_by_url', via: :get
 
     end
   end
