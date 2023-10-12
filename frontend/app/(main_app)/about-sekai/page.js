@@ -3,7 +3,7 @@ import styles from "./page.module.scss";
 import Link from "next/link";
 
 const getAboutSekai = async () => {
-  const data = await fetch("http://localhost:3001/api/v1/about_sekai");
+  const data = await fetch("http://bb:3001/api/v1/about_sekai");
   const posts = await data.json();
 
   return posts.about_sekai;
