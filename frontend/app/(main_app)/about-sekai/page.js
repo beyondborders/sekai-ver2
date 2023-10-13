@@ -91,8 +91,8 @@ export default async function AboutSekai() {
               <div className={styles.imageContainer}>
                 <Image
                   src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/01new.jpg"
-                  width={1788}
-                  height={1292}
+                  width={306}
+                  height={221}
                   alt="セカイプロパティ ビューアストン"
                 />
               </div>
@@ -105,8 +105,8 @@ export default async function AboutSekai() {
               <div className={styles.imageContainer}>
                 <Image
                   src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/02new.jpg"
-                  width={1788}
-                  height={1292}
+                  width={306}
+                  height={221}
                   alt="セカイプロパティ"
                 />
               </div>
@@ -119,8 +119,8 @@ export default async function AboutSekai() {
               <div className={styles.imageContainer}>
                 <Image
                   src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/03new.jpg"
-                  width={1788}
-                  height={1292}
+                  width={306}
+                  height={221}
                   alt="セカイプロパティ"
                 />
               </div>
@@ -133,8 +133,8 @@ export default async function AboutSekai() {
               <div className={styles.imageContainer}>
                 <Image
                   src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/04new.jpg"
-                  width={1788}
-                  height={1292}
+                  width={306}
+                  height={221}
                   alt="セカイプロパティ"
                 />
               </div>
