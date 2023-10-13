@@ -1,4 +1,5 @@
 import Image from "next/image"
+import ImgFV from "@/images/FV-new.jpg"
 import styles from "./page.module.scss";
 import Link from "next/link";
 
@@ -54,10 +55,11 @@ export default async function AboutSekai() {
     <section>
       <div className={styles.FV}>
         <Image
-          src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/FV-new.jpg"
+          src={ImgFV}
           fill={true}
           style={{ objectFit: "cover" }}
           alt="セカイプロパティ ビューアストン"
+          placeholder="blur"
           priority
         />
         <div className={styles.FVtext}>
