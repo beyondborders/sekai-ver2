@@ -13,6 +13,7 @@ export default function Header() {
             src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/logo-201911.png"
             width={400}
             height={166}
+            alt="セカイプロパティ"
           />
         </div>
         <div className={styles.menuContainer}>
@@ -148,6 +149,7 @@ export default function Header() {
             src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/logo-201911.png"
             width={400}
             height={166}
+            alt="セカイプロパティ"
           />
         </div>
         <div className={styles.searchIconContainer}>

@@ -19,6 +19,7 @@ export default async function AboutSekai() {
           src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/FV-new.jpg"
           fill={true}
           style={{ objectFit: "cover" }}
+          alt="セカイプロパティ ビューアストン"
         />
         <div className={styles.FVtext}>
           <div className={styles.biggest}>
@@ -26,7 +27,7 @@ export default async function AboutSekai() {
             海外不動産ポータルサイトです。<br />
           </div>
           <div className={`${styles.bigger} mt-3`}>
-            物件選びから購入、売却までを<br className="d-sm-none" />一気通貫でサポートいたします。<br />
+            物件選びから購入、売却までを<br className="d-lg-none" />一気通貫でサポートいたします。<br />
           </div>
           <div className="mt-5">
             昨今、注目されている海外不動産。<br />
@@ -38,13 +39,13 @@ export default async function AboutSekai() {
             「物件を買ってもそのあとの管理まで出来ない...」<br />
           </div>
           <div className="mt-4">
-            そのようなお客様に、<br className="d-sm-none" />安心して海外不動産を購入いただけるよう、<br />
-            物件選び・購入・管理・売却までを<br className="d-sm-none" />一気通貫でサポートいたします。
+            そのようなお客様に、<br className="d-lg-none" />安心して海外不動産を購入いただけるよう、<br />
+            物件選び・購入・管理・売却までを<br className="d-lg-none" />一気通貫でサポートいたします。
           </div>
         </div>
       </div>
       <section className={styles.section2Container}>
-        <h2 className={styles.h2}>セカイプロパティが選ばれる<br className="d-sm-none" />4つの理由</h2>
+        <h2 className={styles.h2}>セカイプロパティが選ばれる<br className="d-lg-none" />4つの理由</h2>
         <div className="container">
           <div className={styles.section2BoxContainer}>
             <div className={styles.section2Box}>
@@ -53,6 +54,7 @@ export default async function AboutSekai() {
                   src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/01new.jpg"
                   width={1788}
                   height={1292}
+                  alt="セカイプロパティ ビューアストン"
                 />
               </div>
               <div className={styles.text}>
@@ -66,6 +68,7 @@ export default async function AboutSekai() {
                   src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/02new.jpg"
                   width={1788}
                   height={1292}
+                  alt="セカイプロパティ"
                 />
               </div>
               <div className={styles.text}>
@@ -79,6 +82,7 @@ export default async function AboutSekai() {
                   src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/03new.jpg"
                   width={1788}
                   height={1292}
+                  alt="セカイプロパティ"
                 />
               </div>
               <div className={styles.text}>
@@ -92,6 +96,7 @@ export default async function AboutSekai() {
                   src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/04new.jpg"
                   width={1788}
                   height={1292}
+                  alt="セカイプロパティ"
                 />
               </div>
               <div className={styles.text}>
@@ -116,28 +121,69 @@ export default async function AboutSekai() {
         <label htmlFor="tab5" className={styles.tab5label}>海外送金</label>
 
         <div className={styles.section3Content}>
-          <div className={styles.part1}>
-            <div className={styles.title}>1.<br className="d-sm-none" />業界最大級の<br className="d-sm-none" />海外不動産サイトを運営</div>
-            <div className="mt-3">
-              <div className={styles.mainContent}><span className={styles.part1desc}>■ 会員数</span><span className={styles.part1answer}>: a</span></div>
-              <div className={styles.mainContent}><span className={styles.part1desc}>■ 月間PV数</span><span className={styles.part1answer}>: a</span></div>
-              <div className={styles.mainContent}><span className={styles.part1desc}>■ 月間問合せ数</span><span className={styles.part1answer}>: a</span></div>
-              <div className={styles.mainContent}><span className={styles.part1desc}>■ ご紹介可能国</span><span className={styles.part1answer}>: a</span></div>
-              <div className={styles.mainContent}><span className={styles.part1desc}>■ ご紹介可能物件</span><span className={styles.part1answer}>: a</span></div>
-              <div className={styles.mainContent}><span className={styles.part1desc}>■ 掲載物件（一部）</span><span className={styles.part1answer}>: a</span></div>
+          <div className={`${styles.part} ${styles.part1}`}>
+            <div className={styles.title}>1.<br className="d-lg-none" />業界最大級の<br className="d-lg-none" />海外不動産サイトを運営</div>
+            <div className={styles.contentContainer}>
+              <div>
+                <div className={styles.mainContent}><span className={styles.part1desc}>■ 会員数</span><span className={styles.part1answer}>約{aboutSekai.member_number}名</span></div>
+                <div className={styles.mainContent}><span className={styles.part1desc}>■ 月間PV数</span><span className={styles.part1answer}>約{aboutSekai.pv}PV</span></div>
+                <div className={styles.mainContent}><span className={styles.part1desc}>■ 月間問合せ数</span><span className={styles.part1answer}>{aboutSekai.inquiries_number}名</span></div>
+                <div className={styles.mainContent}><span className={styles.part1desc}>■ ご紹介可能国</span><span className={styles.part1answer}>{aboutSekai.countries_number}ヵ国</span></div>
+                <div className={styles.mainContent}><span className={styles.part1desc}>■ ご紹介可能物件</span><span className={styles.part1answer}>{aboutSekai.properties_number}件</span></div>
+                <div className={styles.mainContent}>
+                  <span className={styles.part1desc}>■ 掲載物件（一部）</span>
+                  <span className={styles.part1answer}>
+                    {aboutSekai.malaysia_properties.split('\n').map((d, index) =>
+                      <><span key={index}>{d}</span><br /></>
+                    )}
+                    {aboutSekai.cambodia_properties.split('\n').map((d, index) =>
+                      <><span key={index}>{d}</span><br /></>
+                    )}
+                    {aboutSekai.thailand_properties.split('\n').map((d, index) =>
+                      <><span key={index}>{d}</span><br /></>
+                    )}
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div className={`${styles.fv3LogoContainer}`}>
+                  <div className={styles.fv3Logo}>
+                    <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png' />
+                    <div className={`${styles.fv3LogoText} ${styles.text1}`}>
+                      物件掲載数<br />
+                      <span>約</span><span className={styles.fvMainText}>{aboutSekai.top_page_number_of_properties_listed}件</span>
+                    </div>
+                  </div>
+                  <div className={styles.fv3Logo}>
+                    <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png' />
+                    <div className={`${styles.fv3LogoText} ${styles.text2}`}>
+                      総会員数<br />
+                      <span>約</span><span className={styles.fvMainText}>{aboutSekai.top_page_number_of_customers}人</span>
+                    </div>
+                  </div>
+                  <div className={styles.fv3Logo}>
+                    <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png' />
+                    <div className={`${styles.fv3LogoText} ${styles.text3}`}>
+                      物件契約数<br />
+                      <span>約</span><span className={styles.fvMainText}>{aboutSekai.top_page_number_of_contracts}件</span>
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.imageContainer}>
+                  <Image
+                    src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/2023_JOorganic_aboutUS_1.png"
+                    width={996}
+                    height={527}
+                    alt="セカイプロパティ"
+                  />
+                </div>
+              </div>
             </div>
             <div className="mt-4">
 
             </div>
-            <div className="mt-4">
-              <Image
-                src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/2023_JOorganic_aboutUS_1.png"
-                width={996}
-                height={527}
-              />
-            </div>
           </div>
-          <div className={styles.part2}>
+          <div className={`${styles.part} ${styles.part2}`}>
             <div className={styles.title}>
               2.<br className='d-lg-none' />累計販売総額約{aboutSekai.total_asset}
             </div>
@@ -189,74 +235,78 @@ export default async function AboutSekai() {
               </div>
             </div>
           </div>
-          <div className={styles.part3}>
+          <div className={`${styles.part} ${styles.part3}`}>
             <div className={styles.title}>
-              3.業界最大の独自ネットワークを活用した売却サービス
+              3.<br className='d-lg-none' />業界最大の独自ネットワークを<br className='d-lg-none' />活用した売却サービス
             </div>
             <div>
               <div className={styles.part3Content}>
-                <div>現地提携エージェント<span className={styles.red}>{aboutSekai.total_sale_agent}</span><span className={styles.sm}>（{aboutSekai.total_sale_as_of}時点）</span>を介して、スピーディーに売却を成功させます。</div>
-                <div>提携不動産仲介エージェント数は他社と比べて圧倒的。お客様の物件を効率的にPRできます。</div>
+                現地提携エージェント<span className={styles.red}>{aboutSekai.total_sale_agent}</span><span className={styles.sm}>（{aboutSekai.total_sale_as_of}時点）</span>を介して、スピーディーに売却を成功させます。<br className="d-none d-lg-block"/>
+                提携不動産仲介エージェント数は他社と比べて圧倒的。お客様の物件を効率的にPRできます。
               </div>
               <div className={styles.part3Img}>
                 <Image
                   src={aboutSekai.about_sekai_3_image_url}
                   width={1920}
                   height={720}
+                  alt="セカイプロパティ"
                   className={`d-none d-lg-block mt-4`}
                 />
               </div>
               <img className='d-block d-lg-none mt-3' src={aboutSekai.about_sekai_3_image_url_mobile} width='100%' />
             </div>
           </div>
-          <div className={styles.part4}>
+          <div className={`${styles.part} ${styles.part4}`}>
             <div className={styles.title}>
-              4.各種ライセンスも保持
+              4.<br className='d-lg-none' />各種ライセンスも保持
             </div>
             <div className="mt-4 d-block d-lg-flex">
               <div className={styles.text}>
                 ◎宅地建物取引業免許（日本）<br />
                 東京都知事（2）第98329号<br /><br />
                 ◎MSCステータスライセンス（マレーシア）<br />
-                MSC Status CS/3/9824<br /><br />
-                →マレーシア政府IT産業推進企業認定<br />
+                MSC Status CS/3/9824<br />
+                →マレーシア政府IT産業推進企業認定<br /><br />
                 ◎カンボジア不動産取引ライセンス（カンボジア）
               </div>
               <Image
                 src={`https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/license.jpg`}
                 width={599}
                 height={218}
+                alt="セカイプロパティ"
                 className="mt-4 mt-lg-0"
               />
             </div>
           </div>
-          <div className={styles.part5}>
+          <div className={`${styles.part} ${styles.part5}`}>
             <div className={styles.title}>
-              5.海外への送金も安心
+              5.<br className='d-lg-none' />海外への送金も安心
             </div>
             <div className="mt-4">
               <div className={styles.text}>
-                海外送金に関しては、銀行窓口での手続きが必要ですが、弊社のエスクローサービスを活用することで、インターネットバンキング等を活用した国内送金が可能。<br />
+                海外送金に関しては、銀行窓口での手続きが必要ですが、弊社のエスクローサービスを活用することで、インターネットバンキング等を活用した国内送金が可能。<br className='d-none d-lg-block' />
                 慣れない海外送金でも安心して取り組めます。
               </div>
               <Image
                 src={`https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/EAJ.jpg`}
                 width={1199}
                 height={486}
+                alt="セカイプロパティ"
                 className="mt-4 d-none d-lg-block"
               />
               <Image
                 src={`https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/EAJ_SP.png`}
                 width={552}
                 height={355}
+                alt="セカイプロパティ"
                 className="mt-4 d-block d-lg-none"
               />
             </div>
           </div>
         </div>
-        <div className={styles.blueButtonContainer}>
+        <div className={`${styles.blueButtonContainer} ${styles.section3BtnContainer}`}>
           <Link href={'/contact-ja'}>
-            <div class="mt-5 new-btn btn-shadow-blue">自分に合った物件の提案を受ける</div>
+            <div className="mt-5 new-btn btn-shadow-blue">自分に合った物件の提案を受ける</div>
           </Link>
         </div>
       </section>
@@ -302,7 +352,7 @@ export default async function AboutSekai() {
           </div>
           <div className={styles.blueButtonContainer}>
             <Link href={'/contact-ja'}>
-              <div class="mt-5 new-btn btn-shadow-blue">自分に合った物件の提案を受ける</div>
+              <div className="mt-5 new-btn btn-shadow-blue">自分に合った物件の提案を受ける</div>
             </Link>
           </div>
         </div>
@@ -326,6 +376,7 @@ export default async function AboutSekai() {
                 src={`https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/endo-san.jpg`}
                 width={350}
                 height={393}
+                alt="遠藤 忠義"
                 className="mt-4 mt-lg-0"
               />
             </div>

@@ -1,0 +1,48 @@
+.fv3LogoContainer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+
+  @include breakpoint(laptop) {
+    gap: 24px;
+  }
+
+  .fv3Logo {
+    position: relative;
+
+    img {
+      width: 115px;
+
+      @include breakpoint(laptop) {
+        width: 230px;
+      }
+    }
+
+    .fv3LogoText {
+      position: absolute;
+      font-size: 13px;
+      width: 100%;
+      -webkit-font-smoothing: antialiased;
+      top: 14px;
+      left: 50%;
+      line-height: 1.2;
+      transform: translateX(-50%);
+      text-align: center;
+
+      @include breakpoint(laptop) {
+        font-size: 20px;
+        top: 24px;
+      }
+    }
+  }
+
+  .fvMainText {
+    margin-top: 4px;
+    font-weight: 800;
+    font-size: 19px;
+
+    @include breakpoint(laptop) {
+      font-size: 42px;
+    }
+  }
+}

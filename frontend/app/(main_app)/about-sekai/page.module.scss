@@ -124,6 +124,8 @@
 }
 
 .section3Container {
+  padding-left: 0;
+  padding-right: 0;
   @include breakpoint(laptop) {
     max-width: 1320px;
     margin: 0 auto;
@@ -158,12 +160,21 @@
       background-color: #c9cfdc;
       color: #e8ecf3;
       cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px 0px;
+
+      &:hover{
+        background-color: darken(#c9cfdc, 5%);
+      }
     }
   }
 
   .tab1~.tab1label {
     background-color: #f8f8f8;
     color: #80663a;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px -2px 2px 0px;
+    &:hover{
+      background-color: #f8f8f8;
+    }
   }
 
   .tab2:checked~label,
@@ -172,6 +183,10 @@
   .tab5:checked~label {
     background-color: #c9cfdc;
     color: #e8ecf3;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px 0px;
+    &:hover{
+      background-color: darken(#c9cfdc, 5%);
+    }
   }
 
   .tab2:checked~.tab2label,
@@ -180,6 +195,10 @@
   .tab5:checked~.tab5label {
     background-color: #f8f8f8;
     color: #80663a;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px -2px 2px 0px;
+    &:hover{
+      background-color: #f8f8f8;
+    }
   }
 
   .tab1:checked~.section3Content .part1,
@@ -191,10 +210,10 @@
   }
 
   .section3Content {
-    background-color: #f8f8f8;
     text-align: left;
 
     @include breakpoint(laptop) {
+      background-color: #f8f8f8;
       padding: 48px 124px;
     }
 
@@ -205,6 +224,19 @@
 
       @include breakpoint(laptop) {
         font-size: 30px;
+      }
+    }
+    
+    .part{
+      padding: 48px 24px;
+      &:first-child{
+        padding-top: 0;
+      }
+      &:nth-child(even){
+        background-color: #f8f8f8;
+      }
+      @include breakpoint(laptop) {
+        padding: 0;
       }
     }
 
@@ -222,12 +254,97 @@
     }
 
     .part1 {
+      .contentContainer{
+        margin-top: 24px;
+        @include breakpoint(laptop) {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 48px;
+        }
+      }
       .mainContent {
         display: flex;
+        font-size: 14px;
+        @include breakpoint(laptop) {
+          font-size: 18px;
+        }
       }
 
       .part1desc {
-        width: 150px;
+        position: relative;
+        min-width: 132px;
+        @include breakpoint(laptop) {
+          min-width: 172px;
+        }
+        &::after{
+          display: inline;
+          content: ':';
+          position: absolute;
+          right: 0;
+        }
+      }
+      .part1answer{
+        margin-left: 8px;
+      }
+
+      .fv3LogoContainer {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 24px;
+      
+        @include breakpoint(laptop) {
+          gap: 20px;
+          margin-top: 0;
+        }
+      
+        .fv3Logo {
+          position: relative;
+      
+          img {
+            width: 88px;
+      
+            @include breakpoint(laptop) {
+              width: 110px;
+            }
+          }
+      
+          .fv3LogoText {
+            position: absolute;
+            font-size: 10px;
+            width: 100%;
+            -webkit-font-smoothing: antialiased;
+            top: 14px;
+            left: 50%;
+            line-height: 1.2;
+            transform: translateX(-50%);
+            text-align: center;
+      
+            @include breakpoint(laptop) {
+              font-size: 11px;
+              top: 12px;
+            }
+          }
+        }
+      
+        .fvMainText {
+          margin-top: 4px;
+          font-weight: 500;
+          font-size: 15px;
+      
+          @include breakpoint(laptop) {
+            font-size: 20px;
+          }
+        }
+      }
+
+      .imageContainer{
+        max-width: 90%;
+        margin: 0 auto;
+        margin-top: 24px;
+        @include breakpoint(laptop) {
+          max-width: 440px;
+        }
       }
     }
 
@@ -287,7 +404,7 @@
 
     .part3 {
       .part3Content {
-        font-size: 18px;
+        font-size: 16px;
         margin-top: 12px;
 
         @include breakpoint(laptop) {
@@ -310,7 +427,7 @@
     .part4,
     .part5 {
       .text {
-        font-size: 18px;
+        font-size: 14px;
 
         @include breakpoint(laptop) {
           font-size: 19px;
@@ -324,6 +441,13 @@
 .blueButtonContainer{
   max-width: 700px;
   margin: 0 auto;
+
+  &.section3BtnContainer{
+    padding: 0 24px;
+    @include breakpoint(laptop) {
+      padding: 0;
+    }
+  }
 }
 
 .section4Container{
