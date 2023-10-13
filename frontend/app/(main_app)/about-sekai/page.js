@@ -55,11 +55,12 @@ export default async function AboutSekai() {
       <div className={styles.FV}>
         <Image
           src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/FV-new.jpg"
+          priority={true}
           fill={true}
+          sizes="100vw"
           style={{ objectFit: "cover" }}
           alt="セカイプロパティ ビューアストン"
           quality={65}
-          priority={true}
         />
         <div className={styles.FVtext}>
           <div className={styles.biggest}>
@@ -188,21 +189,33 @@ export default async function AboutSekai() {
               <div>
                 <div className={`${styles.fv3LogoContainer}`}>
                   <div className={styles.fv3Logo}>
-                    <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png' />
+                    <Image
+                      src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png'
+                      width={110}
+                      height={84}
+                    />
                     <div className={`${styles.fv3LogoText}`}>
                       物件掲載数<br />
                       <span>約</span><span className={styles.fvMainText}>{aboutSekai.top_page_number_of_properties_listed}件</span>
                     </div>
                   </div>
                   <div className={styles.fv3Logo}>
-                    <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png' />
+                    <Image
+                      src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png'
+                      width={110}
+                      height={84}
+                    />
                     <div className={`${styles.fv3LogoText}`}>
                       総会員数<br />
                       <span>約</span><span className={styles.fvMainText}>{aboutSekai.top_page_number_of_customers}人</span>
                     </div>
                   </div>
                   <div className={styles.fv3Logo}>
-                    <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png' />
+                    <Image
+                      src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png'
+                      width={110}
+                      height={84}
+                    />
                     <div className={`${styles.fv3LogoText}`}>
                       物件契約数<br />
                       <span>約</span><span className={styles.fvMainText}>{aboutSekai.top_page_number_of_contracts}件</span>
