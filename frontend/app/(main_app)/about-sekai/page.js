@@ -3,8 +3,46 @@ import styles from "./page.module.scss";
 import Link from "next/link";
 
 const getAboutSekai = async () => {
-  const data = await fetch("http://bb:3001/api/v1/about_sekai");
-  const posts = await data.json();
+  // const data = await fetch("http://bb:3001/api/v1/about_sekai");
+  // const posts = await data.json();
+  const posts = {
+    "about_sekai": {
+      "member_number": "2万",
+      "member_number_as_of": "2022年3月",
+      "pv": "15万",
+      "pv_as_of": "2022年1月",
+      "inquiries_number": "800",
+      "inquiries_number_as_of": "2022年2月",
+      "countries_number": "12",
+      "countries_number_as_of": "2022年3月",
+      "properties_number": "436",
+      "properties_number_as_of": "2021年2月",
+      "malaysia_properties": "ザ・リッツカールトンレジデンス クアラルンプール\r\nBBCC・ルセンティアレジデンス\r\nキアラスイーツ163",
+      "cambodia_properties": "ラ・アトレボンケンコン\r\nアジャイルスカイレジデンス\r\nペントハウスレジデンス",
+      "thailand_properties": "フォーシーズンズレジデンスバンコク\r\nザ・リッツカールトンレジデンスバンコク \r\nインプレッションエカマイ",
+      "total_asset": "58億4,900万円",
+      "malaysia_asset": "22億円8,600万円",
+      "malaysia_asset_as_of": "2022年3月",
+      "malaysia_contracts": "73",
+      "cambodia_asset": "30億円1,700万円",
+      "cambodia_asset_as_of": "2022年3月",
+      "cambodia_contracts": "238",
+      "other_asset": "5億4,600万円",
+      "other_asset_as_of": "2022年3月",
+      "other_contracts": "59",
+      "total_sale_agent": "10,000社以上",
+      "total_sale_people": "12,876",
+      "total_sale_as_of": "2022年",
+      "top_page_number_of_properties_listed": "6万",
+      "top_page_number_of_customers": "3万",
+      "top_page_number_of_contracts": "500",
+      "graph_image_url": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/azukari_shisan_PC.png",
+      "graph_image_url_mobile": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/azukari_shisan_SP.png",
+      "top_page_post_ids": "3190, 756,1946",
+      "about_sekai_3_image_url": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/Desktop.jpg",
+      "about_sekai_3_image_url_mobile": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/Mobile.jpg",
+    }
+  }
 
   return posts.about_sekai;
 };
@@ -20,6 +58,7 @@ export default async function AboutSekai() {
           fill={true}
           style={{ objectFit: "cover" }}
           alt="セカイプロパティ ビューアストン"
+          priority
         />
         <div className={styles.FVtext}>
           <div className={styles.biggest}>
@@ -29,16 +68,16 @@ export default async function AboutSekai() {
           <div className={`${styles.bigger} mt-3`}>
             物件選びから購入、売却までを<br className="d-lg-none" />一気通貫でサポートいたします。<br />
           </div>
-          <div className="mt-5">
+          <div className="mt-4 mt-lg-5">
             昨今、注目されている海外不動産。<br />
-            しかし、情報の非対称さ、不透明さゆえに不安を抱く方も多くいらっしゃいます。<br />
+            しかし、情報の非対称さ、不透明さゆえに<br className="d-lg-none" />不安を抱く方も多くいらっしゃいます。<br />
           </div>
-          <div className="mt-4">
+          <div className="mt-3 mt-lg-4">
             「どんな基準で物件を選べばいいのだろう…？」<br />
             「海外の法律や税金について相談できる人がいない…」<br />
             「物件を買ってもそのあとの管理まで出来ない...」<br />
           </div>
-          <div className="mt-4">
+          <div className="mt-3 mt-lg-4">
             そのようなお客様に、<br className="d-lg-none" />安心して海外不動産を購入いただけるよう、<br />
             物件選び・購入・管理・売却までを<br className="d-lg-none" />一気通貫でサポートいたします。
           </div>
@@ -134,13 +173,13 @@ export default async function AboutSekai() {
                   <span className={styles.part1desc}>■ 掲載物件（一部）</span>
                   <span className={styles.part1answer}>
                     {aboutSekai.malaysia_properties.split('\n').map((d, index) =>
-                      <><span key={index}>{d}</span><br /></>
+                      <span key={index}>{d}<br /></span>
                     )}
                     {aboutSekai.cambodia_properties.split('\n').map((d, index) =>
-                      <><span key={index}>{d}</span><br /></>
+                      <span key={index}>{d}<br /></span>
                     )}
                     {aboutSekai.thailand_properties.split('\n').map((d, index) =>
-                      <><span key={index}>{d}</span><br /></>
+                      <span key={index}>{d}<br /></span>
                     )}
                   </span>
                 </div>
@@ -149,21 +188,21 @@ export default async function AboutSekai() {
                 <div className={`${styles.fv3LogoContainer}`}>
                   <div className={styles.fv3Logo}>
                     <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png' />
-                    <div className={`${styles.fv3LogoText} ${styles.text1}`}>
+                    <div className={`${styles.fv3LogoText}`}>
                       物件掲載数<br />
                       <span>約</span><span className={styles.fvMainText}>{aboutSekai.top_page_number_of_properties_listed}件</span>
                     </div>
                   </div>
                   <div className={styles.fv3Logo}>
                     <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png' />
-                    <div className={`${styles.fv3LogoText} ${styles.text2}`}>
+                    <div className={`${styles.fv3LogoText}`}>
                       総会員数<br />
                       <span>約</span><span className={styles.fvMainText}>{aboutSekai.top_page_number_of_customers}人</span>
                     </div>
                   </div>
                   <div className={styles.fv3Logo}>
                     <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png' />
-                    <div className={`${styles.fv3LogoText} ${styles.text3}`}>
+                    <div className={`${styles.fv3LogoText}`}>
                       物件契約数<br />
                       <span>約</span><span className={styles.fvMainText}>{aboutSekai.top_page_number_of_contracts}件</span>
                     </div>
@@ -241,7 +280,7 @@ export default async function AboutSekai() {
             </div>
             <div>
               <div className={styles.part3Content}>
-                現地提携エージェント<span className={styles.red}>{aboutSekai.total_sale_agent}</span><span className={styles.sm}>（{aboutSekai.total_sale_as_of}時点）</span>を介して、スピーディーに売却を成功させます。<br className="d-none d-lg-block"/>
+                現地提携エージェント<span className={styles.red}>{aboutSekai.total_sale_agent}</span><span className={styles.sm}>（{aboutSekai.total_sale_as_of}時点）</span>を介して、スピーディーに売却を成功させます。<br className="d-none d-lg-block" />
                 提携不動産仲介エージェント数は他社と比べて圧倒的。お客様の物件を効率的にPRできます。
               </div>
               <div className={styles.part3Img}>
