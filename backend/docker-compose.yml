@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  sekai-v2:
+    image: "bbdeekshith/sekai-v2-stag:1.0.1"
+    ports:
+      - "3000:3000"
+    env_file:
+      - env
+  nginx-proxy:
+    image: "nginx"
+    volumes:
+      - "${EB_LOG_BASE_DIR}/nginx-proxy:/var/log/nginx"
