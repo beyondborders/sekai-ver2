@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const getAboutSekai = async () => {
   // const data = await fetch("http://bb:3001/api/v1/about_sekai");
-  const data = await fetch("http://sekai-v2-stag.eba-qnzkaccx.ap-northeast-1.elasticbeanstalk.com/api/v1/about_sekai");
+  const data = await fetch("http://sekai-v2-stag.eba-qnzkaccx.ap-northeast-1.elasticbeanstalk.com/api/v1/about_sekai", { cache: 'no-store' });
   const posts = await data.json();
   // const posts = {
   //   "about_sekai": {
