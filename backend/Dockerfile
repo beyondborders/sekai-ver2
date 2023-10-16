@@ -20,7 +20,8 @@ WORKDIR /app
 
 RUN gem install bundler -v 2.4.20
 
-COPY Gemfile* .
+COPY Gemfile .
+COPY Gemfile.lock .
 RUN bundle install
 COPY . .
 EXPOSE 3000
