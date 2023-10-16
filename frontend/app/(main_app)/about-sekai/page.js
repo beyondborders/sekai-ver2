@@ -4,45 +4,46 @@ import Link from "next/link";
 
 const getAboutSekai = async () => {
   // const data = await fetch("http://bb:3001/api/v1/about_sekai");
-  // const posts = await data.json();
-  const posts = {
-    "about_sekai": {
-      "member_number": "2万",
-      "member_number_as_of": "2022年3月",
-      "pv": "15万",
-      "pv_as_of": "2022年1月",
-      "inquiries_number": "800",
-      "inquiries_number_as_of": "2022年2月",
-      "countries_number": "12",
-      "countries_number_as_of": "2022年3月",
-      "properties_number": "436",
-      "properties_number_as_of": "2021年2月",
-      "malaysia_properties": "ザ・リッツカールトンレジデンス クアラルンプール\r\nBBCC・ルセンティアレジデンス\r\nキアラスイーツ163",
-      "cambodia_properties": "ラ・アトレボンケンコン\r\nアジャイルスカイレジデンス\r\nペントハウスレジデンス",
-      "thailand_properties": "フォーシーズンズレジデンスバンコク\r\nザ・リッツカールトンレジデンスバンコク \r\nインプレッションエカマイ",
-      "total_asset": "58億4,900万円",
-      "malaysia_asset": "22億円8,600万円",
-      "malaysia_asset_as_of": "2022年3月",
-      "malaysia_contracts": "73",
-      "cambodia_asset": "30億円1,700万円",
-      "cambodia_asset_as_of": "2022年3月",
-      "cambodia_contracts": "238",
-      "other_asset": "5億4,600万円",
-      "other_asset_as_of": "2022年3月",
-      "other_contracts": "59",
-      "total_sale_agent": "10,000社以上",
-      "total_sale_people": "12,876",
-      "total_sale_as_of": "2022年",
-      "top_page_number_of_properties_listed": "6万",
-      "top_page_number_of_customers": "3万",
-      "top_page_number_of_contracts": "500",
-      "graph_image_url": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/azukari_shisan_PC.png",
-      "graph_image_url_mobile": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/azukari_shisan_SP.png",
-      "top_page_post_ids": "3190, 756,1946",
-      "about_sekai_3_image_url": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/Desktop.jpg",
-      "about_sekai_3_image_url_mobile": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/Mobile.jpg",
-    }
-  }
+  const data = await fetch("http://sekai-v2-stag.eba-qnzkaccx.ap-northeast-1.elasticbeanstalk.com/api/v1/about_sekai");
+  const posts = await data.json();
+  // const posts = {
+  //   "about_sekai": {
+  //     "member_number": "2万",
+  //     "member_number_as_of": "2022年3月",
+  //     "pv": "15万",
+  //     "pv_as_of": "2022年1月",
+  //     "inquiries_number": "800",
+  //     "inquiries_number_as_of": "2022年2月",
+  //     "countries_number": "12",
+  //     "countries_number_as_of": "2022年3月",
+  //     "properties_number": "436",
+  //     "properties_number_as_of": "2021年2月",
+  //     "malaysia_properties": "ザ・リッツカールトンレジデンス クアラルンプール\r\nBBCC・ルセンティアレジデンス\r\nキアラスイーツ163",
+  //     "cambodia_properties": "ラ・アトレボンケンコン\r\nアジャイルスカイレジデンス\r\nペントハウスレジデンス",
+  //     "thailand_properties": "フォーシーズンズレジデンスバンコク\r\nザ・リッツカールトンレジデンスバンコク \r\nインプレッションエカマイ",
+  //     "total_asset": "58億4,900万円",
+  //     "malaysia_asset": "22億円8,600万円",
+  //     "malaysia_asset_as_of": "2022年3月",
+  //     "malaysia_contracts": "73",
+  //     "cambodia_asset": "30億円1,700万円",
+  //     "cambodia_asset_as_of": "2022年3月",
+  //     "cambodia_contracts": "238",
+  //     "other_asset": "5億4,600万円",
+  //     "other_asset_as_of": "2022年3月",
+  //     "other_contracts": "59",
+  //     "total_sale_agent": "10,000社以上",
+  //     "total_sale_people": "12,876",
+  //     "total_sale_as_of": "2022年",
+  //     "top_page_number_of_properties_listed": "6万",
+  //     "top_page_number_of_customers": "3万",
+  //     "top_page_number_of_contracts": "500",
+  //     "graph_image_url": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/azukari_shisan_PC.png",
+  //     "graph_image_url_mobile": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/azukari_shisan_SP.png",
+  //     "top_page_post_ids": "3190, 756,1946",
+  //     "about_sekai_3_image_url": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/Desktop.jpg",
+  //     "about_sekai_3_image_url_mobile": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/Mobile.jpg",
+  //   }
+  // }
 
   return posts.about_sekai;
 };
@@ -95,6 +96,7 @@ export default async function AboutSekai() {
                   src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/01new.jpg"
                   width={306}
                   height={221}
+                  sizes="(max-width: 992px) 100px, 306px"
                   alt="セカイプロパティ ビューアストン"
                 />
               </div>
@@ -109,6 +111,7 @@ export default async function AboutSekai() {
                   src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/02new.jpg"
                   width={306}
                   height={221}
+                  sizes="(max-width: 992px) 100px, 306px"
                   alt="セカイプロパティ"
                 />
               </div>
@@ -123,6 +126,7 @@ export default async function AboutSekai() {
                   src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/03new.jpg"
                   width={306}
                   height={221}
+                  sizes="(max-width: 992px) 100px, 306px"
                   alt="セカイプロパティ"
                 />
               </div>
@@ -137,6 +141,7 @@ export default async function AboutSekai() {
                   src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/04new.jpg"
                   width={306}
                   height={221}
+                  sizes="(max-width: 992px) 100px, 306px"
                   alt="セカイプロパティ"
                 />
               </div>
