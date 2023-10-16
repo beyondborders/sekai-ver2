@@ -20,9 +20,9 @@ WORKDIR /app
 
 RUN gem install bundler -v 2.4.20
 
-COPY ./backend/Gemfile* .
+COPY Gemfile* .
 RUN bundle install
-COPY ./backend .
+COPY . .
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
 
