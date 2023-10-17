@@ -8,9 +8,10 @@ phases:
     commands:
       - cd backend # Change to the repository directory
       - cp staging.Dockerfile Dockerfile # Copy the content of stag.Dockerfile to Dockerfile
+      - mv backend ./
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - 'backend/**/*'
+    - '**/*'
