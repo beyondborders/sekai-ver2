@@ -94,12 +94,20 @@
 
 .headerContainerPC {
   display: none;
-  justify-content: space-between;
-  align-items: center;
+  
   padding: 20px 10px;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 9;
 
   @include breakpoint(laptop) {
+    display: block;
+  }
+  .contentWrapper{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
@@ -175,5 +183,27 @@
     &:hover {
       background: darken(white, 5%);
     }
+  }
+}
+
+.fixedConsultationLink{
+  display: none;
+  position: absolute;
+  top: 104px;
+  right: 0;
+  background: black;
+  color: white;
+  padding: 16px 32px;
+  font-size: 22px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  z-index: 9;
+
+  &:hover{
+    background-color: lighten(#000, 5%);
+  }
+
+  @include breakpoint(laptop) {
+    display: block;
   }
 }

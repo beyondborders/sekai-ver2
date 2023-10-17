@@ -1,0 +1,70 @@
+@import "@/css/utils.scss";
+
+.footer{
+  background-color: #304064;
+  color: white;
+  font-size: 14px;
+  .footerTop{
+    padding: 48px 0;
+    display: none;
+    @include breakpoint(laptop) {
+      display: block;
+    }
+  }
+  .footerBottom{
+    padding: 48px 0;
+    background-color: black;
+    font-size: 14px;
+
+    .logoContainer{
+      width: 175px;
+    }
+    .footerBottomLink{
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 8px;
+      font-size: 12px;
+      @include breakpoint(laptop) {
+        gap: 16px;
+        justify-content: end;
+        font-size: 14px;
+      }
+    }
+  }
+
+  a{
+    &:hover{
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+}
+
+.h3{
+  font-size: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #919191;
+}
+
+.zigexnLink{
+  padding: 24px 12px;
+  line-height: 1.5;
+  a{
+    border-left: 1px solid #ccc;
+    margin-left: 6px;
+    padding-left: 6px;
+    color: #888;
+    font-size: 10px;
+
+    &:first-child{
+      border-left: 0px;
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    @include breakpoint(laptop) {
+      font-size: 11px;
+    }
+  }
+}
