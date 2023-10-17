@@ -8,6 +8,7 @@ phases:
     commands:
       # - cd backend # Change to the repository directory
       - ls
+      - cd backend
       - cp staging.Dockerfile Dockerfile # Copy the content of stag.Dockerfile to Dockerfile 
   post_build:
     commands:
