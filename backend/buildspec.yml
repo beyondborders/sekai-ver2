@@ -6,7 +6,7 @@ phases:
       - echo starting deployment
   build:
     commands:
-      - cd backend # Change to the repository directory
+      # - cd backend # Change to the repository directory
       - cp staging.Dockerfile Dockerfile # Copy the content of stag.Dockerfile to Dockerfile 
   post_build:
     commands:
