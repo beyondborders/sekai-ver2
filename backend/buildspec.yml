@@ -3,10 +3,11 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo starting deployment
+      - echo starting deployment buildspec
   build:
     commands:
       # - cd backend # Change to the repository directory
+      - ls
       - cp staging.Dockerfile Dockerfile # Copy the content of stag.Dockerfile to Dockerfile 
   post_build:
     commands:
