@@ -5,8 +5,7 @@ ARG DEV_PACKAGES="mariadb-dev yaml-dev zlib-dev python3 make g++ icu-dev imagema
 ARG RUBY_PACKAGES="tzdata"
 
 ENV RAILS_ENV=staging\
-    BUNDLE_FORCE_RUBY_PLATFORM=true\
-    TEST_ENV=COPIED
+    BUNDLE_FORCE_RUBY_PLATFORM=true
 
 ENV BUNDLE_PATH=/bundle \
     BUNDLE_BIN=/bundle/bin \
@@ -23,7 +22,10 @@ RUN gem install bundler -v 2.4.20
 
 COPY Gemfile .
 COPY Gemfile.lock .
-RUN bundle install
+RUN bundle install --without development test
 COPY . .
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
+
+
+

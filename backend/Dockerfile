@@ -22,7 +22,7 @@ RUN gem install bundler -v 2.4.20
 
 COPY Gemfile .
 COPY Gemfile.lock .
-RUN bundle install
+RUN bundle install --without development test
 COPY . .
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
