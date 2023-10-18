@@ -1,18 +1,26 @@
+# buildspec.yml
 version: 0.2
 
 phases:
-  pre_build:
+  install:
     commands:
-      - echo starting deployment buildspec
+      - echo Logging into Amazon ECR...
+      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+      - REPOSITORY_URI=637074815469.dkr.ecr.ap-northeast-1.amazonaws.com/sekai-v2-staging
   build:
     commands:
-      - echo building deployment buildspec
+      - echo Build started on `date`
+      - echo Building the Docker image...
       - cd backend
-      - cp staging.Dockerfile Dockerfile # Copy the content of stag.Dockerfile to Dockerfile 
-      - zip -r deployment-package.zip *
+      - docker build -t $REPOSITORY_URI:latest .
   post_build:
     commands:
       - echo Build completed on `date`
+      - echo Pushing the Docker images...
+      - docker push $REPOSITORY_URI:latest
+      - echo Writing image definitions file...
+      - printf '[{"name":"produciton","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
+
 artifacts:
   base-directory: backend
-  files: deployment-package.zip
+  files: imagedefinitions.json
