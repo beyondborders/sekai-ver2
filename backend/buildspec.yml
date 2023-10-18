@@ -9,7 +9,7 @@ phases:
       - echo building deployment buildspec
       - cd backend
       - cp staging.Dockerfile Dockerfile # Copy the content of stag.Dockerfile to Dockerfile 
-      - zip -r deployment-package.zip
+      - zip -r deployment-package.zip *
   post_build:
     commands:
       - echo Build completed on `date`
