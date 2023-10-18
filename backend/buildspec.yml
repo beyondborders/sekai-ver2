@@ -6,10 +6,7 @@ phases:
       - echo starting deployment buildspec
   build:
     commands:
-      # - cd backend # Change to the repository directory
-      - ls
-      - cd backend
-      - cp staging.Dockerfile Dockerfile # Copy the content of stag.Dockerfile to Dockerfile 
+      - echo building deployment buildspec
   post_build:
     commands:
       - echo Build completed on `date`
