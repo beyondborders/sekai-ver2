@@ -9,14 +9,16 @@ export default function Header() {
     <>
       <section className={styles.headerContainerPC}>
         <div className={styles.contentWrapper}>
-          <div className={styles.logo}>
-            <Image
-              src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/logo-201911.png"
-              width={400}
-              height={166}
-              alt="セカイプロパティ"
-            />
-          </div>
+          <Link href='/'>
+            <div className={styles.logo}>
+              <Image
+                src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/logo-201911.png"
+                width={400}
+                height={166}
+                alt="セカイプロパティ"
+              />
+            </div>
+          </Link>
           <div className={styles.menuContainer}>
             <Link href={`/about-sekai`}>セカイプロパティとは</Link>
             <Dropdown
@@ -147,14 +149,16 @@ export default function Header() {
             <li><Link href={`/seminar`}>海外不動産セミナー</Link></li>
           </ul>
         </div>
-        <div className={styles.logo}>
-          <Image
-            src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/logo-201911.png"
-            width={400}
-            height={166}
-            alt="セカイプロパティ"
-          />
-        </div>
+        <Link href='/'>
+          <div className={styles.logo}>
+            <Image
+              src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/logo-201911.png"
+              width={400}
+              height={166}
+              alt="セカイプロパティ"
+            />
+          </div>
+        </Link>
         <div className={styles.searchIconContainer}>
           <div className={styles.iconMglass}></div>
           <div>物件検索</div>

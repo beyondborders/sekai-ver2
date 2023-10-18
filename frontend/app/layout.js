@@ -1,6 +1,6 @@
 import "../css/base.scss";
-import { Shippori_Mincho } from 'next/font/google'
-const shippori_mincho = Shippori_Mincho({
+import { Zen_Old_Mincho } from 'next/font/google'
+const shippori_mincho = Zen_Old_Mincho({
   weight: ['400', '500'],
   subsets: ['latin'],
   display: 'swap'

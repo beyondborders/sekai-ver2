@@ -1,48 +1,366 @@
-.fv3LogoContainer {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
+@import "@/css/utils.scss";
 
-  @include breakpoint(laptop) {
-    gap: 24px;
-  }
-
-  .fv3Logo {
-    position: relative;
-
-    img {
-      width: 115px;
-
-      @include breakpoint(laptop) {
-        width: 230px;
-      }
-    }
-
-    .fv3LogoText {
-      position: absolute;
-      font-size: 13px;
-      width: 100%;
-      -webkit-font-smoothing: antialiased;
-      top: 14px;
-      left: 50%;
-      line-height: 1.2;
-      transform: translateX(-50%);
-      text-align: center;
-
-      @include breakpoint(laptop) {
-        font-size: 20px;
-        top: 24px;
-      }
-    }
-  }
-
-  .fvMainText {
-    margin-top: 4px;
-    font-weight: 800;
-    font-size: 19px;
+.FV {
+  .FVImageContainer {
+    height: 260px;
 
     @include breakpoint(laptop) {
-      font-size: 42px;
+      height: 740px;
+    }
+  }
+}
+
+.h2 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 24px;
+
+  @include breakpoint(laptop) {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+}
+
+.FVTitle {
+  font-size: 16px;
+  margin-bottom: 24px;
+  text-align: center;
+
+  @include breakpoint(laptop) {
+    font-size: 35px;
+    margin-bottom: 40px;
+  }
+
+  span {
+    font-weight: 500;
+    font-size: 23px;
+
+    @include breakpoint(laptop) {
+      font-size: 40px;
+    }
+  }
+}
+
+.mainTitle {
+  font-size: 16px;
+  margin-bottom: 24px;
+  text-align: center;
+  font-weight: 600;
+
+  @include breakpoint(laptop) {
+    font-size: 35px;
+    margin-bottom: 40px;
+  }
+
+  span {
+    font-weight: 500;
+    font-size: 23px;
+
+    @include breakpoint(laptop) {
+      font-size: 40px;
+    }
+  }
+}
+
+.mainLink {
+  display: inline-block;
+  color: #8b8b8b;
+  padding: 2px 6px;
+  border-bottom: 1px solid #8b8b8b;
+  font-size: 18px;
+
+  &:hover {
+    color: darken(#8b8b8b, 20%);
+    border-color: darken(#8b8b8b, 20%);
+  }
+
+  @include breakpoint(laptop) {
+    padding: 2px 12px;
+    border-bottom: 2px solid #8b8b8b;
+    font-size: 21px;
+  }
+}
+
+.sectionContainer {
+  padding: 60px 24px;
+
+  @include breakpoint(laptop) {
+    padding: 120px 0;
+  }
+}
+
+.section2 {
+  text-align: center;
+
+  .mainContent {
+    font-size: 13px;
+    margin-top: 24px;
+
+    @include breakpoint(laptop) {
+      font-size: 20px;
+      margin-top: 40px;
+    }
+  }
+
+  .fv3LogoContainer {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+
+    @include breakpoint(laptop) {
+      gap: 24px;
+    }
+
+    .fv3Logo {
+      position: relative;
+
+      img {
+        width: 115px;
+
+        @include breakpoint(laptop) {
+          width: 230px;
+        }
+      }
+
+      .fv3LogoText {
+        position: absolute;
+        font-size: 11px;
+        width: 100%;
+        -webkit-font-smoothing: antialiased;
+        top: 14px;
+        left: 50%;
+        line-height: 1.2;
+        transform: translateX(-50%);
+        text-align: center;
+
+        @include breakpoint(laptop) {
+          font-size: 20px;
+          top: 24px;
+        }
+      }
+    }
+
+    .fvMainText {
+      margin-top: 4px;
+      font-weight: 800;
+      font-size: 17px;
+
+      @include breakpoint(laptop) {
+        font-size: 42px;
+      }
+    }
+  }
+
+  .part {
+    padding: 60px 0 0;
+
+    @include breakpoint(laptop) {
+      padding: 120px 0 0;
+    }
+  }
+
+  .serviceContainer {
+    background: linear-gradient(144deg, #005daa 0%, #000002 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 8px;
+    cursor: pointer;
+    height: 100%;
+
+    @include breakpoint(laptop) {
+      padding: 24px 0;
+    }
+
+    .serviceText {
+      font-size: 18px;
+
+      @include breakpoint(laptop) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .interviewContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-flow: nowrap;
+    margin-left: 0;
+    margin-right: 12px;
+    margin-bottom: 30px;
+    background: #ebebeb;
+    border-radius: 10px;
+    align-items: center;
+    text-align: left;
+
+    @include breakpoint(laptop) {
+      max-width: none;
+      margin-left: 36px;
+      margin-right: 12px;
+      flex-wrap: nowrap;
+      flex-flow: nowrap;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .interviewContent {
+      margin: 12px;
+
+      @include breakpoint(laptop) {
+        margin: 24px;
+      }
+    }
+
+    .interviewImage {
+      img {
+        object-fit: cover;
+        width: 100px;
+        height: 110px;
+        border-radius: 10px;
+
+        @include breakpoint(laptop) {
+          width: 200px;
+          height: 192px;
+        }
+      }
+    }
+
+    .interviewCompanyName {
+      border-left: 4px solid #1f66a4;
+      padding-left: 8px;
+      line-height: 1.5;
+      font-size: 8px;
+      margin-top: 24px;
+      margin-bottom: 12px;
+
+      @include breakpoint(laptop) {
+        border-left: 6px solid #1f66a4;
+        font-size: 13px;
+        margin-bottom: 0;
+      }
+    }
+
+    .interviewTitle {
+      font-weight: 500;
+      font-size: 10px;
+      margin-top: 12px;
+
+      @include breakpoint(laptop) {
+        margin-top: 0px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.section3 {
+  background: linear-gradient(180deg, #e7dac7 0%, #fff 80%);
+
+  .sectionContent {
+    position: relative;
+    border-radius: 10px;
+    margin-top: 32px;
+    text-align: center;
+
+    @include breakpoint(laptop) {
+      margin-top: 60px;
+    }
+
+    .contentTitle {
+      display: inline-block;
+      color: #65594f;
+      padding: 2px 16px;
+      border-bottom: 2px solid #d2bb9e;
+      font-size: 13px;
+
+      @include breakpoint(laptop) {
+        font-size: 32px;
+        padding: 2px 22px;
+      }
+    }
+
+    .contentInner {
+      width: 90%;
+      margin: 0 auto;
+
+      @include breakpoint(laptop) {
+        width: 100%;
+      }
+
+      .title {
+        color: #65594f;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 16px 0;
+
+        @include breakpoint(laptop) {
+          font-size: 34px;
+        }
+      }
+
+      .description {
+        font-size: 11px;
+        text-align: left;
+
+        @include breakpoint(laptop) {
+          font-size: 30px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+.section4{
+  background: linear-gradient(180deg, #d4dfec 0%, #fff 80%);
+  .sectionContent {
+    display: flex;
+    margin-top: 24px;
+    @include breakpoint(laptop) {
+      margin-top: 64px;
+    }
+  
+    .sectionImage {
+      min-width: 100px;
+      width: 100px;
+      @include breakpoint(laptop) {
+        min-width: 215px;
+      }
+    }
+    
+    .contentInner{
+      display: flex;
+      align-items: center;
+      margin-left: 24px;
+      @include breakpoint(laptop) {
+        display: block;
+        margin-left: 40px;
+      }
+    }
+    .title {
+      font-size: 14px;
+      font-weight: 500;
+  
+      @include breakpoint(laptop) {
+        font-size: 28px;
+      }
+    }
+  
+    .description {
+      font-size: 16px;
+      display: none;
+      margin-top: 24px;
+  
+      @include breakpoint(laptop) {
+        font-size: 22px;
+        display: block;
+      }
     }
   }
 }
