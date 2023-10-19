@@ -1,0 +1,18 @@
+name: Add to Staging
+
+on:
+  workflow_dispatch: # This allows you to trigger the workflow manually from the GitHub web interface
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest # This specifies the type of machine to run the workflow on
+    steps:
+      - name: Checkout repository # This checks out your repository code on the machine
+        uses: actions/checkout@v2 # This uses a predefined action from the GitHub marketplace
+        with:
+          fetch-depth: 0
+      - name: Add to Staging # This runs the git commands you want
+        run: |
+          git checkout staging
+          git reset --hard $CI_COMMIT_BRANCH
+          git push --force
