@@ -15,4 +15,4 @@ jobs:
         run: |
           git checkout staging
           git reset --hard $CI_COMMIT_BRANCH
-          git push --force
+          git push --force origin staging
