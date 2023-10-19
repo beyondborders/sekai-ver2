@@ -1,0 +1,303 @@
+@import "@/css/utils.scss";
+
+.secureInput{
+  position: relative;
+  img{
+    position: absolute;
+    width: 16px;
+    top: 11px;
+    right: 16px;
+    filter: opacity(0.35);
+  }
+}
+
+.stepContainer {
+  height: 102px;
+  width: 100%;
+  margin: 10px auto 0 auto;
+
+  @include breakpoint(laptop) {
+    width: 560px;
+    height: 72px;
+    margin: 40px auto 0 auto;
+  }
+
+  .stepBar {
+    position: relative;
+    list-style: none;
+    margin: 0 0 1em;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    *zoom: 1;
+
+    @include breakpoint(laptop) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .stepBar li {
+    position: relative;
+    float: left;
+    display: inline-block;
+    line-height: 40px;
+    padding: 0px 10px 0 0;
+    background-color: #eee;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 25%;
+    font-size: 12px;
+
+    // font-size: 15px;
+    @include breakpoint(laptop) {
+      width: 15%;
+      padding: 0 26px 0 0;
+    }
+  }
+
+  .stepBar li:before,
+  .stepBar li:after {
+    position: absolute;
+    left: -8px;
+    display: block;
+    content: '';
+    background-color: #eee;
+    border-left: 4px solid #FFF;
+    width: 13px;
+    height: 20px;
+
+    @include breakpoint(laptop) {
+      left: -15px;
+      width: 20px;
+    }
+  }
+
+  .stepBar li:after {
+    top: 0;
+    -moz-transform: skew(30deg);
+    -ms-transform: skew(30deg);
+    -webkit-transform: skew(30deg);
+    transform: skew(30deg);
+  }
+
+  .stepBar li:before {
+    bottom: 0;
+    -moz-transform: skew(-30deg);
+    -ms-transform: skew(-30deg);
+    -webkit-transform: skew(-30deg);
+    transform: skew(-30deg);
+  }
+
+  .stepBar li:first-child {
+    -moz-border-radius-topleft: 4px;
+    -webkit-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  .stepBar li:first-child:before,
+  .stepBar li:first-child:after {
+    content: none;
+  }
+
+  .stepBar li:last-child {
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    width: 15%;
+
+    @include breakpoint(laptop) {
+      width: 10%;
+    }
+  }
+
+  .stepBar li.current {
+    color: #fcfd06;
+    background-color: #80b754;
+  }
+
+  .stepBar li.current:before,
+  .stepBar li.current:after {
+    background-color: #80b754;
+  }
+
+  .stepBar li.noStep {
+    background-color: #ffffff;
+    font-weight: bold;
+    color: #80b754;
+    padding: 0;
+  }
+
+  .stepBar li.noStep:before,
+  .stepBar li.noStep:after {
+    background-color: #ffffff;
+  }
+}
+
+.lockContainer {
+  font-size: 14px;
+  text-align: center;
+
+  .lockContent {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: underline;
+    img{
+      width: 16px;
+      margin-right: 4px;
+    }
+  }
+}
+
+.InquiryContainer {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  // height: auto;
+  padding: 32px 0;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 15%);
+  /* text-align: center; */
+  overflow: hidden;
+
+  @include breakpoint(laptop) {
+    margin: 40px 0 20px;
+    max-width: 600px;
+    min-width: 600px;
+    height: 550px;
+  }
+
+  .formSlider {
+    display: flex;
+    transition: 0.3s;
+
+    .sliderItem {
+      width: 100%;
+      padding: 0 16px;
+
+      @include breakpoint(laptop) {
+        padding: 0 32px;
+      }
+    }
+  }
+}
+
+.questionContainer {
+  display: flex;
+  align-items: center;
+  .icon{}
+  .question{}
+}
+
+.answerContainer{
+  margin: 8px 0;
+}
+
+.buttonContainer{
+  display: flex;
+  justify-content: space-between;  
+}
+
+.baseButton{
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+  border: none;
+  @include breakpoint(laptop) {
+    padding: 12px 54px;
+  }
+}
+.prevButton {
+  color: #fff;
+  background-image: linear-gradient(to bottom, #aaa, #606060);
+  box-shadow: 0px 4px 0px #4b4a49;
+}
+
+.nextButton {
+  color: #fff;
+  background-color: #ff7201;
+  background-image: linear-gradient(to right, #f3a840, #ef6f38);
+  box-shadow: 0px 4px 0px #ac6728;
+
+  @include breakpoint(laptop) {
+    padding: 12px 54px;
+  }
+}
+
+
+
+.submitButton {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background-color: #ec8f03;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+  border: none;
+}
+
+.disabledButton {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background-color: #adadad;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+  border: none;
+  pointer-events: none;
+}
+
+.termButton {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 8px 12px;
+
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+  border: 2px solid #39b5b0;
+  color: #333;
+  background: white;
+
+  &:hover {
+    filter: brightness(105%);
+  }
+}

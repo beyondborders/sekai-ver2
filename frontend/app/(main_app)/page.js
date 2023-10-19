@@ -10,65 +10,65 @@ const getAboutSekai = async () => {
   // const posts = await data.json();
   const posts = {
     "about_sekai": {
-        "member_number": "3万",
-        "member_number_as_of": "2023年6月",
-        "pv": "20万",
-        "pv_as_of": "2023年5月",
-        "inquiries_number": "約800",
-        "inquiries_number_as_of": "2023年5月",
-        "countries_number": "12",
-        "countries_number_as_of": "2023年5月",
-        "properties_number": "436",
-        "properties_number_as_of": "2021年2月",
-        "malaysia_properties": "ザ・リッツカールトンレジデンス クアラルンプール\r\nBBCC・ルセンティアレジデンス\r\nキアラスイーツ163",
-        "cambodia_properties": "ラ・アトレボンケンコン\r\nアジャイルスカイレジデンス\r\nペントハウスレジデンス",
-        "thailand_properties": "フォーシーズンズレジデンスバンコク\r\nザ・リッツカールトンレジデンスバンコク \r\nインプレッションエカマイ",
-        "total_asset": "66億9,260万円",
-        "malaysia_asset": "23億円2,480万円",
-        "malaysia_asset_as_of": "2022年12月",
-        "malaysia_contracts": "83",
-        "cambodia_asset": "37億円3,720万円",
-        "cambodia_asset_as_of": "2022年12月",
-        "cambodia_contracts": "278",
-        "other_asset": "6億3,060万円",
-        "other_asset_as_of": "2022年12月",
-        "other_contracts": "61",
-        "total_sale_agent": "10,000社以上",
-        "total_sale_people": "12,876",
-        "total_sale_as_of": "2022年",
-        "top_page_number_of_properties_listed": "6万",
-        "top_page_number_of_customers": "3万",
-        "top_page_number_of_contracts": "500",
-        "graph_image_url": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/azukari_shisan_PC.png",
-        "graph_image_url_mobile": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/azukari_shisan_SP.png",
-        "top_page_post_ids": "3190, 756,1946",
-        "about_sekai_3_image_url": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/Desktop.jpg",
-        "about_sekai_3_image_url_mobile": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/Mobile.jpg",
-        "posts": [
-            {
-                "id": 756,
-                "category": "knowhow",
-                "title": "マレーシア不動産の利回りを9つの国・4つのエリアで徹底比較",
-                "eyecatch_image": "https://sekai-property-post-image.s3-ap-northeast-1.amazonaws.com/757/4511b579-cbbb-4957-8254-d8fe019bcb8c.jpg",
-                "publish_date": "2020-03-16"
-            },
-            {
-                "id": 1946,
-                "category": "knowhow",
-                "title": "クアラルンプールのコンドミニアムの魅力。賃貸・購入情報まで解説！",
-                "eyecatch_image": "https://sekai-property-post-image.s3-ap-northeast-1.amazonaws.com/2926/4fcfec67-ced9-43bd-85cf-e92346e6997b.jpg",
-                "publish_date": "2020-03-13"
-            },
-            {
-                "id": 3190,
-                "category": "knowhow",
-                "title": "投資・移住を考え中の方へ。海外不動産の買い方ガイダンス",
-                "eyecatch_image": "https://sekai-property-post-image.s3-ap-northeast-1.amazonaws.com/9917/d4061a3c-d6b3-46f9-a299-64a7f7ef400b.jpg",
-                "publish_date": "2020-08-21"
-            }
-        ]
+      "member_number": "3万",
+      "member_number_as_of": "2023年6月",
+      "pv": "20万",
+      "pv_as_of": "2023年5月",
+      "inquiries_number": "約800",
+      "inquiries_number_as_of": "2023年5月",
+      "countries_number": "12",
+      "countries_number_as_of": "2023年5月",
+      "properties_number": "436",
+      "properties_number_as_of": "2021年2月",
+      "malaysia_properties": "ザ・リッツカールトンレジデンス クアラルンプール\r\nBBCC・ルセンティアレジデンス\r\nキアラスイーツ163",
+      "cambodia_properties": "ラ・アトレボンケンコン\r\nアジャイルスカイレジデンス\r\nペントハウスレジデンス",
+      "thailand_properties": "フォーシーズンズレジデンスバンコク\r\nザ・リッツカールトンレジデンスバンコク \r\nインプレッションエカマイ",
+      "total_asset": "66億9,260万円",
+      "malaysia_asset": "23億円2,480万円",
+      "malaysia_asset_as_of": "2022年12月",
+      "malaysia_contracts": "83",
+      "cambodia_asset": "37億円3,720万円",
+      "cambodia_asset_as_of": "2022年12月",
+      "cambodia_contracts": "278",
+      "other_asset": "6億3,060万円",
+      "other_asset_as_of": "2022年12月",
+      "other_contracts": "61",
+      "total_sale_agent": "10,000社以上",
+      "total_sale_people": "12,876",
+      "total_sale_as_of": "2022年",
+      "top_page_number_of_properties_listed": "6万",
+      "top_page_number_of_customers": "3万",
+      "top_page_number_of_contracts": "500",
+      "graph_image_url": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/azukari_shisan_PC.png",
+      "graph_image_url_mobile": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/azukari_shisan_SP.png",
+      "top_page_post_ids": "3190, 756,1946",
+      "about_sekai_3_image_url": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/Desktop.jpg",
+      "about_sekai_3_image_url_mobile": "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/Mobile.jpg",
+      "posts": [
+        {
+          "id": 756,
+          "category": "knowhow",
+          "title": "マレーシア不動産の利回りを9つの国・4つのエリアで徹底比較",
+          "eyecatch_image": "https://sekai-property-post-image.s3-ap-northeast-1.amazonaws.com/757/4511b579-cbbb-4957-8254-d8fe019bcb8c.jpg",
+          "publish_date": "2020-03-16"
+        },
+        {
+          "id": 1946,
+          "category": "knowhow",
+          "title": "クアラルンプールのコンドミニアムの魅力。賃貸・購入情報まで解説！",
+          "eyecatch_image": "https://sekai-property-post-image.s3-ap-northeast-1.amazonaws.com/2926/4fcfec67-ced9-43bd-85cf-e92346e6997b.jpg",
+          "publish_date": "2020-03-13"
+        },
+        {
+          "id": 3190,
+          "category": "knowhow",
+          "title": "投資・移住を考え中の方へ。海外不動産の買い方ガイダンス",
+          "eyecatch_image": "https://sekai-property-post-image.s3-ap-northeast-1.amazonaws.com/9917/d4061a3c-d6b3-46f9-a299-64a7f7ef400b.jpg",
+          "publish_date": "2020-08-21"
+        }
+      ]
     }
-}
+  }
 
   return posts.about_sekai;
 };
@@ -142,21 +142,33 @@ export default async function Page() {
         <div>
           <div className={`${styles.fv3LogoContainer}`}>
             <div className={styles.fv3Logo}>
-              <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png' />
+              <Image
+                src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png'
+                width={110}
+                height={84}
+              />
               <div className={`${styles.fv3LogoText} ${styles.text1}`}>
                 物件掲載数<br />
                 <span>約</span><span className={styles.fvMainText}>{aboutSekai.top_page_number_of_properties_listed}件</span>
               </div>
             </div>
             <div className={styles.fv3Logo}>
-              <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png' />
+              <Image
+                src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png'
+                width={110}
+                height={84}
+              />
               <div className={`${styles.fv3LogoText} ${styles.text2}`}>
                 総会員数<br />
                 <span>約</span><span className={styles.fvMainText}>{aboutSekai.top_page_number_of_customers}人</span>
               </div>
             </div>
             <div className={styles.fv3Logo}>
-              <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png' />
+              <Image
+                src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/TopFVFrame_2.png'
+                width={110}
+                height={84}
+              />
               <div className={`${styles.fv3LogoText} ${styles.text3}`}>
                 物件契約数<br />
                 <span>約</span><span className={styles.fvMainText}>{aboutSekai.top_page_number_of_contracts}件</span>
@@ -219,7 +231,12 @@ export default async function Page() {
               <div className={styles.interviewContainer}>
                 <div>
                   <div className={styles.interviewImage}>
-                    <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/top/fukutake_sama.jpg' />
+                    <Image
+                      src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/top/fukutake_sama.jpg'
+                      width={445}
+                      height={278}
+                      sizes="200px"
+                    />
                   </div>
                 </div>
                 <div className={styles.interviewContent}>
@@ -238,7 +255,12 @@ export default async function Page() {
               <div className={styles.interviewContainer}>
                 <div>
                   <div className={styles.interviewImage}>
-                    <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/top/fujio_sama.jpg' />
+                    <Image
+                      src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/top/fujio_sama.jpg'
+                      width={445}
+                      height={278}
+                      sizes="200px"
+                    />
                   </div>
                 </div>
                 <div className={styles.interviewContent}>
@@ -257,7 +279,12 @@ export default async function Page() {
               <div className={styles.interviewContainer}>
                 <div>
                   <div className={styles.interviewImage}>
-                    <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/top/umeda_sama.jpg' />
+                    <Image
+                      src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/top/umeda_sama.jpg'
+                      width={445}
+                      height={278}
+                      sizes="200px"
+                    />
                   </div>
                 </div>
                 <div className={styles.interviewContent}>
@@ -332,7 +359,12 @@ export default async function Page() {
         <div className="container p-0">
           <div className={styles.sectionContent}>
             <div className={styles.sectionImage}>
-              <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/top/06.png' width='100%' />
+              <Image
+                src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/top/06.png'
+                width={215}
+                height={215}
+                sizes="(max-width: 992px) 100px, 215px"
+              />
             </div>
             <div className={styles.contentInner}>
               <div className={styles.title}>提案物件は数ある中から厳選</div>
@@ -341,7 +373,12 @@ export default async function Page() {
           </div>
           <div className={styles.sectionContent}>
             <div className={styles.sectionImage}>
-              <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/top/07.png' width='100%' />
+              <Image
+                src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/top/07.png'
+                width={215}
+                height={215}
+                sizes="(max-width: 992px) 100px, 215px"
+              />
             </div>
             <div className={styles.contentInner}>
               <div className={styles.title}>各種専門家チームとの連携体制</div>
@@ -350,7 +387,12 @@ export default async function Page() {
           </div>
           <div className={styles.sectionContent}>
             <div className={styles.sectionImage}>
-              <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/top/08.png' width='100%' />
+              <Image
+                src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/top/08.png'
+                width={215}
+                height={215}
+                sizes="(max-width: 992px) 100px, 215px"
+              />
             </div>
             <div className={styles.contentInner}>
               <div className={styles.title}>購入から売却まで<br className='d-block d-lg-none' />ワンストップサービス</div>
@@ -359,7 +401,12 @@ export default async function Page() {
           </div>
           <div className={styles.sectionContent}>
             <div className={styles.sectionImage}>
-              <img src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/top/09.jpg' width='100%' />
+              <Image
+                src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/top/09.jpg'
+                width={215}
+                height={215}
+                sizes="(max-width: 992px) 100px, 215px"
+              />
             </div>
             <div className={styles.contentInner}>
               <div className={styles.title}>経験豊富な<br className='d-block d-lg-none' />プロフェッショナルチーム</div>
@@ -367,6 +414,145 @@ export default async function Page() {
             </div>
           </div>
         </div>
+        <div className={`${styles.mainTitle} mt-5`}>国別の海外不動産投資ガイド</div>
+        <div className="container">
+          <div className='row'>
+            <Link className={`${styles.homepageGuideContainer} col-12 col-lg-6`} href='/global/cambodia-guide'>
+              <div className={styles.homepageGuideContainerBg}>
+                <Image
+                  src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/free-guide/cambodia.jpg"
+                  width={636}
+                  height={230}
+                />
+              </div>
+              <div className={styles.homepageGuideText}>
+                <div>カンボジア</div>
+                <div className={styles.homepageGuideTextSub}>Cambodia</div>
+              </div>
+            </Link>
+            <Link className={`${styles.homepageGuideContainer} col-12 col-lg-6`} href='/global/malaysia-guide'>
+              <div className={styles.homepageGuideContainerBg}>
+                <Image
+                  src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/free-guide/malaysia.jpg"
+                  width={636}
+                  height={230}
+                />
+              </div>
+              <div className={styles.homepageGuideText}>
+                <div>マレーシア</div>
+                <div className={styles.homepageGuideTextSub}>Malaysia</div>
+              </div>
+            </Link>
+            <Link className={`${styles.homepageGuideContainer} col-12 col-lg-6`} href='/global/philippines-guide'>
+              <div className={styles.homepageGuideContainerBg}>
+                <Image
+                  src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/free-guide/philippines.jpg"
+                  width={636}
+                  height={230}
+                />
+              </div>
+              <div className={styles.homepageGuideText}>
+                <div>フィリピン</div>
+                <div className={styles.homepageGuideTextSub}>philippines</div>
+              </div>
+            </Link>
+            <Link className={`${styles.homepageGuideContainer} col-12 col-lg-6`} href='/global/thailand-guide'>
+              <div className={styles.homepageGuideContainerBg}>
+                <Image
+                  src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/free-guide/thailand.jpg"
+                  width={636}
+                  height={230}
+                />
+              </div>
+              <div className={styles.homepageGuideText}>
+                <div>タイ</div>
+                <div className={styles.homepageGuideTextSub}>Thailand</div>
+              </div>
+            </Link>
+          </div>
+          <div className='mt-5 text-center'>
+            <Link href='/library' className={styles.mainLink}>
+              国別の海外不動産投資ガイド　全てを見る
+            </Link>
+          </div>
+        </div>
+        <section className={`${styles.sectionContainer}`}>
+          <div className={styles.mainTitle}>おすすめの海外不動産資料</div>
+          <div className="container">
+            <div className='row'>
+              <Link className={`${styles.homepagePropertymaterialContainer} col-12 col-lg-6`} href='https://ja.sekaiproperty.com/global/property-leconde'>
+                <div className={styles.homepagePropertymaterialContainerBg}>
+                  <Image
+                    src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/%E3%83%AB%E3%82%B3%E3%83%B3%E3%83%87.jpg"
+                    width={600}
+                    height={310}
+                    />
+                </div>
+                <div className={styles.homepagePropertymaterialText}>
+                  <div>Le Conde</div>
+                  <div className={styles.homepagePropertymaterialTextSub}>
+                    カンボジア・プノンペン<br />
+                    日系企業による建物管理マネジメントで高品質
+                  </div>
+                </div>
+              </Link>
+              <Link className={`${styles.homepagePropertymaterialContainer} col-12 col-lg-6`} href='https://ja.sekaiproperty.com/global/property-timesquare-6'>
+                <div className={styles.homepagePropertymaterialContainerBg}>
+                  <Image
+                    src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/202310_Time+Square+6_%E7%89%A9%E4%BB%B6%E8%B3%87%E6%96%99%E3%83%9A%E3%83%BC%E3%82%B8%E7%94%A8+(1).jpg"
+                    width={600}
+                    height={310}
+                    />
+                </div>
+                <div className={styles.homepagePropertymaterialText}>
+                  <div>Time Square 6</div>
+                  <div className={styles.homepagePropertymaterialTextSub}>
+                    カンボジア・プノンペン<br />
+                    全室完売の大人気シリーズ物件
+                  </div>
+                </div>
+              </Link>
+              <Link className={`${styles.homepagePropertymaterialContainer} col-12 col-lg-6`} href='https://ja.sekaiproperty.com/global/property-seasons'>
+                <div className={styles.homepagePropertymaterialContainerBg}>
+                  <Image
+                    src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/Seasons_buildings_1200+(1).jpg"
+                    width={600}
+                    height={310}
+                    />
+                </div>
+                <div className={styles.homepagePropertymaterialText}>
+                  <div>The SEASONS</div>
+                  <div className={styles.homepagePropertymaterialTextSub}>
+                    フィリピン・マニラ<br />
+                    野村不動産&三越伊勢丹HDが参画
+                  </div>
+                </div>
+              </Link>
+              <Link className={`${styles.homepagePropertymaterialContainer} col-12 col-lg-6`} href='https://ja.sekaiproperty.com/global/property-damac-bay2'>
+                <div className={styles.homepagePropertymaterialContainerBg}>
+                  <Image
+                    src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/BAY2_p10+(1).jpg"
+                    width={600}
+                    height={310}
+                    />
+                </div>
+                <div className={styles.homepagePropertymaterialText}>
+                  <div>DAMAC BAY2 by Cavalli</div>
+                  <div className={styles.homepagePropertymaterialTextSub}>
+                    ドバイ<br />
+                    パームジュメイラ隣接の絶好な立地
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            <div className='mt-5 text-center'>
+              <Link href='/property_materials' className={styles.mainLink}>
+                おすすめ物件　全てを見る
+              </Link>
+            </div>
+          </div>
+        </section>
       </section>
     </section >
   )
