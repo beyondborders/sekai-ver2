@@ -11,6 +11,5 @@ jobs:
         uses: actions/checkout@v2 # This uses a predefined action from the GitHub marketplace
       - name: Add to Staging # This runs the git commands you want
         run: |
-          git checkout staging
           git reset --hard test/feature
           git push --force
