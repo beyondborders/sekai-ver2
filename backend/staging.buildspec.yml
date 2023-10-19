@@ -29,3 +29,7 @@ phases:
 artifacts:
   base-directory: backend
   files: Dockerrun.aws.json
+
+cache:
+  paths:
+    - /bundle
