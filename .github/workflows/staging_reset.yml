@@ -12,5 +12,5 @@ jobs:
       - name: Add to Staging # This runs the git commands you want
         run: |
           git checkout staging
-          git reset --hard feat/branch
+          git reset --hard test/feature
           git push --force
