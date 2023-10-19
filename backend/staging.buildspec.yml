@@ -2,7 +2,17 @@ version: 0.2
 
 phases:
   pre_build:
+    on-failure: ABORT
     commands:
+      - CHANGED_FILES=$(git diff --name-only HEAD HEAD~1)
+      # Check if any of the changed files are in the src folder
+      - SRC_CHANGED=false
+      - for file in $CHANGED_FILES; do
+          if [[ $file == backend/* ]]; then
+            echo "No changes in backend, aborting pipeline"
+            exit 1
+          fi
+        done
       - echo Set variables
       - IMAGE_REPO_NAME=sekai-v2-staging
       - IMAGE_TAG=latest
@@ -11,6 +21,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
   build:
+    on-failure: ABORT
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...   
@@ -18,6 +29,7 @@ phases:
       - docker build -f $DOCKER_FILE -t $IMAGE_REPO_NAME:$IMAGE_TAG .
       - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG      
   post_build:
+    on-failure: ABORT
     commands:
       - ls
       - echo Build completed on `date`
