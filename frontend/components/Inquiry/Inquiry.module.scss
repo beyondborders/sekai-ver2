@@ -1,8 +1,9 @@
 @import "@/css/utils.scss";
 
-.secureInput{
+.secureInput {
   position: relative;
-  img{
+
+  img {
     position: absolute;
     width: 16px;
     top: 11px;
@@ -12,20 +13,15 @@
 }
 
 .stepContainer {
-  height: 102px;
   width: 100%;
-  margin: 10px auto 0 auto;
-
   @include breakpoint(laptop) {
     width: 560px;
-    height: 72px;
-    margin: 40px auto 0 auto;
   }
 
   .stepBar {
     position: relative;
     list-style: none;
-    margin: 0 0 1em;
+    margin-bottom: 24px;
     padding: 0;
     text-align: center;
     width: 100%;
@@ -53,7 +49,7 @@
 
     // font-size: 15px;
     @include breakpoint(laptop) {
-      width: 15%;
+      width: 30%;
       padding: 0 26px 0 0;
     }
   }
@@ -120,19 +116,19 @@
   }
 
   .stepBar li.current {
-    color: #fcfd06;
-    background-color: #80b754;
+    color: white;
+    background-color: #db6f26;
   }
 
   .stepBar li.current:before,
   .stepBar li.current:after {
-    background-color: #80b754;
+    background-color: #db6f26;
   }
 
   .stepBar li.noStep {
     background-color: #ffffff;
     font-weight: bold;
-    color: #80b754;
+    color: #db6f26;
     padding: 0;
   }
 
@@ -150,7 +146,8 @@
     display: inline-flex;
     align-items: center;
     text-decoration: underline;
-    img{
+
+    img {
       width: 16px;
       margin-right: 4px;
     }
@@ -160,20 +157,18 @@
 .InquiryContainer {
   position: relative;
   width: 100%;
-  height: 450px;
+  height: 410px;
   // height: auto;
-  padding: 32px 0;
   background-color: white;
-  border-radius: 20px;
-  box-shadow: 0 3px 6px rgb(0 0 0 / 15%);
+  // border-radius: 20px;
+  // box-shadow: 0 3px 6px rgb(0 0 0 / 15%);
   /* text-align: center; */
   overflow: hidden;
 
   @include breakpoint(laptop) {
-    margin: 40px 0 20px;
     max-width: 600px;
     min-width: 600px;
-    height: 550px;
+    height:420px;
   }
 
   .formSlider {
@@ -194,23 +189,25 @@
 .questionContainer {
   display: flex;
   align-items: center;
-  .icon{}
-  .question{}
+
+  .icon {}
+
+  .question {}
 }
 
-.answerContainer{
+.answerContainer {
   margin: 8px 0;
 }
 
-.buttonContainer{
+.buttonContainer {
   display: flex;
-  justify-content: space-between;  
+  justify-content: space-between;
 }
 
-.baseButton{
+.baseButton {
   display: inline-block;
   margin-top: 10px;
-  padding: 12px 18px;
+  padding: 12px 32px;
   border-radius: 10px;
   font-size: 16px;
   font-weight: bold;
@@ -218,10 +215,29 @@
   transition: 0.3s;
   text-align: center;
   border: none;
+
   @include breakpoint(laptop) {
     padding: 12px 54px;
   }
 }
+.baseButtonSubmit {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+  border: none;
+
+  @include breakpoint(laptop) {
+    padding: 12px 54px;
+  }
+}
+
+
 .prevButton {
   color: #fff;
   background-image: linear-gradient(to bottom, #aaa, #606060);
@@ -230,12 +246,24 @@
 
 .nextButton {
   color: #fff;
-  background-color: #ff7201;
-  background-image: linear-gradient(to right, #f3a840, #ef6f38);
+  background-color: #ef6f38;
+  background-image: linear-gradient(to right, #e88d4f, #ef6f38);
   box-shadow: 0px 4px 0px #ac6728;
 
   @include breakpoint(laptop) {
     padding: 12px 54px;
+  }
+}
+
+.privacyText {
+  text-align: center;
+  font-size: 11px;
+  
+  a {
+    color: $mainColor;
+    &:hover {
+      color: darken($mainColor, 10%);
+    }
   }
 }
 

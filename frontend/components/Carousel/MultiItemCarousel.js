@@ -3,10 +3,10 @@
 import Slider from "react-slick";
 
 export default function CarouselComponent(props) {
-  const { items, dots, arrows, slidesToShow, autoplaySpeed } = props
+  const { centerMode, items, dots, arrows, slidesToShow, autoplaySpeed } = props
 
   const settings = {
-    centerMode: true,
+    centerMode: centerMode || false,
     centerPadding: "140px",
     infinite: true,
     speed: 500,

@@ -4,6 +4,7 @@ module Api
     class InquiriesController < ApiController
 
       def create
+        p params
         Inquiry.create!(inquiry_params)
       end
 

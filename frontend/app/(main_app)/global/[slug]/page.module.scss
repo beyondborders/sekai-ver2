@@ -1,0 +1,9 @@
+@import "@/css/utils.scss";
+
+.FVImage{
+  position: relative;
+  height: 250px;
+  @include breakpoint(laptop) {
+    height: 500px;
+  }
+}
