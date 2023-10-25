@@ -122,3 +122,33 @@ img {
 }
 .slick-next{right:25px}
 .slick-dotted.slick-slider{margin-bottom:30px}.slick-dots{bottom:25px;width:100%;margin:0;list-style:none;text-align:center}.slick-dots li{position:relative;display:inline-block;width:40px;height:5px;margin:0 2px;padding:0;cursor:pointer;background: white; opacity: 0.4;}.slick-dots li button{font-size:0;line-height:0;display:block;width:40px;height:5px;cursor:pointer;color:transparent;border:0;outline:0;background:0 0}.slick-dots li.slick-active{opacity: 1;}
+arrow2{
+  &.slick-prev, &.slick-next{
+    background-color: #6d8fb4;
+    height: 25px;
+    width: 25px;
+  }
+  &.slick-next:before, &.slick-prev:before{
+    border-width: 8px;
+    margin-top: -8px;
+    left: 10px;
+  }
+  &.slick-next:after, &.slick-prev:after{
+    border-left-color: #6d8fb4;
+    border-width: 6px;
+    margin-top: -6px;
+    left: 10px;
+  }
+  &.slick-prev{
+    left: -24px;
+    @include breakpoint(laptop) {
+      left:-32px;
+    }
+  }
+  &.slick-next{
+    right: -24px;
+    @include breakpoint(laptop) {
+      right:-32px;
+    }
+  }
+}

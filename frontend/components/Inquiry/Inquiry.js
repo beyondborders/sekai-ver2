@@ -168,7 +168,7 @@ export default function Inquiry(props) {
             <div className={styles.answerContainer}>
               <div className={`${styles.secureInput} mt-2`}>
                 <select value={Budget} className='form-control' onChange={(e) => { setBudget(e.target.value) }}>
-                  <option value="" disabled selected>予算をご選択ください。</option>
+                  <option value="" disabled defaultChecked>予算をご選択ください。</option>
                   <option value="1億円～">1億円～</option>
                   <option value="～1億円">～1億円</option>
                   <option value="～7,000万円">～7,000万円</option>
@@ -185,7 +185,7 @@ export default function Inquiry(props) {
               </div>
               <div className={`${styles.secureInput} mt-2`}>
                 <select value={PaymentMethod} className='form-control' onChange={(e) => { setPaymentMethod(e.target.value) }}>
-                  <option value="" disabled selected>お支払い方法をご選択ください。</option>
+                  <option value="" disabled defaultChecked>お支払い方法をご選択ください。</option>
                   <option value="現金">現金</option>
                   <option value="ローン必須">ローン必須</option>
                 </select>
@@ -197,7 +197,7 @@ export default function Inquiry(props) {
               </div>
               <div className={`${styles.secureInput} mt-2`}>
                 <select value={TotalAssetIncludingRealEstate} className='form-control' onChange={(e) => { setTotalAssetIncludingRealEstate(e.target.value) }}>
-                  <option value="" disabled selected>ご資産※不動産を含む</option>
+                  <option value="" disabled defaultChecked>ご資産※不動産を含む</option>
                   <option value="10億円以上">10億円以上</option>
                   <option value="～10億円">～10億円</option>
                   <option value="～5億円">～5億円</option>

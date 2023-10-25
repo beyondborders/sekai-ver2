@@ -21,7 +21,6 @@ const getGuides = async (slug) => {
 export default async function Guide(props) {
   const { guide } = props
   const guides = await getGuides();
-  console.log(guides)
 
   return (
     <section className={styles.guideContainer}>
@@ -32,7 +31,7 @@ export default async function Guide(props) {
             <span className="mx-1">/</span>
             <Link href='/library'>海外不動産ガイド</Link>
             <span className="mx-1">/</span>
-            <span>{guide.label}</span>
+            <span>{guide.main_title}</span>
           </div>
           <div className={styles.phoneContainer}>
             <div className={styles.phone}>0120-643-293</div>
@@ -61,30 +60,34 @@ export default async function Guide(props) {
 
       <section className={styles.otherGuideContainer}>
         <div className={styles.title}>国別の海外不動産投資ガイド</div>
-        <MultiItemCarousel
-          slidesToShow={3}
-          arrows
-          items={
-            guides.map((g, index) =>
-              <Link href={g.url} key={index}>
-                <div className={styles.guideCard}>
-                  <div className={styles.guideImage}>
-                    <Image
-                      fill={true}
-                      sizes="25vw"
-                      style={{ objectFit: "cover" }}
-                      src={g.image_url.split(';')[0]}
-                    />
+        <div className={styles.carouselContainer}>
+          <MultiItemCarousel
+            slidesToShow={3}
+            arrows
+            nextArrow={<arrow2></arrow2>}
+            prevArrow={<arrow2></arrow2>}
+            items={
+              guides.map((g, index) =>
+                <Link href={g.url} key={index}>
+                  <div className={styles.guideCard}>
+                    <div className={styles.guideImage}>
+                      <Image
+                        fill={true}
+                        sizes="25vw"
+                        style={{ objectFit: "cover" }}
+                        src={g.image_url.split(';')[0]}
+                      />
+                    </div>
+                    <div className={styles.mainTitle}>
+                      <div>{g.label.split(`\r\n`)[0]}</div>
+                      <div className={styles.bold}>{g.label.split(`\r\n`)[1]}</div>
+                    </div>
                   </div>
-                  <div className={styles.mainTitle}>
-                    <div>{g.label.split(`\r\n`)[0]}</div>
-                    <div className={styles.bold}>{g.label.split(`\r\n`)[1]}</div>
-                  </div>
-                </div>
-              </Link>
-            )
-          } />
-        <div className='mt-4 mt-lg-5 text-center'>
+                </Link>
+              )
+            } />
+        </div>
+        <div className='mt-4 text-center'>
           <Link href='/library' className={`${styles.blueButton} new-btn btn-shadow-blue`}>
             不動産投資ガイドをすべて見る
           </Link>
