@@ -4,7 +4,6 @@ module Api
     class InquiriesController < ApiController
 
       def create
-        p params
         Inquiry.create!(inquiry_params)
       end
 
@@ -13,7 +12,7 @@ module Api
       def inquiry_params
         params.require(:inquiry).permit(
           :property_id, :content, :email, :name, :nationality, :residence, :tel, :tel_country_code, :inquiry_type,
-          :budget, :payment_method, :url_from, :expected_purchase_date, :plan_to_visit_japan, :communication_method
+          :budget, :payment_method, :url_from, :expected_purchase_date, :plan_to_visit_japan, :communication_method, :payment_Method, :total_asset_including_real_estate
         )
       end
 
