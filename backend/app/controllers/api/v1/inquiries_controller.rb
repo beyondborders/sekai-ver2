@@ -5,6 +5,7 @@ module Api
 
       def create
         Inquiry.create!(inquiry_params)
+        head :ok
       end
 
       private

@@ -16,6 +16,12 @@ Rails.application.routes.draw do
         end
       end
 
+      resources :posts, only: [:show] do
+        collection do
+          post 'search'
+        end
+      end
+
       match '/property_materials/search', to: 'property_materials#search', via: :post
 
       match '/guides/search', to: 'guides#search', via: :post
