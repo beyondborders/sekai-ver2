@@ -37,7 +37,7 @@
     font-weight: 600;
 
     @include breakpoint(laptop) {
-      font-size: 51px;
+      font-size: 36px;
     }
   }
 
@@ -46,12 +46,12 @@
     font-weight: 600;
 
     @include breakpoint(laptop) {
-      font-size: 29px;
+      font-size: 22px;
     }
   }
 
   .fvDesc{
-    margin-top: 100px;
+    margin-top: 72px;
     margin-left: 20px;
   }
 }
