@@ -77,7 +77,10 @@ export default async function AboutSekai() {
     <section>
       <div className={styles.FV}>
         <Image
-          src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/FV-new.jpg"
+          // src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/FV-new.jpg"
+          // src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/FV_2.png"
+          // src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/1680_1050.png"
+          src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/about-sekai/1680_700.png"
           priority={true}
           fill={true}
           sizes="100vw"
@@ -93,19 +96,36 @@ export default async function AboutSekai() {
           <div className={`${styles.bigger} mt-3`}>
             物件選びから購入、売却までを<br className="d-lg-none" />一気通貫でサポートいたします。<br />
           </div>
-          <div className="mt-4 mt-lg-5">
-            昨今、注目されている海外不動産。<br />
-            しかし、情報の非対称さ、不透明さゆえに<br className="d-lg-none" />不安を抱く方も多くいらっしゃいます。<br />
+          <div className={`${styles.fvDesc} d-none d-lg-block`}>
+            <div className="mt-4 mt-lg-5">
+              昨今、注目されている海外不動産。<br />
+              しかし、情報の非対称さ、不透明さゆえに<br className="d-lg-none" />不安を抱く方も多くいらっしゃいます。<br />
+            </div>
+            <div className="mt-3 mt-lg-4">
+              「どんな基準で物件を選べばいいのだろう…？」<br />
+              「海外の法律や税金について相談できる人がいない…」<br />
+              「物件を買ってもそのあとの管理まで出来ない...」<br />
+            </div>
+            <div className="mt-3 mt-lg-4">
+              そのようなお客様に、<br className="d-lg-none" />安心して海外不動産を購入いただけるよう、<br />
+              物件選び・購入・管理・売却までを<br className="d-lg-none" />一気通貫でサポートいたします。
+            </div>
           </div>
-          <div className="mt-3 mt-lg-4">
-            「どんな基準で物件を選べばいいのだろう…？」<br />
-            「海外の法律や税金について相談できる人がいない…」<br />
-            「物件を買ってもそのあとの管理まで出来ない...」<br />
-          </div>
-          <div className="mt-3 mt-lg-4">
-            そのようなお客様に、<br className="d-lg-none" />安心して海外不動産を購入いただけるよう、<br />
-            物件選び・購入・管理・売却までを<br className="d-lg-none" />一気通貫でサポートいたします。
-          </div>
+        </div>
+      </div>
+      <div className={styles.section1}>
+        <div>
+          昨今、注目されている海外不動産。<br />
+          しかし、情報の非対称さ、不透明さゆえに<br className="d-lg-none" />不安を抱く方も多くいらっしゃいます。<br />
+        </div>
+        <div className="mt-3 mt-lg-4">
+          「どんな基準で物件を選べばいいのだろう…？」<br />
+          「海外の法律や税金について相談できる人がいない…」<br />
+          「物件を買ってもそのあとの管理まで出来ない...」<br />
+        </div>
+        <div className="mt-3 mt-lg-4">
+          そのようなお客様に、<br className="d-lg-none" />安心して海外不動産を購入いただけるよう、<br />
+          物件選び・購入・管理・売却までを<br className="d-lg-none" />一気通貫でサポートいたします。
         </div>
       </div>
       <section className={styles.section2Container}>
@@ -190,7 +210,7 @@ export default async function AboutSekai() {
 
         <div className={styles.section3Content}>
           <div className={`${styles.part} ${styles.part1}`}>
-            <div className={styles.title}>1.<br className="d-lg-none" />業界最大級の<br className="d-lg-none" />海外不動産サイトを運営</div>
+            <div className={styles.title}>1.業界最大級の<br className="d-lg-none" />海外不動産サイトを運営</div>
             <div className={styles.contentContainer}>
               <div>
                 <div className={styles.mainContent}><span className={styles.part1desc}>■ 会員数</span><span className={styles.part1answer}>約{aboutSekai.member_number}名</span></div>
@@ -265,7 +285,7 @@ export default async function AboutSekai() {
           </div>
           <div className={`${styles.part} ${styles.part2}`}>
             <div className={styles.title}>
-              2.<br className='d-lg-none' />累計販売総額約{aboutSekai.total_asset}
+              2.累計販売総額約{aboutSekai.total_asset}
             </div>
             <div className='d-lg-flex'>
               <div className='px-0 px-lg-5'>
@@ -317,7 +337,7 @@ export default async function AboutSekai() {
           </div>
           <div className={`${styles.part} ${styles.part3}`}>
             <div className={styles.title}>
-              3.<br className='d-lg-none' />業界最大の独自ネットワークを<br className='d-lg-none' />活用した売却サービス
+              3.業界最大の独自ネットワークを<br className='d-lg-none' />活用した売却サービス
             </div>
             <div>
               <div className={styles.part3Content}>
@@ -338,7 +358,7 @@ export default async function AboutSekai() {
           </div>
           <div className={`${styles.part} ${styles.part4}`}>
             <div className={styles.title}>
-              4.<br className='d-lg-none' />各種ライセンスも保持
+              4.各種ライセンスも保持
             </div>
             <div className="mt-4 d-block d-lg-flex">
               <div className={styles.text}>
@@ -360,7 +380,7 @@ export default async function AboutSekai() {
           </div>
           <div className={`${styles.part} ${styles.part5}`}>
             <div className={styles.title}>
-              5.<br className='d-lg-none' />海外への送金も安心
+              5.海外への送金も安心
             </div>
             <div className="mt-4">
               <div className={styles.text}>

@@ -60,7 +60,7 @@ export default function Inquiry(props) {
             tel: Phone,
             email: Email,
             budget: Budget,
-            payment_Method: PaymentMethod,
+            payment_method: PaymentMethod,
             total_asset_including_real_estate: TotalAssetIncludingRealEstate
           }
         }),
@@ -70,6 +70,7 @@ export default function Inquiry(props) {
         // Request was successful
         const data = await response.json();
         console.log(data);
+        router.push(thanksPage)
       } else {
         // Request failed
         console.error('Request failed');
@@ -77,8 +78,6 @@ export default function Inquiry(props) {
     } catch (error) {
       console.error('Error:', error);
     }
-    // console.log(thanksPage)
-    // router.push(thanksPage)
   }
 
   return (
