@@ -3,16 +3,13 @@
 .FV {
   position: relative;
   width: 100%;
-  height: 518px;
+  height: 215px;
 
   @include breakpoint(laptop) {
     height: 700px;
   }
 
   img {
-    object-position: -110px 0;
-    filter: brightness(0.4);
-
     @include breakpoint(laptop) {
       object-position: 0 0;
       filter: none;
@@ -24,34 +21,47 @@
   position: relative;
   color: white;
   font-size: 14px;
-  text-align: center;
-  padding-top: 52px;
+  padding-top: 59px;
+  padding-left: 32px;
 
   @include breakpoint(laptop) {
     position: absolute;
     padding-top: 0;
     top: 104px;
-    right: 176px;
+    left: 120px;
     font-size: 18px;
-    text-align: left;
   }
 
   .biggest {
-    font-size: 20px;
+    font-size: 13px;
     font-weight: 600;
 
     @include breakpoint(laptop) {
-      font-size: 42px;
+      font-size: 36px;
     }
   }
 
   .bigger {
-    font-size: 18px;
+    font-size: 11px;
     font-weight: 600;
 
     @include breakpoint(laptop) {
-      font-size: 26px;
+      font-size: 22px;
     }
+  }
+
+  .fvDesc{
+    margin-top: 72px;
+    margin-left: 20px;
+  }
+}
+
+.section1{
+  display: block;
+  padding: 48px 0 48px 32px;
+  font-size: 13px;
+  @include breakpoint(laptop) {
+    display: none;
   }
 }
 
