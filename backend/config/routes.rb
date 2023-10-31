@@ -6,26 +6,30 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
 
-      resources :about_sekai, only: [:index]
+      scope "(/:locale)", locale: /#{I18n.available_locales.join("|")}/, defaults: {locale: "ja"} do
 
-      resources :inquiries, only: [:create]
+        resources :about_sekai, only: [:index]
 
-      resources :seminars, only: [:show] do
-        collection do
-          post 'search'
+        resources :inquiries, only: [:create]
+
+        resources :seminars, only: [:show] do
+          collection do
+            post 'search'
+          end
         end
-      end
 
-      resources :posts, only: [:show] do
-        collection do
-          post 'search'
+        resources :posts, only: [:show] do
+          collection do
+            post 'search'
+          end
         end
+
+        match '/property_materials/search', to: 'property_materials#search', via: :post
+
+        match '/guides/search', to: 'guides#search', via: :post
+        match '/guides/url', to: 'guides#show_by_url', via: :get
+      
       end
-
-      match '/property_materials/search', to: 'property_materials#search', via: :post
-
-      match '/guides/search', to: 'guides#search', via: :post
-      match '/guides/url', to: 'guides#show_by_url', via: :get
 
     end
   end

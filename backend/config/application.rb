@@ -18,5 +18,10 @@ module Sekai
     #
     config.time_zone = "Tokyo"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.i18n.default_locale = :ja # or any other valid locale
+
+
+    I18n.available_locales = [:en, :ja]
   end
 end
