@@ -6,7 +6,7 @@ module Api
       before_action :find_post, only: [:show]
 
       def search
-        @q = Post.published.ransack(params[:q])
+        @q = Post.language(I18n.locale).published.order_desc.ransack(params[:q])
         @pagy, @posts = paginate(
           @q.result(distinct: true).includes(:post_images, :eyecatch_image)
         )

@@ -12,7 +12,9 @@ class Post < ApplicationRecord
   has_many :related_posts, through: :post_related_posts
   has_many :post_related_posts, dependent: :destroy
 
-  scope :published, -> { where('publish_date <= ?', Time.zone.today) }
+  scope :published, -> { where('publish_date <= ?', Time.zone.today)}
+  scope :order_desc, -> { order('publish_date DESC') }
+  scope :language, -> (locale) { where(language_code: locale) }
 
   CATEGORIES = {
     'Tour'      => 'tour',
