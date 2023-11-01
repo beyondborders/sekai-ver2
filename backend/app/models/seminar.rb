@@ -13,6 +13,7 @@ class Seminar < ApplicationRecord
   scope :by_closest_date, lambda {
     left_outer_joins(:seminar_schedules).order(Arel.sql("CASE WHEN seminar_schedules.start_at > NOW() THEN 0 ELSE 1 END ASC, CASE WHEN seminar_schedules.start_at <= NOW() THEN seminar_schedules.start_at END DESC"))
   }
+  scope :language, -> (locale) { where(language_code: locale) }
   
   def published?
     publish_date <= Time.zone.today

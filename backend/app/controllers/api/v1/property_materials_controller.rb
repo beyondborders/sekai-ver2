@@ -4,6 +4,8 @@ module Api
     class PropertyMaterialsController < ApiController
       include PropertyMaterialsHelper
 
+      before_action :merge_locale, only: [:search]
+
       def search
         @q = Guide.property_material.active.ransack(params[:q])
         @pagy, @property_materials = paginate(

@@ -1,7 +1,8 @@
 module LocaleHandler
 
-  def search_locale
-    params[:q].merge!(locale: I18n.locale)
+  def merge_locale
+    params[:q] ||= {}
+    params[:q].merge!(locale_eq: I18n.locale)
   end
 
   def set_locale

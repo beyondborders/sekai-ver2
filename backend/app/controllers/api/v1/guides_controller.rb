@@ -3,7 +3,7 @@ module Api
 
     class GuidesController < ApiController
 
-      # before_action :find_guide, only: [:show]
+      before_action :merge_locale, only: [:search]
 
       def search
         @q = Guide.library.active.ransack(params[:q])
