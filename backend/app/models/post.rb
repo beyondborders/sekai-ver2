@@ -7,10 +7,10 @@ class Post < ApplicationRecord
   # belongs_to :guide
   # has_many :tags, through: :taggings
   # has_many :taggings, dependent: :destroy
+  has_many :post_target_countries, dependent: :destroy
   has_many :countries, through: :post_target_countries
-  # has_many :post_target_countries, dependent: :destroy
-  has_many :related_posts, through: :post_related_posts
   has_many :post_related_posts, dependent: :destroy
+  has_many :related_posts, through: :post_related_posts
 
   scope :published, -> { where('publish_date <= ?', Time.zone.today)}
   scope :order_desc, -> { order('publish_date DESC') }
