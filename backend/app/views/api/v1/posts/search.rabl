@@ -5,7 +5,7 @@ child(@posts, :object_root => false) do
 
   node(:content) {|post| strip_tags(post.content).squish}
 
-  child({eyecatch_images: :eyecatch_images}, {:object_root => false}) {
+  child({eyecatch_image: :eyecatch_image}, {:object_root => false}) {
     attributes :id, :url
   }
 end

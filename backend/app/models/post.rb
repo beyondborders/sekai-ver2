@@ -27,4 +27,8 @@ class Post < ApplicationRecord
     ["category", "content", "created_at", "guide_id", "has_form", "id", "is_public", "is_recommend", "keywords", "language_code", "meta_description", "publish_date", "slug", "title", "updated_at"]
   end
 
+  def self.ransackable_associations(auth_object = nil)
+    ["countries", "related_posts"]
+  end
+
 end
