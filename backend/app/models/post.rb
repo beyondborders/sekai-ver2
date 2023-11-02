@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
 
   has_many :post_images
-  has_one :eyecatch_image, -> { where image_type: 'eyecatch' }, class_name: 'PostImage', foreign_key: :post_id
+  has_one :eyecatch_image, -> { eyecatch }, class_name: 'PostImage'
 
   # belongs_to :admin_user
   # belongs_to :guide
@@ -16,12 +16,7 @@ class Post < ApplicationRecord
   scope :order_desc, -> { order('publish_date DESC') }
   scope :language, -> (locale) { where(language_code: locale) }
 
-  CATEGORIES = {
-    'Tour'      => 'tour',
-    'Knowhow'   => 'knowhow',
-    'News'      => 'news',
-    'Interview' => 'interview'
-  }.freeze
+  enum category: { tour: 'tour', knowhow: 'knowhow', news: 'news', interview: 'interview' }
 
   def self.ransackable_attributes(auth_object = nil)
     ["category", "content", "created_at", "guide_id", "has_form", "id", "is_public", "is_recommend", "keywords", "language_code", "meta_description", "publish_date", "slug", "title", "updated_at"]

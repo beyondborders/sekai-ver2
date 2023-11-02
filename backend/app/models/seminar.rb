@@ -1,7 +1,8 @@
 class Seminar < ApplicationRecord
 
   has_many :post_images
-  has_many :eyecatch_images, -> { where image_type: 'eyecatch' }, class_name: 'PostImage', foreign_key: :seminar_id
+  # has_many :eyecatch_images, -> { where image_type: 'eyecatch' }, class_name: 'PostImage', foreign_key: :seminar_id
+  has_many :eyecatch_images, -> { eyecatch }, class_name: 'PostImage'
   has_many :seminar_schedules
 
   scope :by_latest_start, -> {
