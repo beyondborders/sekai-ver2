@@ -8,7 +8,7 @@ module Api
       def search
         @q = Post.language(I18n.locale).published.order_desc.ransack(params[:q])
         @pagy, @posts = paginate(
-          @q.result(distinct: true).includes(:eyecatch_image)
+          @q.result(distinct: true).includes(:post_images, :eyecatch_image)
         )
       end
 

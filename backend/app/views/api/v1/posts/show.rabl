@@ -12,7 +12,11 @@ child(:countries, :object_root => false) do
   attributes :id, :country_code, :name
 end
 
-child(:related_posts, :object_root => false) do
+child(:guide, :object_root => false) do
+  attributes :url, :post_image_url, :post_image_url_mobile
+end
+
+child({related_posts: :related_posts}, :object_root => false) do
   attributes :id, :title, :publish_date, :language_code, :category
 
   node(:content) {|post| strip_tags(post.content.to_s.truncate(300)).squish }

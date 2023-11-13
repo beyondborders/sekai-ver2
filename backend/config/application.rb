@@ -23,5 +23,10 @@ module Sekai
 
 
     I18n.available_locales = [:en, :ja]
+
+    Slack.configure do |config|
+      config.token = ENV['SLACK_API_TOKEN']
+    end
+    
   end
 end

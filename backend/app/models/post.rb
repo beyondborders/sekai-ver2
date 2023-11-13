@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   has_one :eyecatch_image, -> { eyecatch }, class_name: 'PostImage'
 
   # belongs_to :admin_user
-  # belongs_to :guide
+  belongs_to :guide
   # has_many :tags, through: :taggings
   # has_many :taggings, dependent: :destroy
   has_many :post_target_countries, dependent: :destroy
