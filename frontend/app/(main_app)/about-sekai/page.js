@@ -523,14 +523,17 @@ export default async function AboutSekai() {
               <div className={styles.companyInfoTitle}>役員</div>
               <div>
                 遠藤　忠義／CEO, Co-founder<br />
-                水野　貴明／CTO<br />
-                平山　一滋／CFO<br />
-                小林　利光／Executive Officer
+                小林利光／Executive Officer<br />
+                高稲祐貴／Executive Officer<br />
+                今井良祐／Director<br />
+                早川翔／Director<br />
+                冨澤哲大／Director<br />
+                松原知恵子／Auditor
               </div>
             </div>
             <div className={styles.companyInfo}>
               <div className={styles.companyInfoTitle}>スタッフ数</div>
-              <div>44名（2022年1月現在）</div>
+              <div>72名（2023年10月現在）</div>
             </div>
             <div className={styles.companyInfo}>
               <div className={styles.companyInfoTitle}>宅建免許</div>

@@ -1,0 +1,8 @@
+@import "@/css/utils.scss";
+
+.articleContainer{
+  padding: 24px 12px;
+  @include breakpoint(laptop) {
+    padding: 24px 0;
+  }
+}

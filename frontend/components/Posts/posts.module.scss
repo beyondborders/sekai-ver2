@@ -1,0 +1,67 @@
+@import "@/css/utils.scss";
+
+.postsCard{
+  .image{
+    background: #c4c4c4;
+    height: 170px;
+    min-height: 170px;
+    min-width: 100%;
+  }
+  .publishDate{
+    margin-top: 4px;
+    font-size: 12px;
+  }
+  .title{
+    font-weight: bold;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 50px;
+  }
+  .content{
+    font-size: 12px;
+    margin-top: 4px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.sideText{
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.seminarCard{
+  margin-top: 24px;
+  .seminarImage{
+    height: 170px;
+    background: #c4c4c4;
+    img{
+      object-fit: cover;
+      max-height: 100%;
+    }
+  }
+  .seminarTitle{
+    font-weight: 500;
+    margin-top: 4px;
+  }
+}
+
+.bannerContainer{
+  position: relative;
+  width: 100%;
+  img{
+    width: 100%;
+  }
+}
+
+.sideContentContainer{
+  @include breakpoint(laptop) {
+    margin-left: 32px;
+  }
+}

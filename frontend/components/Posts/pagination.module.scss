@@ -1,0 +1,22 @@
+@import "@/css/utils.scss";
+
+.paginationContainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination{
+  display: flex;
+  gap: 12px;
+  @include breakpoint(laptop) {
+    gap: 24px;
+  }
+
+  div{
+    cursor: pointer;
+  }
+  .active{
+    border-bottom: 1px solid black;
+  }
+}
