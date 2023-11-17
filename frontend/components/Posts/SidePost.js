@@ -49,7 +49,7 @@ export default function SidePost(props) {
           />
         </a>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 d-none d-lg-block">
         <a href="https://twitter.com/jasekaiproperty" target="_blank" className={styles.bannerContainer}>
           <Image
             src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/x.png"}
@@ -58,7 +58,7 @@ export default function SidePost(props) {
           />
         </a>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 d-none d-lg-block">
         <a href="https://business.facebook.com/sekaiproperty" target="_blank" className={styles.bannerContainer}>
           <Image
             src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/fb.png"}
@@ -67,7 +67,7 @@ export default function SidePost(props) {
           />
         </a>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 d-none d-lg-block">
         <a href="https://www.instagram.com/sekaiproperty_jp" target="_blank" className={styles.bannerContainer}>
           <Image
             src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/ig.png"}

@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link";
 import styles from "./page.module.scss";
-import Inquiry from "@/components/Inquiry/Inquiry";
+import ConsultationInquiry from "@/components/Inquiry/ConsultationInquiry";
 
 export default async function Page() {
   return (
@@ -24,7 +24,7 @@ export default async function Page() {
       </div>
       <div className={`${styles.blueButtonContainer} ${styles.section3BtnContainer}`}>
         <Link href={'#consultation-form'}>
-          <div className="my-5 new-btn btn-shadow-blue">【30秒で完了】無料個別相談に申し込む</div>
+          <div className={`${styles.consultationBtn} my-5 new-btn btn-shadow-blue`}>【30秒で完了】無料個別相談に申し込む</div>
         </Link>
       </div>
 
@@ -76,7 +76,7 @@ export default async function Page() {
           </div>
           <div className={`${styles.blueButtonContainer} ${styles.section3BtnContainer}`}>
             <Link href={'#consultation-form'}>
-              <div className="my-5 new-btn btn-shadow-blue">【30秒で完了】無料個別相談に申し込む</div>
+              <div className={`${styles.consultationBtn} my-5 new-btn btn-shadow-blue`}>【30秒で完了】無料個別相談に申し込む</div>
             </Link>
           </div>
         </div>
@@ -112,7 +112,7 @@ export default async function Page() {
           <a href="tel:0120-643-293" className={styles.phone}>0120-643-293</a>
         </h2>
         <div className={styles.formContainer}>
-          <Inquiry
+          <ConsultationInquiry
             thanksPage={`/inquiry_thanks/global/consultation`}/>
         </div>
       </section>
