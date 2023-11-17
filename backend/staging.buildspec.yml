@@ -4,15 +4,6 @@ phases:
   pre_build:
     on-failure: ABORT
     commands:
-      - CHANGED_FILES=$(git diff --name-only HEAD HEAD~1)
-      # Check if any of the changed files are in the src folder
-      - SRC_CHANGED=false
-      - for file in $CHANGED_FILES; do
-          if [[ $file == backend/* ]]; then
-            echo "No changes in backend, aborting pipeline"
-            exit 1
-          fi
-        done
       - echo Set variables
       - IMAGE_REPO_NAME=sekai-v2-staging
       - IMAGE_TAG=latest
