@@ -50,8 +50,7 @@ export default function Header() {
                   <Link href={"/article/thailand"}>タイ</Link>
                   <Link href={"/article/vietnam"}>ベトナム</Link>
                   <Link href={"/article/dubai"}>ドバイ</Link>
-                  <Link href={"/article/united states"}>アメリカ</Link>
-                  <Link href={"/article/hawaii"}>ハワイ</Link>
+                  <Link href={"/article/united-states"}>アメリカ</Link>
                   <Link href={"/article/asset-management"}>資産運用</Link>
                 </div>
               }
@@ -66,8 +65,7 @@ export default function Header() {
                   <Link href={"/news/cambodia"}>カンボジア</Link>
                   <Link href={"/news/thailand"}>タイ</Link>
                   <Link href={"/news/vietnam"}>ベトナム</Link>
-                  <Link href={"/news/united states"}>アメリカ</Link>
-                  <Link href={"/news/hawaii"}>ハワイ</Link>
+                  <Link href={"/news/united-states"}>アメリカ</Link>
                 </div>
               }
             />
@@ -121,8 +119,7 @@ export default function Header() {
                     <div className="col-6 mt-1"><Link href={"/article/thailand"}>タイ</Link></div>
                     <div className="col-6 mt-1"><Link href={"/article/vietnam"}>ベトナム</Link></div>
                     <div className="col-6 mt-1"><Link href={"/article/dubai"}>ドバイ</Link></div>
-                    <div className="col-6 mt-1"><Link href={"/article/united states"}>アメリカ</Link></div>
-                    <div className="col-6 mt-1"><Link href={"/article/hawaii"}>ハワイ</Link></div>
+                    <div className="col-6 mt-1"><Link href={"/article/united-states"}>アメリカ</Link></div>
                     <div className="col-6 mt-1"><Link href={"/article/asset-management"}>資産運用</Link></div>
                   </div>
                 }
@@ -139,8 +136,7 @@ export default function Header() {
                     <div className="col-6 mt-1"><Link href={"/news/cambodia"}>カンボジア</Link></div>
                     <div className="col-6 mt-1"><Link href={"/news/thailand"}>タイ</Link></div>
                     <div className="col-6 mt-1"><Link href={"/news/vietnam"}>ベトナム</Link></div>
-                    <div className="col-6 mt-1"><Link href={"/news/united states"}>アメリカ</Link></div>
-                    <div className="col-6 mt-1"><Link href={"/news/hawaii"}>ハワイ</Link></div>
+                    <div className="col-6 mt-1"><Link href={"/news/united-states"}>アメリカ</Link></div>
                   </div>
                 }
               />

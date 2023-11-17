@@ -46,7 +46,7 @@ export default function Footer() {
                   <div className="my-2">その他の国</div>
                   <div className="col-4 col-sm-3 mb-3">
                     <div className="mb-1">
-                      <div><Link href={'/search/united states'}>- アメリカ</Link></div>
+                      <div><Link href={'/search/united-states'}>- アメリカ</Link></div>
                       <div><Link href={'/search/philippines'}>- フィリピン</Link></div>
                     </div>
                   </div>

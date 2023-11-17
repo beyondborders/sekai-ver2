@@ -5,7 +5,7 @@ import Pagination from "./Pagination";
 import SidePost from "./SidePost";
 
 export default function Posts(props) {
-  const { baseURL, posts, seminars } = props
+  const { baseURL, paginationBaseURL, posts, seminars } = props 
 
   return (
     <section className={styles.postsContainer}>
@@ -14,7 +14,7 @@ export default function Posts(props) {
           <div className="col-12 col-lg-9">
             <div className="row">
               {
-                posts?.posts.map((post, index) => {
+                posts?.posts?.map((post, index) => {
                   return (
                     <Link href={`${baseURL}/${post.id}`} key={index} className={`${styles.postsCard} col-12 col-lg-4 ${index > 0 ? "mt-4" : ""} ${index > 2 ? "mt-lg-5" : "mt-lg-0"}`}>
                       <img className={styles.image} src={post.eyecatch_image?.url} />
@@ -27,10 +27,10 @@ export default function Posts(props) {
               }
             </div>
             <Pagination
-              totalItems={posts._links.total_pages}
-              currentPage={posts._links.current_page}
-              totalPages={posts._links.total_pages}
-              baseURL={baseURL}
+              totalItems={posts?._links.total_pages}
+              currentPage={posts?._links.current_page}
+              totalPages={posts?._links.total_pages}
+              baseURL={paginationBaseURL}
             />
           </div>
           <div className="col-12 col-lg-3 mt-4 mt-lg-0">

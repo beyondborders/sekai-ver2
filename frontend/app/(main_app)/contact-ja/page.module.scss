@@ -1,0 +1,159 @@
+@import "@/css/utils.scss";
+
+.blueButtonContainer {
+  max-width: 700px;
+  margin: 0 auto;
+
+  &.section3BtnContainer {
+    padding: 0 24px;
+
+    @include breakpoint(laptop) {
+      padding: 0;
+    }
+  }
+}
+
+.h2 {
+  padding-bottom: 24px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 1;
+
+  span {
+    font-size: 16px;
+  }
+
+  @include breakpoint(laptop) {
+    padding-bottom: 60px;
+    font-size: 38px;
+  }
+}
+
+.section1Container,
+.section2Container,
+.section3Container {
+  padding: 60px 24px;
+
+  @include breakpoint(laptop) {
+    padding: 120px 0;
+  }
+}
+
+.mainTitle {
+  font-weight: 600;
+  margin-top: 32px;
+
+  @include breakpoint(laptop) {
+    margin-top: 60px;
+  }
+}
+
+.section1Container {
+  background-color: #f9f8f5;
+
+  .contentContainer {
+    @include breakpoint(laptop) {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
+
+  .content {
+    &:not(:first-child) {
+      margin-top: 24px;
+
+      @include breakpoint(laptop) {
+        margin-top: 48px;
+      }
+    }
+
+    .title {
+      display: inline-block;
+      font-size: 20px;
+      color: #80663a;
+      border-bottom: 1px solid #80663a;
+      padding: 0px 8px 4px 0;
+      font-weight: 500;
+
+      @include breakpoint(laptop) {
+        font-size: 24px;
+      }
+    }
+
+    .description {
+      margin-top: 12px;
+      font-size: 14px;
+
+      @include breakpoint(laptop) {
+        font-size: 19px;
+      }
+    }
+  }
+}
+
+.section2Container {
+  background: #dfe8ee;
+
+  .contentContainer {
+    @include breakpoint(laptop) {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
+
+  .divider {
+    border-bottom: 1px solid #aaa;
+
+    @include breakpoint(laptop) {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  }
+
+  .content {
+    margin: 12px auto;
+    font-size: 14px;
+
+    @include breakpoint(laptop) {
+      max-width: 700px;
+      margin: 48px auto;
+      font-size: 19px;
+    }
+  }
+}
+
+.consultationOrange{
+  background: #f07338;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 4px;
+  text-align: center;
+  letter-spacing: 1px;
+  transform: scale(1, 1.2);
+  @include breakpoint(laptop) {
+    font-size: 26px;
+  }
+}
+
+.phone{
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  color: #f07338;
+  font-size: 26px;
+  margin-top: 12px;
+  text-decoration: underline;
+  &:hover{
+    color: darken(#f07338, 10%);
+  }
+  @include breakpoint(laptop) {
+    margin-top: 20px;
+    font-size: 38px;
+  }
+}
+
+.formContainer{
+  max-width: 550px;
+  margin: 0 auto;
+}

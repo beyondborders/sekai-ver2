@@ -14,7 +14,7 @@ export default function SidePost(props) {
         </div>
         <div className={`${styles.sideText} mt-4`}>最近のセミナー</div>
         <div>
-          {seminars?.seminars.map((seminar, index) => {
+          {seminars?.seminars?.map((seminar, index) => {
             return (
               <div key={index} className="mt-3">
                 <Link href={`/seminar/${seminar.id}`} className={`${styles.seminarCard}`}>

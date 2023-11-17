@@ -72,7 +72,7 @@ export default function PostDetails(props) {
 
   return (
     <section className={styles.postDetailsContainer}>
-      <div className="container">
+      <div className="">
         <div className="row">
           <div className="col-12 col-lg-9">
             <div className='post-content post' dangerouslySetInnerHTML={{ __html: post.content }}></div>
