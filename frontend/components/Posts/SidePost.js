@@ -4,9 +4,9 @@ import SearchInput from "./SearchInput";
 import styles from "./posts.module.scss"
 
 export default function SidePost(props) {
-  const { seminars } = props;
+  const { seminars, hideOnMobile } = props;
   return (
-    <div className={styles.sideContentContainer}>
+    <div className={`${styles.sideContentContainer} ${hideOnMobile ? styles.hideOnMobile : ""}`}>
       <div>
         <div className={styles.sideText}>コンテンツ検索</div>
         <div>

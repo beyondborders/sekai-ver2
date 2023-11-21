@@ -4,7 +4,7 @@ import Link from "next/link";
 import Posts from "@/components/Posts/Index";
 import { notFound } from 'next/navigation';
 
-const getPosts = async (type, currentPage) => {
+const getPosts = async (type, currentPage, searchKeyword) => {
   const data = await fetch(`http://${process.env.API_BASE_URL}/api/v1/posts/search`, {
     method: 'POST',
     headers: {
@@ -12,7 +12,8 @@ const getPosts = async (type, currentPage) => {
     },
     body: JSON.stringify({
       q: {
-        "category_eq": type
+        "category_eq": type,
+        "title_cont": searchKeyword
       },
       page: currentPage,
       page_count: "15"
@@ -49,7 +50,8 @@ const getSeminars = async () => {
 export default async function Page({ searchParams }) {
   const type = "knowhow"
   const currentPage = searchParams.page
-  const posts = await getPosts(type, currentPage);
+  const searchKeyword = searchParams.search
+  const posts = await getPosts(type, currentPage, searchKeyword);
   const seminars = await getSeminars();
   return (
     <div>
