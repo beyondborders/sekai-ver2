@@ -62,7 +62,9 @@
 }
 
 .sideContentContainer{
+  display: none;
   @include breakpoint(laptop) {
+    display: block;
     margin-left: 32px;
   }
 }
