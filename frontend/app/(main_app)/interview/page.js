@@ -48,7 +48,7 @@ const getSeminars = async () => {
 }
 
 export default async function Page({ searchParams }) {
-  const type = "knowhow"
+  const type = "interview"
   const currentPage = searchParams.page
   const searchKeyword = searchParams.search
   const posts = await getPosts(type, currentPage, searchKeyword);
@@ -58,7 +58,7 @@ export default async function Page({ searchParams }) {
       <div className={styles.FV}>
         <div className="d-none d-lg-block">
           <Image
-            src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/column_PC.png"}
+            src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/interview_PC.png"}
             priority={true}
             fill={true}
             sizes="100vw"
@@ -67,17 +67,17 @@ export default async function Page({ searchParams }) {
         </div>
         <div className="d-block d-lg-none">
           <Image
-            src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/column_SP.png"}
+            src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/interview_SP.png"}
             sizes="100vw"
             style={{ objectFit: "cover" }}
             fill
           />
         </div>
         <div className={styles.FVText}>
-          <h1>海外不動産コラム</h1>
+          <h1>オーナー様の声</h1>
           <div className="mt-3">
-            国ごとの特徴やメリット・デメリットなど<br />
-            海外不動産投資のお役立ち情報をお届けしています。
+            海外不動産を所有する目的や購入理由について<br/>
+            オーナー様にお伺いいたしました。
           </div>
         </div>
       </div>
@@ -85,13 +85,13 @@ export default async function Page({ searchParams }) {
         <div className={styles.breadcrumb}>
           <Link href='/'>TOP</Link>
           <span className="mx-1">/</span>
-          <Link href='/article'>海外不動産コラム</Link>
+          <Link href='/interview'>オーナー様の声</Link>
         </div>
       </div>
       <div className={styles.articlesContainer}>
         <Posts
-          baseURL="/article"
-          paginationBaseURL={`/article`}
+          baseURL="/interview"
+          paginationBaseURL={`/interview`}
           posts={posts}
           seminars={seminars}
         />

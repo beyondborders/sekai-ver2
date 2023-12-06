@@ -1,0 +1,82 @@
+@import "@/css/utils.scss";
+
+.relatedPosts{
+  background-color: #f4f4f4;
+  padding: 12px;
+  @include breakpoint(laptop) {
+    padding: 32px;
+  }
+
+  .title{
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 12px;
+    @include breakpoint(laptop) {
+      font-size: 20px;
+    }
+  }
+
+  a{
+    color: #0171a6;
+    text-decoration: underline;
+    margin-top: 4px;
+    font-size: 14px;
+    &:hover{
+      color: darken(#0171a6, 10%);
+    }
+    @include breakpoint(laptop) {
+      font-size: 16px;
+    }
+  }
+}
+
+.mainTitle{
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  @include breakpoint(laptop) {
+    font-size: 20px;
+    margin: 32px 0 16px 0;
+  }
+}
+
+.otherPostsContainer{
+  max-width: 950px;
+  margin: 0 auto;
+  .postsCard{
+    .image{
+      background: #c4c4c4;
+      height: 170px;
+      min-height: 170px;
+      min-width: 100%;
+      object-fit: cover;
+    }
+    .publishDate{
+      margin-top: 4px;
+      font-size: 12px;
+    }
+    .title{
+      font-weight: bold;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-height: 50px;
+    }
+    .content{
+      font-size: 12px;
+      margin-top: 4px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.snsShare{
+  display: flex;
+  gap: 6px;
+}

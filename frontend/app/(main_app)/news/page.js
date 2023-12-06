@@ -48,7 +48,7 @@ const getSeminars = async () => {
 }
 
 export default async function Page({ searchParams }) {
-  const type = "knowhow"
+  const type = "news"
   const currentPage = searchParams.page
   const searchKeyword = searchParams.search
   const posts = await getPosts(type, currentPage, searchKeyword);
@@ -58,7 +58,7 @@ export default async function Page({ searchParams }) {
       <div className={styles.FV}>
         <div className="d-none d-lg-block">
           <Image
-            src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/column_PC.png"}
+            src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/news_PC.png"}
             priority={true}
             fill={true}
             sizes="100vw"
@@ -67,17 +67,17 @@ export default async function Page({ searchParams }) {
         </div>
         <div className="d-block d-lg-none">
           <Image
-            src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/column_SP.png"}
+            src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/news_SP.png"}
             sizes="100vw"
             style={{ objectFit: "cover" }}
             fill
           />
         </div>
         <div className={styles.FVText}>
-          <h1>海外不動産コラム</h1>
+          <h1>海外不動産ニュース</h1>
           <div className="mt-3">
-            国ごとの特徴やメリット・デメリットなど<br />
-            海外不動産投資のお役立ち情報をお届けしています。
+            為替や経済情勢、インフラ情報など<br />
+            海外不動産に関する最新ニュースをお届けいたします。
           </div>
         </div>
       </div>
@@ -85,13 +85,15 @@ export default async function Page({ searchParams }) {
         <div className={styles.breadcrumb}>
           <Link href='/'>TOP</Link>
           <span className="mx-1">/</span>
-          <Link href='/article'>海外不動産コラム</Link>
+          <Link href='/news'>海外不動産ニュース</Link>
         </div>
       </div>
       <div className={styles.articlesContainer}>
         <Posts
-          baseURL="/article"
-          paginationBaseURL={`/article`}
+          baseURL="/news"
+          paginationBaseURL={`/news`}
+          type="knowhow"
+          currentPage={searchParams.page}
           posts={posts}
           seminars={seminars}
         />

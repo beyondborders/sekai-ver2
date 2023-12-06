@@ -68,3 +68,10 @@
     }
   }
 }
+
+.snsShare{
+  margin-bottom: 12px;
+  @include breakpoint(laptop) {
+    margin-bottom: 0;
+  }
+}

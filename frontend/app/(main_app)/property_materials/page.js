@@ -19,19 +19,10 @@ const getPropertyMaterials = async () => {
   return guides
 }
 
-// const getSelectedTab = () => {
-//   console.log("===================")
-//   console.log(window.location.hash)
-//   return 2;
-// }
-
 export default async function PropertyMaterials(props) {
   const res = await getPropertyMaterials();
   const recommended = res.property_materials.recommended
   const propertyMaterials = res.property_materials.countries
-
-  // const [selectedTab, setSelectedTab] = useState(getSelectedTab())
-  // console.log(selectedTab)
 
   return (
     <section>
@@ -343,7 +334,7 @@ export default async function PropertyMaterials(props) {
                 <div className={`${styles.part} ${styles.part4}`}>
                   <div className="row">
                     {
-                      propertyMaterials.thailand?.map((g, index) =>
+                      propertyMaterials.thai?.map((g, index) =>
                         <div className="col-4" key={index}>
                           <Link href={g.url}>
                             <div className={styles.guideCard}>

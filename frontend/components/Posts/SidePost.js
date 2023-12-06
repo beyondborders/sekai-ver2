@@ -4,9 +4,9 @@ import SearchInput from "./SearchInput";
 import styles from "./posts.module.scss"
 
 export default function SidePost(props) {
-  const { seminars } = props;
+  const { seminars, hideOnMobile } = props;
   return (
-    <div className={styles.sideContentContainer}>
+    <div className={`${styles.sideContentContainer} ${hideOnMobile ? styles.hideOnMobile : ""}`}>
       <div>
         <div className={styles.sideText}>コンテンツ検索</div>
         <div>
@@ -14,7 +14,7 @@ export default function SidePost(props) {
         </div>
         <div className={`${styles.sideText} mt-4`}>最近のセミナー</div>
         <div>
-          {seminars?.seminars.map((seminar, index) => {
+          {seminars?.seminars?.map((seminar, index) => {
             return (
               <div key={index} className="mt-3">
                 <Link href={`/seminar/${seminar.id}`} className={`${styles.seminarCard}`}>
@@ -49,7 +49,7 @@ export default function SidePost(props) {
           />
         </a>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 d-none d-lg-block">
         <a href="https://twitter.com/jasekaiproperty" target="_blank" className={styles.bannerContainer}>
           <Image
             src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/x.png"}
@@ -58,7 +58,7 @@ export default function SidePost(props) {
           />
         </a>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 d-none d-lg-block">
         <a href="https://business.facebook.com/sekaiproperty" target="_blank" className={styles.bannerContainer}>
           <Image
             src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/fb.png"}
@@ -67,7 +67,7 @@ export default function SidePost(props) {
           />
         </a>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 d-none d-lg-block">
         <a href="https://www.instagram.com/sekaiproperty_jp" target="_blank" className={styles.bannerContainer}>
           <Image
             src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/ig.png"}

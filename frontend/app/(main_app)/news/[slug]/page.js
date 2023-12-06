@@ -58,7 +58,7 @@ const getSeminars = async () => {
   return seminars
 }
 
-export default async function ArticleDetails({ params, searchParams }) {
+export default async function NewsDetails({ params, searchParams }) {
   const defaultSlugMap = {
     'malaysia': "MYS",
     'philippines': "PHP",
@@ -70,7 +70,7 @@ export default async function ArticleDetails({ params, searchParams }) {
     'asset-management': "AS3"
   }
   const renderIndex = async () => {
-    const type = "knowhow"
+    const type = "news"
     const currentPage = searchParams.page
     const posts = await getPosts(type, currentPage, defaultSlugMap[params.slug]);
     const seminars = getSeminars()
@@ -79,7 +79,7 @@ export default async function ArticleDetails({ params, searchParams }) {
         <div className={styles.FV}>
           <div className="d-none d-lg-block">
             <Image
-              src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/column_PC.png"}
+              src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/news_PC.png"}
               sizes="100vw"
               width={1920}
               height={771}
@@ -87,7 +87,7 @@ export default async function ArticleDetails({ params, searchParams }) {
           </div>
           <div className="d-block d-lg-none">
             <Image
-              src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/column_SP.png"}
+              src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/news_SP.png"}
               sizes="100vw"
               style={{ objectFit: "cover" }}
               fill
@@ -105,13 +105,13 @@ export default async function ArticleDetails({ params, searchParams }) {
           <div className={styles.breadcrumb}>
             <Link href='/'>TOP</Link>
             <span className="mx-1">/</span>
-            <Link href='/article'>海外不動産コラム</Link>
+            <Link href='/news'>海外不動産ニュース</Link>
           </div>
         </div>
         <div className={styles.articlesContainer}>
           <Posts
-            baseURL={`/article`}
-            paginationBaseURL={`/article/${params.slug}`}
+            baseURL={`/news`}
+            paginationBaseURL={`/news/${params.slug}`}
             posts={posts}
             seminars={seminars}
           />
@@ -167,10 +167,10 @@ export default async function ArticleDetails({ params, searchParams }) {
           <div className={styles.breadcrumb}>
             <Link href='/'>TOP</Link>
             <span className="mx-1">/</span>
-            <Link href='/article'>海外不動産コラム</Link>
+            <Link href='/news'>海外不動産ニュース</Link>
             <span className="mx-1">/</span>
             {countryJP[post.countries[0]] &&
-              <Link href={`/article${countryJP[post.countries[0]?.country_code]?.link}`}>{countryJP[post.countries[0]?.country_code]?.label}コラム</Link>
+              <Link href={`/news${countryJP[post.countries[0]?.country_code]?.link}`}>{countryJP[post.countries[0]?.country_code]?.label}ニュース</Link>
             }
           </div>
         </div>
@@ -179,7 +179,7 @@ export default async function ArticleDetails({ params, searchParams }) {
             <div className="col-12 col-lg-9">
               <div className="mb-2">{post.publish_date}</div>
               <h1 className={`${styles.postTitle} mb-2`}>{post.title}</h1>
-              <div className={`${styles.colorMain} mb-2`}>海外不動産コラム</div>
+              <div className={`${styles.colorMain} mb-2`}>海外不動産ニュース</div>
             </div>
           </div>
 
