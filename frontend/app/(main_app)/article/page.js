@@ -59,9 +59,10 @@ export default async function Page({ searchParams }) {
         <div className="d-none d-lg-block">
           <Image
             src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/column_PC.png"}
+            priority={true}
+            fill={true}
             sizes="100vw"
-            width={1920}
-            height={771}
+            style={{ objectFit: "cover" }}
           />
         </div>
         <div className="d-block d-lg-none">

@@ -19,17 +19,7 @@ export default async function Global({ params }) {
   let guide = await getGuide(params.slug);
   guide = guide.guide;
   return (
-    <section>
-      <div className={styles.FVImage}>
-        <Image
-          priority={true}
-          fill={true}
-          sizes="100vw"
-          style={{ objectFit: "cover" }}
-          src={guide.image_url.split(';')[0]}
-        />
-      </div>
-
+    <section className={styles.globalContainer}>
       {
         guide.guide_type == 'library' ?
         <Guide guide={guide}/> :

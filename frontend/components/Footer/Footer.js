@@ -1,6 +1,7 @@
 import Image from "next/image"
-import styles from "./Footer.module.scss"
 import Link from "next/link"
+import FooterSNS from "./FooterSNS"
+import styles from "./Footer.module.scss"
 
 export default function Footer() {
   return (
@@ -132,6 +133,9 @@ export default function Footer() {
               />
             </div>
             <div className="col-12 col-md text-center text-lg-end">
+              <div>
+                <FooterSNS />
+              </div>
               <div className={styles.footerBottomLink}>
                 <Link href='/contact-ja'>お問い合わせ</Link>
                 <Link href='http://beyondborders.jp/' target="_blank">会社概要</Link>
