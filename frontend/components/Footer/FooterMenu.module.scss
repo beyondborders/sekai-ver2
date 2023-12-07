@@ -1,0 +1,51 @@
+@import "@/css/utils.scss";
+
+.footerMenu{
+  position: fixed;
+  z-index: 910;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  @include breakpoint(laptop) {
+    display: none;  
+  }
+  .footerMenuList {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 100%;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .footerMenuItem {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    width: 25%;
+    text-align: center;
+    color: #fff;
+    border-right: 1px solid #ccc;
+    padding: 4px 0;
+    background: linear-gradient(144deg, #005daa 0%, #000002 100%);
+    
+    .footerMenuAction{  
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      margin: 12px 0;
+      i{
+        height:36px;
+      }
+      div{
+        font-size: 10px;
+        font-weight: 300;
+        line-height: 14px;
+      }
+    }
+  }
+}

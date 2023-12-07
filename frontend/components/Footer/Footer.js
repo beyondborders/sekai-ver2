@@ -141,7 +141,7 @@ export default function Footer() {
                 <Link href='http://beyondborders.jp/' target="_blank">会社概要</Link>
                 <Link href='/ja_terms-privacypolicy'>利用規約</Link>
                 <Link href='/ja_terms-privacypolicy#privacy-policy'>個⼈情報の取り扱いについて</Link>
-                {/* <Link href='/sitemap'>サイトマップ</Link> */}
+                <Link href='/sitemap'>サイトマップ</Link>
               </div>
               <p className="text-white fz-3xs my-0">Copyright SEKAI PROPERTY ALL Rights Reserved. Produced by BEYOND BORDERS</p>
             </div>

@@ -1,10 +1,14 @@
 @import "@/css/utils.scss";
 
 .headerContainerSP {
+  position: sticky;
+  top: 0;
+  background: white;
   display: flex;
   align-items: center;
   padding: 12px;
   justify-content: space-between;
+  z-index: 9999;
 
   @include breakpoint(laptop) {
     display: none;
