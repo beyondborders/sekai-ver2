@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer/Footer";
+import FooterMenu from "@/components/Footer/FooterMenu";
 import Header from "@/components/Header/Header";
 
 export default function MainLayout({ children }) {
@@ -6,6 +7,7 @@ export default function MainLayout({ children }) {
     <div>
       <Header/>
       {children}
+      <FooterMenu/>
       <Footer/>
     </div>
   )

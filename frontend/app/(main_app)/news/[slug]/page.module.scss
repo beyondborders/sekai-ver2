@@ -2,9 +2,9 @@
 
 .FV{
   position: relative;
-  min-height: 255px;
-  img{
-    
+  height: 250px;
+  @include breakpoint(laptop) {
+    height: 500px;
   }
   .FVText{
     color: white;
@@ -49,6 +49,7 @@
 
 .postTitle{
   font-size: 18px;
+  font-weight: 600;
   @include breakpoint(laptop) {
     font-size: 24px;
   }

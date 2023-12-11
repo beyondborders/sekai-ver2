@@ -80,9 +80,10 @@ export default async function ArticleDetails({ params, searchParams }) {
           <div className="d-none d-lg-block">
             <Image
               src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/column_PC.png"}
+              priority={true}
+              fill={true}
               sizes="100vw"
-              width={1920}
-              height={771}
+              style={{ objectFit: "cover" }}
             />
           </div>
           <div className="d-block d-lg-none">
@@ -162,14 +163,14 @@ export default async function ArticleDetails({ params, searchParams }) {
     }
 
     return (
-      <section>
+      <section className={styles.postDetailContainer}>
         <div className={styles.breadcrumbContainer}>
           <div className={styles.breadcrumb}>
             <Link href='/'>TOP</Link>
             <span className="mx-1">/</span>
             <Link href='/article'>海外不動産コラム</Link>
             <span className="mx-1">/</span>
-            {countryJP[post.countries[0]] &&
+            {countryJP[post.countries[0]?.country_code] &&
               <Link href={`/article${countryJP[post.countries[0]?.country_code]?.link}`}>{countryJP[post.countries[0]?.country_code]?.label}コラム</Link>
             }
           </div>
@@ -179,7 +180,6 @@ export default async function ArticleDetails({ params, searchParams }) {
             <div className="col-12 col-lg-9">
               <div className="mb-2">{post.publish_date}</div>
               <h1 className={`${styles.postTitle} mb-2`}>{post.title}</h1>
-              <div className={`${styles.colorMain} mb-2`}>海外不動産コラム</div>
             </div>
           </div>
 

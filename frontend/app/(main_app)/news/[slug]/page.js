@@ -80,9 +80,10 @@ export default async function NewsDetails({ params, searchParams }) {
           <div className="d-none d-lg-block">
             <Image
               src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/news_PC.png"}
+              priority={true}
+              fill={true}
               sizes="100vw"
-              width={1920}
-              height={771}
+              style={{ objectFit: "cover" }}
             />
           </div>
           <div className="d-block d-lg-none">
@@ -169,7 +170,7 @@ export default async function NewsDetails({ params, searchParams }) {
             <span className="mx-1">/</span>
             <Link href='/news'>海外不動産ニュース</Link>
             <span className="mx-1">/</span>
-            {countryJP[post.countries[0]] &&
+            {countryJP[post.countries[0]?.country_code] &&
               <Link href={`/news${countryJP[post.countries[0]?.country_code]?.link}`}>{countryJP[post.countries[0]?.country_code]?.label}ニュース</Link>
             }
           </div>
@@ -179,7 +180,6 @@ export default async function NewsDetails({ params, searchParams }) {
             <div className="col-12 col-lg-9">
               <div className="mb-2">{post.publish_date}</div>
               <h1 className={`${styles.postTitle} mb-2`}>{post.title}</h1>
-              <div className={`${styles.colorMain} mb-2`}>海外不動産ニュース</div>
             </div>
           </div>
 
