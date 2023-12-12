@@ -16,6 +16,10 @@ child(:guide, :object_root => false) do
   attributes :url, :post_image_url, :post_image_url_mobile
 end
 
+child(:tags, :object_root => false) {
+  attributes :id, :name
+}
+
 child({related_posts: :related_posts}, :object_root => false) do
   attributes :id, :title, :publish_date, :language_code, :category
 
@@ -24,4 +28,15 @@ child({related_posts: :related_posts}, :object_root => false) do
   child({eyecatch_image: :eyecatch_image}, {:object_root => false}) {
     attributes :id, :url
   }
+end
+
+child({@tag_related_posts => :tag_related_posts}, :object_root => false) do
+  attributes :id, :title, :publish_date, :language_code, :category
+
+  node(:content) {|post| strip_tags(post.content.to_s.truncate(300)).squish }
+
+  child({eyecatch_image: :eyecatch_image}, {:object_root => false}) {
+    attributes :id, :url
+  }
+
 end

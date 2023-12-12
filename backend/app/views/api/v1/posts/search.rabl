@@ -8,6 +8,10 @@ child(@posts, :object_root => false) do
   child({eyecatch_image: :eyecatch_image}, {:object_root => false}) {
     attributes :id, :url
   }
+
+  child(:tags, {:object_root => false}) {
+    attributes :id, :name
+  }
 end
 
 node(:_links) do
