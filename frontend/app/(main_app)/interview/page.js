@@ -90,7 +90,6 @@ export default async function Page({ searchParams }) {
       </div>
       <div className={styles.articlesContainer}>
         <Posts
-          baseURL="/interview"
           paginationBaseURL={`/interview`}
           posts={posts}
           seminars={seminars}

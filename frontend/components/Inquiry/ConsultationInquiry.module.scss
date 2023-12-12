@@ -107,7 +107,7 @@
   margin-top: 10px;
   padding: 12px 18px;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 11px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
@@ -115,6 +115,7 @@
   border: none;
 
   @include breakpoint(laptop) {
+    font-size: 14px;
     padding: 12px 54px;
   }
 }

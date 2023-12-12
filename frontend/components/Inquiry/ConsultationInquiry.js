@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image"
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import styles from "./ConsultationInquiry.module.scss"
 import Link from "next/link"
 

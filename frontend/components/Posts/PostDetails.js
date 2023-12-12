@@ -159,6 +159,21 @@ export default function PostDetails(props) {
                 </Link>
               </div>
             }
+            {post?.tags.length > 0 &&
+              <div className={`${styles.postTags} mb-4`}>
+                {
+                  post?.tags?.map((tag, index) => {
+                    return (
+                      <div key={index} className="my-1">
+                        <Link href={`/tags/${tag.name}`} >
+                          {tag.name}
+                        </Link>
+                      </div>
+                    )
+                  })
+                }
+              </div>
+            }
             <div className={styles.snsShare}>
               <FacebookShareButton
                 url={window.location.href} >
@@ -177,16 +192,16 @@ export default function PostDetails(props) {
           <div className="col-12 col-lg-3 mb-4">
             <SidePost
               seminars={seminars}
-              hideOnMobile
+              relatedPosts={post?.related_posts}
             />
           </div>
           {
-            post?.related_posts?.length > 0 &&
+            post?.tag_related_posts?.length > 0 &&
             <div className={`${styles.otherPostsContainer} col-12 mb-4`}>
               <div className={styles.mainTitle}>関連する記事</div>
               <div className="row">
                 {
-                  post?.related_posts?.map((post, index) => {
+                  post?.tag_related_posts?.slice(0,6).map((post, index) => {
                     let category = post.category === 'knowhow' ? 'article' : post.category;
                     return (
                       <Link href={`/${category}/${post.id}`} key={index} className={`${styles.postsCard} col-12 col-lg-4 mt-3`}>
@@ -202,7 +217,7 @@ export default function PostDetails(props) {
             </div>
           }
           {latestNews?.length > 0 &&
-            <div className={`${styles.otherPostsContainer} col-12 d-none d-lg-block mb-4`}>
+            <div className={`${styles.otherPostsContainer} col-12 mb-4`}>
               <div className={styles.mainTitle}>最新の海外不動産ニュースをチェック</div>
               <div className="row">
                 {

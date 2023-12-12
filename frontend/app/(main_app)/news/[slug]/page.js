@@ -111,7 +111,6 @@ export default async function NewsDetails({ params, searchParams }) {
         </div>
         <div className={styles.articlesContainer}>
           <Posts
-            baseURL={`/news`}
             paginationBaseURL={`/news/${params.slug}`}
             posts={posts}
             seminars={seminars}

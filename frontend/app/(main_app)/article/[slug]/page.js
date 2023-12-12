@@ -46,7 +46,7 @@ const getSeminars = async () => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      page_count: "3"
+      page_count: "5"
     }),
     cache: 'no-store'
   });
@@ -111,7 +111,6 @@ export default async function ArticleDetails({ params, searchParams }) {
         </div>
         <div className={styles.articlesContainer}>
           <Posts
-            baseURL={`/article`}
             paginationBaseURL={`/article/${params.slug}`}
             posts={posts}
             seminars={seminars}
