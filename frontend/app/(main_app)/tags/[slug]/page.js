@@ -4,7 +4,7 @@ import Link from "next/link";
 import Posts from "@/components/Posts/Index";
 import { notFound } from 'next/navigation';
 
-const getPosts = async (type, currentPage, searchKeyword) => {
+const getPosts = async (tagName, currentPage) => {
   const data = await fetch(`http://${process.env.API_BASE_URL}/api/v1/posts/search`, {
     method: 'POST',
     headers: {
@@ -12,8 +12,7 @@ const getPosts = async (type, currentPage, searchKeyword) => {
     },
     body: JSON.stringify({
       q: {
-        "category_eq": type,
-        "title_cont": searchKeyword
+        "tags_name_ja_eq": tagName
       },
       page: currentPage,
       page_count: "15"
@@ -47,50 +46,25 @@ const getSeminars = async () => {
   return seminars
 }
 
-export default async function Page({ searchParams }) {
-  const type = "news"
+export default async function Page({ params, searchParams }) {
+  const tagName = decodeURI(params.slug)
   const currentPage = searchParams.page
-  const searchKeyword = searchParams.search
-  const posts = await getPosts(type, currentPage, searchKeyword);
+  const posts = await getPosts(tagName, currentPage);
   const seminars = await getSeminars();
+  console.log(params)
   return (
     <div>
-      <div className={styles.FV}>
-        <div className="d-none d-lg-block">
-          <Image
-            src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/news_PC.png"}
-            priority={true}
-            fill={true}
-            sizes="100vw"
-            style={{ objectFit: "cover" }}
-          />
-        </div>
-        <div className="d-block d-lg-none">
-          <Image
-            src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/news_SP.png"}
-            sizes="100vw"
-            style={{ objectFit: "cover" }}
-            fill
-          />
-        </div>
-        <div className={styles.FVText}>
-          <h1>海外不動産ニュース</h1>
-          <div className="mt-3">
-            為替や経済情勢、インフラ情報など<br />
-            海外不動産に関する最新ニュースをお届けいたします。
-          </div>
-        </div>
-      </div>
       <div className={styles.breadcrumbContainer}>
         <div className={styles.breadcrumb}>
           <Link href='/'>TOP</Link>
           <span className="mx-1">/</span>
-          <Link href='/news'>海外不動産ニュース</Link>
+          <span>{tagName}</span>
         </div>
       </div>
+      <h3 className="text-center">{tagName}</h3>
       <div className={styles.articlesContainer}>
         <Posts
-          paginationBaseURL={`/news`}
+          paginationBaseURL={`/tags/${tagName}`}
           posts={posts}
           seminars={seminars}
         />

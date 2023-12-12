@@ -4,7 +4,7 @@ import SearchInput from "./SearchInput";
 import styles from "./posts.module.scss"
 
 export default function SidePost(props) {
-  const { seminars, hideOnMobile } = props;
+  const { seminars, relatedPosts, hideOnMobile } = props;
   return (
     <div className={`${styles.sideContentContainer} ${hideOnMobile ? styles.hideOnMobile : ""}`}>
       <div>
@@ -12,6 +12,24 @@ export default function SidePost(props) {
         <div>
           <SearchInput />
         </div>
+        {!!relatedPosts && relatedPosts.length > 0 &&
+          <>
+            <div className={`${styles.sideText} mt-4`}>よく読まれている記事</div>
+            <div>
+              {relatedPosts?.map((post, index) => {
+                let category = post.category === 'knowhow' ? 'article' : post.category;
+                return (
+                  <div className="mb-2">
+                    <Link href={`/${category}/${post.id}`} key={index} className={`${styles.postsCard} col-12 col-lg-4`}>
+                      <img className={styles.image} src={post.eyecatch_image?.url} />
+                      <div>{post.title}</div>
+                    </Link>
+                  </div>
+                )
+              })}
+            </div>
+          </>
+        }
         <div className={`${styles.sideText} mt-4`}>最近のセミナー</div>
         <div>
           {seminars?.seminars?.map((seminar, index) => {

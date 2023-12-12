@@ -39,33 +39,33 @@ export default async function Page() {
           <div className={styles.content}>
             <div className={styles.title}>1.日時や場所の設定</div>
             <div className={styles.description}>
-              オンラインのほか、青山オフィスやお客様のご希望の場所にて無料個別相談を実施しております。定休日はございませんため、ご希望の日時を担当者にお知らせください。
+              オンラインのほか、虎ノ門オフィスやお客様のご希望の場所にて無料個別相談を実施しております。定休日はございません。ご希望の日時を担当者にお知らせください。
             </div>
           </div>
           <div className={styles.content}>
             <div className={styles.title}>2.会社概要説明</div>
             <div className={styles.description}>
               当日はまず、会社概要から説明させていただきます。<br />
-              弊社が行っている事業や提供しているサービス内容についてご紹介いたします。
+              弊社が行っている事業や提供しているサービス内容について紹介いたします。
             </div>
           </div>
           <div className={styles.content}>
             <div className={styles.title}>3.国別比較</div>
             <div className={styles.description}>
               国ごとの規制や価格帯等の比較を行い、お客様に最適な国を提案いたします。<br />
-              弊社スタッフも海外不動産を購入しておりますため、リアルな情報をお伝えすることが可能です。
+              弊社スタッフも海外不動産を購入しているため、リアルな情報をお伝えすることが可能です。
             </div>
           </div>
           <div className={styles.content}>
             <div className={styles.title}>4.物件紹介</div>
             <div className={styles.description}>
-              国が定まった後は、いよいよ物件のご紹介です。ホームページやダウンロード資料には載っていない、最新の情報をお伝えいたします。弊社ではしっかりとリスクも伝えるようにしております。
+              国が定まった後は、いよいよ物件のご紹介です。ホームページやダウンロード資料には載っていない、最新の情報をお伝えします。弊社ではリスクについてもしっかりとお伝えしています。
             </div>
           </div>
           <div className={styles.content}>
             <div className={styles.title}>5.お見積もり</div>
             <div className={styles.description}>
-              海外不動産の購入となると、不安を抱く方もいらっしゃるかと思います。一般的な日本の支払いスケジュールとは異なる場合がございますため、いつ、いくら、どのように支払うのか、丁寧にご説明いたします。
+              海外不動産の購入となると、不安を抱く方もいらっしゃるかと思います。一般的な日本の支払いスケジュールとは異なる場合がございます。そのため、いつ、いくら、どのように支払うのか、丁寧に説明いたします。
             </div>
           </div>
           <div className={styles.content}>
@@ -113,7 +113,7 @@ export default async function Page() {
         </h2>
         <div className={styles.formContainer}>
           <ConsultationInquiry
-            thanksPage={`/inquiry_thanks/global/consultation`}/>
+            thanksPage={`/inquiry_thanks/global/consultation`} />
         </div>
       </section>
 

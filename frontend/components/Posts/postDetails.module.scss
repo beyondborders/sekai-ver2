@@ -79,3 +79,16 @@
   display: flex;
   gap: 6px;
 }
+
+.postTags{
+  display: flex;  
+  flex-wrap: wrap;
+  gap: 4px 24px;
+
+  a{
+    color: $mainColor;
+    &:hover{
+      color: darken($mainColor, 20%);
+    }
+  }
+}

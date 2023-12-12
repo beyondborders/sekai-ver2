@@ -1,0 +1,63 @@
+@import "@/css/utils.scss";
+
+.FV{
+  position: relative;
+  height: 250px;
+  @include breakpoint(laptop) {
+    height: 500px;
+  }
+  .FVText{
+    color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    @include breakpoint(desktop) {
+      font-size: 18px;
+    }
+
+    h1{
+      font-size: 16px;
+      @include breakpoint(desktop) {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+.postDetailContainer{
+  font-family: system-ui;
+}
+.breadcrumbContainer{
+  font-size: 12px;
+  margin: 12px;
+  @include breakpoint(desktop) {
+    font-size: 14px;
+    margin: 48px 100px;
+  }
+}
+
+.articlesContainer{
+  padding: 24px 12px;
+  @include breakpoint(laptop) {
+    padding: 24px 0;
+  }
+}
+
+.postTitle{
+  font-size: 18px;
+  font-weight: 600;
+  @include breakpoint(laptop) {
+    font-size: 24px;
+  }
+}
+
+.colorMain{
+  color: $mainColor;
+}
