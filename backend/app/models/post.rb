@@ -1,5 +1,7 @@
 class Post < ApplicationRecord
 
+  default_scope { where(deleted_at: nil) }
+
   has_many :post_images
   has_one :eyecatch_image, -> { eyecatch }, class_name: 'PostImage'
 
@@ -12,30 +14,19 @@ class Post < ApplicationRecord
   has_many :post_related_posts, dependent: :destroy
   has_many :related_posts, through: :post_related_posts
 
-  scope :published, -> { where('publish_date <= ?', Time.zone.today)}
+  scope :published, -> { where('is_public = true AND publish_date <= ?', Time.zone.today)}
   scope :order_desc, -> { order('publish_date DESC') }
   scope :language, -> (locale) { where(language_code: locale) }
 
-  scope :tag_related_posts, ->(post,limit) {
-    published.where(language_code: post.language_code)
-    .joins(:tags).where(tags: { id: post.tag_ids }).where.not(id: post.id)
-    .or(Post.published.where(language_code: post.language_code)).order(created_at: :desc)
-    .distinct.limit(limit)
-  }
-
   enum category: { tour: 'tour', knowhow: 'knowhow', news: 'news', interview: 'interview' }
 
-  # def tag_related_posts(limit=10)
-  #   posts = Post.published.where(language_code: language_code)
-  #   .joins(:tags).where(tags: { id: tag_ids }).where.not(id: id)
-  #   .distinct.limit(10)
-  #   if posts.size < 10
-  #     posts.merge(Post.published.where(language_code: language_code)
-  #     .joins(:tags).where.not(id: id)
-  #     .distinct.limit(10-posts.size))
-  #   end
-  #   posts.all
-  # end
+  def tag_related_posts(limit=6)
+    tag_post_ids = Post.published.order_desc.joins(:tags).where(language_code: language_code, category: category, tags: { id: tag_ids }).where.not(id: id).distinct.limit(limit).pluck(:id)
+    if tag_post_ids.length < limit
+      tag_post_ids.concat(Post.published.order_desc.where(language_code: language_code, category: category).where.not(id: tag_post_ids.push(id)).distinct.limit(limit-tag_post_ids.length).pluck(:id))
+    end
+    Post.where(id: tag_post_ids).in_order_of(:id, tag_post_ids)
+  end
 
   def self.ransackable_attributes(auth_object = nil)
     ["category", "content", "created_at", "guide_id", "has_form", "id", "is_public", "is_recommend", "keywords", "language_code", "meta_description", "publish_date", "slug", "title", "updated_at"]
