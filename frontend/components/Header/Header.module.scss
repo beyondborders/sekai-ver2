@@ -149,6 +149,11 @@
     font-size: 20px;
   }
 
+  img{
+    width: 24px;
+    height: 24px;
+  }
+
   @include breakpoint(laptop) {
     padding: 8px;
     font-size: 10px;

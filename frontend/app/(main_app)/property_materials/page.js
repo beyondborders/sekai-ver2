@@ -52,7 +52,7 @@ export default async function PropertyMaterials(props) {
           <Link href='/property_materials'>おすすめ物件資料</Link>
         </div>
         <div className={`mt-3 mt-lg-4 row`}>
-          <div className={styles.sectionTitle}>セカイプロパティ厳選3物件</div>
+          <div className={styles.sectionTitle}>Pick Up 3物件</div>
           <div className={styles.carouselContainer}>
             <MultiItemCarousel
               slidesToShow={3}

@@ -75,7 +75,14 @@ export default function Header() {
             </div>
             <div className={`${styles.searchIconContainer}`}>
               <a href="tel:0120-643-293" >
-                <div className={styles.icon}>📞</div>
+                <div className={styles.icon}>
+                  <Image
+                    src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/tel-icon.png"
+                    width={50}
+                    height={50}
+                    alt="telephone-icon"
+                  />
+                </div>
                 <div>お問い合わせ</div>
               </a>
             </div>
@@ -87,7 +94,7 @@ export default function Header() {
         </div>
         <Link href="/contact-ja#consultation-form-start" className={styles.fixedConsultationLink}>個別相談はこちらから</Link>
       </section>
-      <HeaderSP/>
+      <HeaderSP />
     </>
   )
 }
