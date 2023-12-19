@@ -12,9 +12,14 @@ module Api
         )
       end
 
+      def show
+        @tag_related_posts = @post.tag_related_posts.includes(:post_images, :eyecatch_image)
+      end
+
+      private
+
       def find_post
         @post = Post.published.find(params[:id])
-        @tag_related_posts = @post.tag_related_posts.includes(:post_images, :eyecatch_image)
       end
 
     end
