@@ -4,17 +4,25 @@ import Image from "next/image"
 import Link from "next/link"
 import Inquiry from '@/components/Inquiry/Inquiry';
 import MultiItemCarousel from "@/components/Carousel/MultiItemCarousel"
+import ProjectInquiryTop from "@/components/Inquiry/ProjectInquiryTop"
 import { notFound } from 'next/navigation';
 import { useEffect, useState } from "react";
 
 import styles from "./ProjectDetails.module.scss"
 import Map from "../Map/Map";
+import Lightbox from "../Lightbox/Lightbox";
 
 const ProjectDetails = (props) => {
+  const [openLightBox, setOpenLightBox] = useState(false)
+  const [lightboxIndex, setLightboxIndex] = useState(0)
+
   const { project, recommendedProperties } = props
   const [FVImage, setFVImage] = useState(project?.image_url?.split(';')[0])
   const translateLabel = {
     house: "一戸建て",
+    beginning: "予定",
+    mid: "中旬",
+    end: "下旬",
   }
 
   const generateVideoUrl = (url) => {
@@ -39,7 +47,7 @@ const ProjectDetails = (props) => {
           src={FVImage}
         />
       </div>
-      <section className={styles.guideContainer}>
+      <section className={styles.projectContainer}>
         <div className={styles.contentContainer}>
           <div className={styles.contentHeader}>
             <div className={styles.breadcrumb}>
@@ -127,7 +135,10 @@ const ProjectDetails = (props) => {
                     </div>
                     <div className={styles.propertymaterialTableRow}>
                       <div className={styles.propertymaterialTableTitle}>入居予定年月</div>
-                      <div className={styles.propertymaterialTableContent}>{project.expected_move_in}</div>
+                      <div className={styles.propertymaterialTableContent}>
+                        {project.immediate_move_in ? "-" :
+                          !!project.expected_move_in?.year ? `${project.expected_move_in.year}年 ${project.expected_move_in.month}月 ${translateLabel[project.expected_move_in.period]}` : "ご相談"}
+                      </div>
                     </div>
                     <div className={styles.propertymaterialTableRow}>
                       <div className={styles.propertymaterialTableTitle}>開発会社 / 不動産会社</div>
@@ -144,12 +155,16 @@ const ProjectDetails = (props) => {
                   </div>
                 </div>
               </div>
-              <div className="col-4"></div>
+              <div className="col-4">
+                <div className="mt-4">
+                  <ProjectInquiryTop />
+                </div>
+              </div>
             </div>
           </div>
           {
             !!project.video_url &&
-            <section className="container my-6" id="wysiwig">
+            <section className="container my-5" id="wysiwig">
               <span className="fr-video fr-dvb">
                 <iframe width="100%" height="460" src={generateVideoUrl(project.video_url)} frameBorder="0" allowFullScreen="true"></iframe>
               </span>
@@ -163,66 +178,79 @@ const ProjectDetails = (props) => {
               {project.floor_plans.map((floorplan, index) => {
                 return (
                   <div className="col-6 col-lg-3 px-2 my-2" key={index}>
-                    <h4 className="text-center">{floorplan.name}</h4>
-                    <img src={floorplan.image_url} />
-                    <div className="row">
-                      <Image
-                        src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/icon-house.png"}
-                        width={60}
-                        height={60}
-                      />
-                      <span>{floorplan.square_meter}</span>
-                      <Image
-                        src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/icon-bed.png"}
-                        width={60}
-                        height={60}
-                      />
-                      <span>{floorplan.number_of_bedrooms}</span>
+                    <div className="text-center mt-4 mb-3">{floorplan.name}</div>
+                    <img src={floorplan.image_url} onClick={() => { setLightboxIndex(index); setOpenLightBox(true) }} />
+                    <div className={`${styles.floorplanDetails}`}>
+                      <div className={styles.detailsWrapper}>
+                        <div className={styles.icon}>
+                          <Image
+                            src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/icon-house.png"}
+                            width={60}
+                            height={60}
+                          />
+                        </div>
+                        <span>{floorplan.square_meter}</span>
+                      </div>
+                      <div className={styles.detailsWrapper}>
+                        <div className={styles.icon}>
+                          <Image
+                            src={"https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/icon-bed.png"}
+                            width={60}
+                            height={60}
+                          />
+                        </div>
+                        <span>{floorplan.number_of_bedrooms}</span>
+                      </div>
                     </div>
                   </div>
                 )
               })}
             </div>
+            <Lightbox
+              open={openLightBox}
+              close={() => setOpenLightBox(false)}
+              slides={project.floor_plans.map((floorplan, index) => { return { src: floorplan.image_url } })}
+              index={lightboxIndex}
+            />
           </div>
         </div>
         {
           !!project.description &&
           <div className="container pt-5">
             <h3 className={styles.h3}>担当者コメント</h3>
-            <p className="mt-4" dangerouslySetInnerHTML={{ __html: project.description }}></p>
+            <div className={`${styles.slightlyLeft} mt-4`} dangerouslySetInnerHTML={{ __html: project.description }}></div>
           </div>
         }
         {
           !!project.seller &&
           <div className="container py-5">
             <h3 className={styles.h3}>売主情報</h3>
-            <div className="row">
-              <div className="col-4">
+            <div className={`${styles.slightlyLeft} ${styles.sellerContainer} mt-4 row`}>
+
+              <div className={styles.sellerImg}>
                 <img
                   src={project.seller.image_url}
                 />
               </div>
-              <div className="col-8">
-                <div>{project.seller.name}</div>
+
+              <div className={styles.sellerInfo}>
+                <div className="mb-2">{project.seller.name}</div>
                 <div>{project.seller.description}</div>
               </div>
             </div>
           </div>
         }
         {
-          !!project.description &&
+          !!project.building?.latitude &&
           <div className="container pt-5">
             <h3 className={styles.h3}>所在地</h3>
-            <p className="mt-4" dangerouslySetInnerHTML={{ __html: project.description }}></p>
+            <div className="mt-5">
+              <Map
+                lat={project.building?.latitude}
+                lng={project.building?.longitude}
+              />
+            </div>
           </div>
-        }
-
-
-        {
-          <Map
-            lat={project.building?.latitude}
-            lng={project.building?.longitude}
-          />
         }
 
 

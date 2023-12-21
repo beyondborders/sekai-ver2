@@ -37,7 +37,11 @@ const getProject = async (slug) => {
       image_url: "https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/RCR_room_1200.png;https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/ritz1.png;https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/ritz2.jpg;https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/ritz3.png;https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/ritz4.jpg;https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/ritz5.jpg",
       price: "8,238万円 ~ 3億8,940万円",
       immediate_move_in: true,
-      expected_move_in: "-",
+      expected_move_in: {
+        year: "2026",
+        month: "1",
+        period: "end"
+      },
       ownership: "所有権",
       management: "ザ・リッツカールトン（The Ritz-Carlton）",
       video_url: "https://youtu.be/Iskjd26hdpg",
@@ -55,19 +59,19 @@ const getProject = async (slug) => {
         },
         {
           name: "Type Bella",
-          image_url: "https://en.sekaiproperty.com/img/sekai-property-property-image/file/123908/c4ac9b41-9245-489f-9aa0-8b9064f414dd.jpg",
+          image_url: "https://en.sekaiproperty.com/img/sekai-property-property-image/file/123909/2f929e11-4e32-4f00-a59a-014d08bde6bc.jpg",
           number_of_bedrooms: "1",
           square_meter: "108.05㎡",
         },
         {
           name: "Type Citra",
-          image_url: "https://en.sekaiproperty.com/img/sekai-property-property-image/file/123908/c4ac9b41-9245-489f-9aa0-8b9064f414dd.jpg",
+          image_url: "https://en.sekaiproperty.com/img/sekai-property-property-image/file/123910/8e66b2ba-e4a6-4767-aeb3-f3e676c3680d.jpg",
           number_of_bedrooms: "1",
           square_meter: "95.05㎡",
         },
         {
           name: "Type Dana",
-          image_url: "https://en.sekaiproperty.com/img/sekai-property-property-image/file/123908/c4ac9b41-9245-489f-9aa0-8b9064f414dd.jpg",
+          image_url: "https://en.sekaiproperty.com/img/sekai-property-property-image/file/123911/272f99ef-8f55-49b9-b7b7-c3a3af59c008.jpg",
           number_of_bedrooms: "2",
           square_meter: "146.05㎡",
         },

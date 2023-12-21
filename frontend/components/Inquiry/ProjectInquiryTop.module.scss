@@ -1,0 +1,68 @@
+@import "@/css/utils.scss";
+
+.ProjectInquiryTopContainer {
+  padding: 24px;
+  border: 3px double #e3e3e3;
+  background-color: #FAFAFA;
+}
+
+.label{
+  position: relative;
+  font-size: 13px;
+  font-weight: 600;
+  &.required{
+    &::after{
+      content: "*";
+      color: red;
+    }
+  }
+}
+
+.secureInput {
+  position: relative;
+
+  img {
+    position: absolute;
+    width: 16px;
+    top: 11px;
+    right: 16px;
+    filter: opacity(0.35);
+  }
+  input, select, textarea{
+    border: 1px solid #cbd6e2;
+    background-color:#f5f8fa;
+    font-size: 15px;
+  }
+}
+
+.submitButton{
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  position: relative;
+  text-align: center;
+  transition: all .15s linear;
+  background: #e08523;
+  border-color: #e08523;
+  color: #fff;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 12px 24px;
+  font-size: 16px;
+  line-height: 16px;
+  margin-top: 16px;
+}
+
+.privacyText{
+  text-align: center;
+  font-size: 11px;
+
+  a{
+    color: $mainColor;
+  }
+}
+.errorText{
+  color: red;
+  font-size: 10px;
+}
