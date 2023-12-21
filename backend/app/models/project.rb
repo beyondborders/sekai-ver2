@@ -7,7 +7,7 @@ class Project < Building
   has_many :taggings, dependent: :destroy
 
   def floor_plans
-    prop = property || properties.first # property not returns correctly when test env
+    prop = property || properties.first
     prop.floor_plans if prop
   end
 
@@ -43,10 +43,21 @@ class Project < Building
   end
 
   def fp_all_prices
+    return unless floor_plans
     prices = floor_plans.map(&:price)
     price_maxs = floor_plans.map(&:price_max)
     price_mins = floor_plans.map(&:price_min)
     prices.concat(price_maxs).concat(price_mins).compact
+  end
+
+  def converted_price_min(target_currency='JPY')
+    return nil if price_min.blank?
+    CurrencyConverterService.new(get_currency).convert(price_max,target_currency) rescue nil
+  end
+
+  def converted_price_max(target_currency='JPY')
+    return nil if price_max.blank?
+    CurrencyConverterService.new(get_currency).convert(price_max,target_currency) rescue nil
   end
 
 end

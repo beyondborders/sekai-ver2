@@ -32,6 +32,8 @@ gem 'pagy'
 gem 'ransack'
 
 gem 'slack-ruby-client'
+gem 'open_exchange_rates'
+gem 'countries'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

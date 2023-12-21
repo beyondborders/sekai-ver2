@@ -3,7 +3,7 @@ object false
 child({@project => :project}, {:object_root => false}) do
   attributes :id, :name, :address, :latitude, :longitude, :building_type, :number_of_floors, :number_of_units, :description
 
-  node(:price){|o| "#{o.price_max}~#{o.price_min}"}
+  node(:price){|o| "#{currency_format_jp(o.converted_price_min)}~#{currency_format_jp(o.converted_price_max)}"}
   node(:constructed_at){|o| o.constructed_year }
   node(:square_meter){|o| "#{o.square_meter_min}~#{o.square_meter_max}" }
   node(:number_of_bedrooms){|o| "#{o.bedrooms_min}~#{o.bedrooms_max}" }
@@ -46,7 +46,7 @@ end
 
 # attributes :id, :name, :address, :latitude, :longitude, :building_type, :number_of_floors, :number_of_units
 
-# node(:price){|o| "#{o.price_max}~#{o.price_min}"}
+# node(:price){|o| "#{currency_format_jp(o.price_min)}~#{currency_format_jp(o.price_max)}"}
 # node(:constructed_at){|o| o.constructed_year }
 # node(:square_meter){|o| "#{o.square_meter_min}~#{o.square_meter_max}" }
 # node(:number_of_bedrooms){|o| "#{o.bedrooms_min}~#{o.bedrooms_max}" }

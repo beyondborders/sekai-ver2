@@ -39,4 +39,8 @@ class Building < ApplicationRecord
       building_images.where.not(id: all_images.map(&:id)).select(:id, :url).all
     )
   end
+
+  def get_currency
+    country.currency_code
+  end
 end
