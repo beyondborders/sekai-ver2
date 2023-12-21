@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { useState } from 'react'
-import styles from "./ProjectInquiryTop.module.scss"
+import styles from "./ProjectInquiryBottom.module.scss"
 import Link from "next/link"
 
 import { useRouter } from 'next/navigation'
@@ -10,8 +10,6 @@ import { useRouter } from 'next/navigation'
 export default function Inquiry(props) {
 
   const router = useRouter()
-
-  const { thanksPage } = props
 
   const [Name, setName] = useState('')
   const [Phone, setPhone] = useState('')
@@ -148,17 +146,9 @@ export default function Inquiry(props) {
 
   return (
     <section>
-      <div className={styles.ProjectInquiryTopContainer}>
-        <div className={styles.phoneContainer}>
-          <Image
-            src="https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/tel-icon.png"
-            width={20}
-            height={20}
-            alt="telephone-icon"
-          />
-          <span>0120-643-293</span></div>
+      <div className={styles.ProjectInquiryBottomContainer}>
         <label className={`${styles.label} ${styles.required}`} htmlFor="name">お名前</label>
-        <div className={`${styles.secureInput} mt-1 mb-2`}>
+        <div className={`${styles.secureInput}`}>
           <input id="name" className='form-control' value={Name} onChange={(e) => { setName(e.target.value) }} placeholder='お名前' />
           <Image
             src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/lock.png'
@@ -169,7 +159,7 @@ export default function Inquiry(props) {
         </div>
 
         <label className={`${styles.label} ${styles.required}`} htmlFor="email">Eメール</label>
-        <div className={`${styles.secureInput} mt-1 mb-2`}>
+        <div className={`${styles.secureInput}`}>
           <input id="email" className='form-control' type="email" value={Email} onChange={(e) => { setEmail(e.target.value) }} placeholder='Eメール' />
           <Image
             src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/lock.png'
@@ -180,7 +170,7 @@ export default function Inquiry(props) {
         </div>
 
         <label className={`${styles.label} ${styles.required}`} htmlFor="phone">電話番号</label>
-        <div className={`${styles.secureInput} mt-1 mb-2`}>
+        <div className={`${styles.secureInput}`}>
           <input id="phone" className='form-control' type="tel" value={Phone} onChange={(e) => { setPhone(e.target.value) }} placeholder='電話番号' />
           <Image
             src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/lock.png'
@@ -191,7 +181,7 @@ export default function Inquiry(props) {
         </div>
 
         <label className={`${styles.label} ${styles.required}`} htmlFor="budget">予算</label>
-        <div className={`${styles.secureInput} mt-1 mb-2`}>
+        <div className={`${styles.secureInput}`}>
           <select id="budget" value={Budget} className='form-control' onChange={(e) => { setBudget(e.target.value) }}>
             <option value="" disabled defaultChecked>予算</option>
             <option value="1億円～">1億円～</option>
@@ -211,7 +201,7 @@ export default function Inquiry(props) {
         </div>
 
         <label className={`${styles.label} ${styles.required}`} htmlFor="paymentMethod">お支払い方法</label>
-        <div className={`${styles.secureInput} mt-1 mb-2`}>
+        <div className={`${styles.secureInput}`}>
           <select id="paymentMethod" value={PaymentMethod} className='form-control' onChange={(e) => { setPaymentMethod(e.target.value) }}>
             <option value="" disabled defaultChecked>お支払い方法</option>
             <option value="現金">現金</option>
@@ -226,7 +216,7 @@ export default function Inquiry(props) {
         </div>
 
         <label className={`${styles.label} ${styles.required}`} htmlFor="asset">ご資産※不動産を含む</label>
-        <div className={`${styles.secureInput} mt-1 mb-2`}>
+        <div className={`${styles.secureInput}`}>
           <select id="asset" value={TotalAssetIncludingRealEstate} className='form-control' onChange={(e) => { setTotalAssetIncludingRealEstate(e.target.value) }}>
             <option value="" disabled defaultChecked>ご資産※不動産を含む</option>
             <option value="10億円以上">10億円以上</option>
@@ -247,7 +237,7 @@ export default function Inquiry(props) {
         </div>
 
         <label className={`${styles.label}`} htmlFor="content">その他ご要望</label>
-        <div className={`${styles.secureInput} mt-1 mb-2`}>
+        <div className={`${styles.secureInput}`}>
           <textarea id="content" className='form-control' value={Content} onChange={(e) => { setContent(e.target.value) }} placeholder='その他ご要望' />
           <Image
             src='https://sekai-property-assets.s3.ap-northeast-1.amazonaws.com/images/lock.png'
@@ -256,11 +246,11 @@ export default function Inquiry(props) {
           />
         </div>
 
-        <div className={styles.buttonContainer}>
-          <div className={`${styles.submitButton}`} onClick={() => { handleSubmit() }}>同意して、入力内容を送信する</div>
+        <div className="text-center">
+          <div className={`${styles.submitButton} btn-shadow-orange`} onClick={() => { handleSubmit() }}>同意して、入力内容を送信する</div>
         </div>
         <div className={`${styles.privacyText} mt-3`}>
-          上記フォーム内容を送信することにより、<br className="d-lg-none" />
+          上記フォーム内容を送信することにより、<br />
           <a target="_blank" href="/ja_terms-privacypolicy.html" className="">個人情報の取り扱いについて</a>へ同意したこととなります。</div>
 
       </div>

@@ -45,7 +45,43 @@ img {
   }
 }
 
+.btn-shadow-orange {
+  position: relative;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  background-color: #e87138;
+  border-color: #e87138;
+  box-shadow: 0 3px darken(#e87138, 40%);
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten(#e87138, 5%);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: calc(50% - 4px);
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-left: 2px solid #fff;
+    border-top: 2px solid #fff;
+    transform: rotate(135deg);
+
+    @include breakpoint(laptop) {
+      top: calc(50% - 6px);
+      width: 12px;
+      height: 12px;
+      right: 26px;
+    }
+  }
+}
+
 .btn-shadow-blue {
+  position: relative;
   text-align: center;
   font-weight: 700;
   color: #fff;

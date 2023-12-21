@@ -162,6 +162,10 @@
 
 .propertymaterialTableRow {
   display: flex;
+  font-size: 12px;
+  @include breakpoint(laptop) {
+    font-size: 16px;
+  }
 }
 
 .propertymaterialTableTitle {
@@ -243,6 +247,10 @@
   font-size: 20px;
   padding: 12px;
   border-bottom: 1px solid #aaa;
+  text-align: center;
+  @include breakpoint(laptop) {
+    text-align: left;
+  }
 }
 
 .slightlyLeft{
@@ -252,13 +260,52 @@
   }
 }
 .sellerContainer{
-  display: flex;
-  align-items: center;
+  
+  @include breakpoint(laptop) {
+    display: flex;
+    align-items: center;
+  }
   .sellerImg{
     width: 200px;
+    margin: 0 auto;
   }
   .sellerInfo{
     flex: 1;
     margin-left: 12px;
+  }
+}
+
+
+.inquiryHeader{
+  text-align: center;
+  margin: 12px 0;
+  @include breakpoint(laptop) {
+    margin: 36px 0;
+  }
+  .inquiryTitle{
+    font-size: 19px;
+    font-weight: 600;
+    @include breakpoint(laptop) {
+      font-size: 30px;
+    }
+  }
+  
+  .inquiryPhone{
+    display: inline-block;
+    color: $mainColor;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid $mainColor;
+    @include breakpoint(laptop) {
+      font-size: 38px;
+      margin: 16px 0 8px;
+    }
+  }
+}
+
+.youtubeIframe{
+  height: 180px;
+  @include breakpoint(laptop) {
+    height: 460px;
   }
 }

@@ -66,3 +66,13 @@
   color: red;
   font-size: 10px;
 }
+
+.phoneContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+  gap: 6px;
+  margin-bottom: 8px;
+}

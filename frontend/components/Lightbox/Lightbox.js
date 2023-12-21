@@ -2,7 +2,7 @@
 import Lightbox from "yet-another-react-lightbox";
 
 import "yet-another-react-lightbox/styles.css";
-import NextJsImage from "./NextjsImage";
+import NextJsImage from "./NextJsImage";
 
 export default function UseLightbox(props) {
   const {open, close, slides, index} = props

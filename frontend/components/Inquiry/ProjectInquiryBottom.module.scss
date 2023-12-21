@@ -1,0 +1,76 @@
+@import "@/css/utils.scss";
+
+.ProjectInquiryBottomContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.label {
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+
+  &.required {
+    &::after {
+      content: "*";
+      color: red;
+    }
+  }
+}
+
+.secureInput {
+  position: relative;
+  margin-top: 4px;
+  margin-bottom: 20px;
+
+  img {
+    position: absolute;
+    width: 16px;
+    top: 11px;
+    right: 16px;
+    filter: opacity(0.35);
+  }
+
+  input,
+  select,
+  textarea {
+    border: 1px solid #f5f8fa;
+    background-color: #f5f8fa;
+    font-size: 15px;
+  }
+
+  input,
+  select {
+    height: 46px;
+  }
+}
+
+.submitButton {
+  display: inline-block;
+  font-size: 16px;
+  padding: 16px 32px;
+
+  &:hover {
+    color: white;
+  }
+
+  @include breakpoint(laptop) {
+    width: 450px;
+    font-size: 18px;
+  }
+}
+
+
+.privacyText {
+  text-align: center;
+  font-size: 11px;
+
+  a {
+    color: $mainColor;
+  }
+}
+
+.errorText {
+  color: red;
+  font-size: 12px;
+}

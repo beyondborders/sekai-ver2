@@ -5,6 +5,7 @@ import Link from "next/link"
 import Inquiry from '@/components/Inquiry/Inquiry';
 import MultiItemCarousel from "@/components/Carousel/MultiItemCarousel"
 import ProjectInquiryTop from "@/components/Inquiry/ProjectInquiryTop"
+import ProjectInquiryBottom from "@/components/Inquiry/ProjectInquiryBottom"
 import { notFound } from 'next/navigation';
 import { useEffect, useState } from "react";
 
@@ -98,7 +99,7 @@ const ProjectDetails = (props) => {
           <div className={styles.subtitle}>{project?.building?.address}</div>
           <div className="container">
             <div className="row">
-              <div className="col-8">
+              <div className="col-12 col-lg-8">
                 <div className={styles.guideDetails}>
                   <div className={`${styles.guideDetailsContent} mt-4`}>
                     <div className={styles.propertymaterialTableRow}>
@@ -155,7 +156,7 @@ const ProjectDetails = (props) => {
                   </div>
                 </div>
               </div>
-              <div className="col-4">
+              <div className="col-4 d-none d-lg-flex">
                 <div className="mt-4">
                   <ProjectInquiryTop />
                 </div>
@@ -166,7 +167,7 @@ const ProjectDetails = (props) => {
             !!project.video_url &&
             <section className="container my-5" id="wysiwig">
               <span className="fr-video fr-dvb">
-                <iframe width="100%" height="460" src={generateVideoUrl(project.video_url)} frameBorder="0" allowFullScreen="true"></iframe>
+                <iframe width="100%" className={styles.youtubeIframe} src={generateVideoUrl(project.video_url)} frameBorder="0" allowFullScreen="true"></iframe>
               </span>
             </section>
           }
@@ -225,7 +226,7 @@ const ProjectDetails = (props) => {
           !!project.seller &&
           <div className="container py-5">
             <h3 className={styles.h3}>売主情報</h3>
-            <div className={`${styles.slightlyLeft} ${styles.sellerContainer} mt-4 row`}>
+            <div className={`${styles.slightlyLeft} ${styles.sellerContainer} mt-4`}>
 
               <div className={styles.sellerImg}>
                 <img
@@ -252,6 +253,15 @@ const ProjectDetails = (props) => {
             </div>
           </div>
         }
+
+        <div className="my-5 container">
+          <div className={styles.inquiryHeader}>
+            <div className={styles.inquiryTitle}>お問い合わせはこちらから</div>
+            <a className={styles.inquiryPhone} href="tel:0120-643-293">0120-643-293</a>
+            <div>受付時間 9:00 - 20:30（年中無休）</div>
+          </div>
+          <ProjectInquiryBottom />
+        </div>
 
 
         {/* <div className={styles.formTitle}>簡単30秒で完了 ガイドダウンロード</div>
