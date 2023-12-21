@@ -24,6 +24,9 @@ Rails.application.routes.draw do
           end
         end
 
+        resources :projects, only: [:show]
+        resources :properties, only: [:show]
+
         match '/property_materials/search', to: 'property_materials#search', via: :post
 
         match '/guides/search', to: 'guides#search', via: :post
