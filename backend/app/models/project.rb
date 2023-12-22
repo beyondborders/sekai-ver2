@@ -51,13 +51,15 @@ class Project < Building
   end
 
   def converted_price_min(target_currency='JPY')
-    return nil if price_min.blank?
-    CurrencyConverterService.new(get_currency).convert(price_max,target_currency) rescue nil
+    base_currency = get_currency
+    return nil if (price_min.blank? or base_currency.blank?)
+    CurrencyConverterService.new(base_currency).convert(price_min,target_currency)
   end
 
   def converted_price_max(target_currency='JPY')
-    return nil if price_max.blank?
-    CurrencyConverterService.new(get_currency).convert(price_max,target_currency) rescue nil
+    base_currency = get_currency
+    return nil if (price_max.blank? or base_currency.blank?)
+    CurrencyConverterService.new(base_currency).convert(price_max,target_currency)
   end
 
 end
