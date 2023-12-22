@@ -9,7 +9,7 @@ const Map = (props) => {
   const { lat, lng } = props
   // laod script for google map
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
 
   if (!isLoaded) return <div>Loading....</div>;

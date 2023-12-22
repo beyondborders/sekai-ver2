@@ -6,7 +6,6 @@ import NextJsImage from "./NextJsImage";
 
 export default function UseLightbox(props) {
   const {open, close, slides, index} = props
-  console.log(slides)
   return (
     <Lightbox
       open={open}

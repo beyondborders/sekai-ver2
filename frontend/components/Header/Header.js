@@ -3,6 +3,7 @@ import styles from "./Header.module.scss"
 import Link from "next/link"
 import Dropdown from "../Dropdown/Dropdown"
 import HeaderSP from "./HeaderSP"
+import HeaderSearchIcon from "./HeaderSearchIcon"
 
 export default function Header() {
   return (
@@ -86,10 +87,7 @@ export default function Header() {
                 <div>お問い合わせ</div>
               </a>
             </div>
-            <div className={styles.searchIconContainer}>
-              <div className={styles.icon}><div className={styles.iconMglass}></div></div>
-              <div>物件検索</div>
-            </div>
+            <HeaderSearchIcon/>
           </div>
         </div>
         <Link href="/contact-ja#consultation-form-start" className={styles.fixedConsultationLink}>個別相談はこちらから</Link>

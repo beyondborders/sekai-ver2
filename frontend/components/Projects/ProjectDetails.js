@@ -309,6 +309,50 @@ const ProjectDetails = (props) => {
             </Link>
           </div>
         </section>
+
+        <section className={`${styles.otherLinkContainer} container my-5`}>
+          <div className="mt-5">
+            <div className={styles.title}>{project?.building?.prefecture}の不動産物件を部屋の大きさから探す</div>
+            <div className={`${styles.linkContainer} mt-3`}>
+              <Link href={`/search/${project?.building?.country_en}/${project?.building?.prefecture_en}/less-than-30-sqm`}>
+                {project?.building?.prefecture}の30㎡以下の不動産物件
+              </Link>
+              <Link href={`/search/${project?.building?.country_en}/${project?.building?.prefecture_en}/less-than-30-to-60-sqm`}>
+                {project?.building?.prefecture}の30㎡から60㎡の不動産物件
+              </Link>
+              <Link href={`/search/${project?.building?.country_en}/${project?.building?.prefecture_en}/less-than-60-to-90-sqm`}>
+                {project?.building?.prefecture}の60㎡から90㎡の不動産物件
+              </Link>
+              <Link href={`/search/${project?.building?.country_en}/${project?.building?.prefecture_en}/less-than-90-to-120-sqm`}>
+                {project?.building?.prefecture}の90㎡から120㎡の不動産物件
+              </Link>
+              <Link href={`/search/${project?.building?.country_en}/${project?.building?.prefecture_en}/more-than-120-sqm`}>
+                {project?.building?.prefecture}の120㎡以上の不動産物件
+              </Link>
+            </div>
+
+            <div className="mt-5">
+              <div className={styles.title}>{project?.building?.prefecture}のベッドルームの数から不動産物件を探す</div>
+              <div className={`${styles.linkContainer} mt-3`}>
+                <Link href={`/search/${project?.building?.country_en}/${project?.building?.prefecture_en}/1-bedrooms`}>
+                  {project?.building?.prefecture}の1ベッドルームの不動産物件
+                </Link>
+                <Link href={`/search/${project?.building?.country_en}/${project?.building?.prefecture_en}/2-bedrooms`}>
+                  {project?.building?.prefecture}の2ベッドルームの不動産物件
+                </Link>
+                <Link href={`/search/${project?.building?.country_en}/${project?.building?.prefecture_en}/3-bedrooms`}>
+                  {project?.building?.prefecture}の3ベッドルームの不動産物件
+                </Link>
+                <Link href={`/search/${project?.building?.country_en}/${project?.building?.prefecture_en}/4-bedrooms`}>
+                  {project?.building?.prefecture}の4ベッドルームの不動産物件
+                </Link>
+                <Link href={`/search/${project?.building?.country_en}/${project?.building?.prefecture_en}/5-bedrooms`}>
+                  {project?.building?.prefecture}の5ベッドルームの不動産物件
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
       </section >
     </>
   );
