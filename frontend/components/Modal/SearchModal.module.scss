@@ -1,9 +1,87 @@
-.searchModal{
+@import "@/css/utils.scss";
+
+.searchModal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 86px);
   background-color: #f1f1f1;
-  margin-top: 135px;
+  margin-top: 86px;
+  overflow: scroll;
+
+  @include breakpoint(laptop) {
+    height: calc(100% - 135px);
+    margin-top: 135px;
+  }
+}
+
+.searchModalStart {
+  @include breakpoint(laptop) {
+    margin-top: 40px;
+  }
+}
+
+.modalRow {
+  border-bottom: 1px solid #e3e3e3;
+  padding: 12px 0;
+
+  @include breakpoint(laptop) {
+    padding: 20px 0;
+  }
+}
+
+.modalItemTitle {
+  color: $mainColor;
+  font-weight: 600;
+
+  @include breakpoint(laptop) {
+    width: 150px;
+  }
+}
+
+.selectContainer {
+  display: flex;
+  width: 170px;
+
+  @include breakpoint(laptop) {
+    width: 400px;
+  }
+}
+
+.selectContainerBig {
+  @include breakpoint(laptop) {
+    width: 450px;
+  }
+}
+
+.adjustmentGap {
+  width: 30px;
+  text-align: center;
+
+  @include breakpoint(laptop) {
+    width: 40px;
+  }
+}
+
+.blueButtonContainer {
+  margin: 0 auto;
+  width: 100%;
+
+  @include breakpoint(laptop) {
+    width: 500px;
+  }
+
+  div {
+    position: relative;
+    font-size: 16px;
+    padding: 12px 36px;
+    padding-right: 36px;
+
+    @include breakpoint(laptop) {
+      font-size: 20px;
+      padding: 16px 36px;
+      padding-right: 60px;
+    }
+  }
 }

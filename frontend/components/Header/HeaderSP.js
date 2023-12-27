@@ -5,6 +5,7 @@ import styles from "./Header.module.scss"
 import Link from "next/link"
 import DropdownMobile from "../DropdownMobile/DropdownMobile"
 import { useState } from "react"
+import HeaderSearchIcon from "./HeaderSearchIcon"
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -99,10 +100,7 @@ export default function Header() {
             <div>お問い合わせ</div>
           </a>
         </div>
-        <div className={styles.searchIconContainer}>
-          <div className={styles.icon}><div className={styles.iconMglass}></div></div>
-          <div>物件検索</div>
-        </div>
+        <HeaderSearchIcon/>
       </div>
     </section>
   )

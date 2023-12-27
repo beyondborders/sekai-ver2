@@ -14,6 +14,7 @@ export default function HeaderSearchIcon() {
       </div>
       <SearchModal
         open={openSearchModal}
+        close={() => {setOpenSearchModal(false)}}
       />
     </>
   )

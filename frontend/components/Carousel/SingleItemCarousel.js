@@ -3,12 +3,12 @@
 import Slider from "react-slick";
 
 export default function CarouselComponent(props) {
-  const { items, dots, fade, autoplaySpeed } = props
+  const { items, dots, fade, arrow, autoplaySpeed } = props
 
   const settings = {
     infinite: true,
     autoplay: false,
-    arrows: false,
+    arrows: arrow || false,
     dots: dots,
     fade: fade,
     autoplaySpeed: autoplaySpeed || 10000,

@@ -1,0 +1,91 @@
+@import "@/css/utils.scss";
+.projectName{
+  font-weight: 600;
+  font-size: 20px;
+  color: $mainColor;
+
+  &:hover{
+    color: darken($mainColor,10%);
+  }
+  @include breakpoint(laptop) {
+    font-size: 24px;
+  }
+}
+.projectItemContainer{
+  display: block;
+  margin-top: 12px;
+  @include breakpoint(laptop) {
+    display: flex;
+  }
+  .slideshowContainer{
+    width: 100%;
+    @include breakpoint(laptop) {
+      width: 450px;
+      background-color: #ccc;
+    }
+  }
+  .contentContainer{
+    margin-top: 12px;
+    flex-grow: 1;
+    @include breakpoint(laptop) {
+      margin-top: 0;
+      margin-left: 24px;
+    }
+  }
+}
+
+.propertymaterialTableRow {
+  display: flex;
+  font-size: 12px;
+  @include breakpoint(laptop) {
+    font-size: 16px;
+  }
+}
+
+.propertymaterialTableTitle {
+  width: 103px;
+  background-color: #e8edf1;
+  border: solid 1px #d2dce4;
+  padding: 12px;
+
+  @include breakpoint(laptop) {
+    width: 200px;
+  }
+}
+
+.propertymaterialTableContent {
+  flex: 1;
+  padding: 12px;
+  border: solid 1px #d2dce4;
+  border-left: none;
+  white-space: pre-wrap;
+}
+
+.buttonContainer{
+  display: flex;
+  gap: 16px;
+  .greyButton{
+    padding: 16px;
+    text-align: center;
+    flex-grow: 1;
+    color: #2152A3;
+    background-color: #e3e3e3;
+  }
+  .blueButton{
+    padding: 16px;
+    text-align: center;
+    flex-grow: 1;
+    background: #2152A3;
+    color: white;
+  }
+}
+
+.carouselImageContainer{
+  position: relative;
+  width: 100%;
+  height: 240px;
+  img{
+    height: 100%;
+    object-fit: cover;
+  }
+}

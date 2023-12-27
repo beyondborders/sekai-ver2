@@ -19,8 +19,12 @@ const ProjectDetails = (props) => {
 
   const { project, recommendedProperties } = props
   const [FVImage, setFVImage] = useState(project?.image_url?.split(';')[0])
-  const translateLabel = {
-    house: "一戸建て",
+  const translationLabel = {
+    "condominium": "コンドミニアム",
+    "house": "一戸建て",
+    "whole_building": "一棟",
+    "store_office": "区分店舗・事務所",
+    "land": "土地",
     beginning: "予定",
     mid: "中旬",
     end: "下旬",
@@ -60,7 +64,7 @@ const ProjectDetails = (props) => {
               <span className="mx-1">/</span>
               <Link href={`/search/${project?.building?.country_en}/${project?.building?.prefecture_en}/${project?.building?.city_en}`}>{project?.building?.city}</Link>
               <span className="mx-1">/</span>
-              <Link href={`/search/${project?.building?.country_en}/${project?.building?.prefecture_en}/${project?.building?.city_en}/${project?.building?.building_type_raw}`}>{translateLabel[project?.building?.building_type_raw]}</Link>
+              <Link href={`/search/${project?.building?.country_en}/${project?.building?.prefecture_en}/${project?.building?.city_en}/${project?.building?.building_type_raw}`}>{translationLabel[project?.building?.building_type_raw]}</Link>
             </div>
           </div>
 
@@ -104,7 +108,7 @@ const ProjectDetails = (props) => {
                   <div className={`${styles.guideDetailsContent} mt-4`}>
                     <div className={styles.propertymaterialTableRow}>
                       <div className={styles.propertymaterialTableTitle}>建物タイプ</div>
-                      <div className={styles.propertymaterialTableContent}>{translateLabel[project?.building?.building_type_raw]}</div>
+                      <div className={styles.propertymaterialTableContent}>{translationLabel[project?.building?.building_type_raw]}</div>
                     </div>
                     <div className={styles.propertymaterialTableRow}>
                       <div className={styles.propertymaterialTableTitle}>価格</div>
@@ -138,7 +142,7 @@ const ProjectDetails = (props) => {
                       <div className={styles.propertymaterialTableTitle}>入居予定年月</div>
                       <div className={styles.propertymaterialTableContent}>
                         {project.immediate_move_in ? "-" :
-                          !!project.expected_move_in?.year ? `${project.expected_move_in.year}年 ${project.expected_move_in.month}月 ${translateLabel[project.expected_move_in.period]}` : "ご相談"}
+                          !!project.expected_move_in?.year ? `${project.expected_move_in.year}年 ${project.expected_move_in.month}月 ${translationLabel[project.expected_move_in.period]}` : "ご相談"}
                       </div>
                     </div>
                     <div className={styles.propertymaterialTableRow}>
