@@ -12,7 +12,7 @@ module Api
       private
 
       def find_project
-        @project = Project.find(params[:id])
+        @project = Project.only_public.find(params[:id])
       end
 
     end

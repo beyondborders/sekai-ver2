@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_11_055956) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_04_120638) do
   create_table "about_sekais", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", options: "ENGINE=InnoDB ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "member_number"
     t.string "member_number_as_of"
@@ -629,6 +629,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_11_055956) do
     t.text "title_color"
     t.text "icon_image"
     t.string "footer_type"
+    t.string "stepper_type"
     t.text "seminar_date_options"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
@@ -969,6 +970,34 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_11_055956) do
     t.index ["language_code"], name: "index_property_points_on_language_code"
     t.index ["property_id", "language_code"], name: "index_property_points_on_property_id_and_language_code", unique: true
     t.index ["property_id"], name: "index_property_points_on_property_id"
+  end
+
+  create_table "property_searches", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", options: "ENGINE=InnoDB ROW_FORMAT=DYNAMIC", force: :cascade do |t|
+    t.decimal "price_max", precision: 20, scale: 4
+    t.decimal "price_min", precision: 20, scale: 4
+    t.decimal "square_meter_max", precision: 8, scale: 2
+    t.decimal "square_meter_min", precision: 8, scale: 2
+    t.date "constructed_at"
+    t.integer "bedrooms_max"
+    t.integer "bedrooms_min"
+    t.string "title_ja"
+    t.string "title_en"
+    t.integer "country_id"
+    t.integer "city_id"
+    t.integer "prefecture_id"
+    t.string "searchable_type", null: false
+    t.bigint "searchable_id", null: false
+    t.decimal "yield_rate_max", precision: 6, scale: 2
+    t.decimal "yield_rate_min", precision: 6, scale: 2
+    t.integer "building_type_mid"
+    t.integer "score"
+    t.integer "priority"
+    t.boolean "show_to_jpn"
+    t.boolean "is_rent"
+    t.boolean "sold"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_property_searches_on_searchable"
   end
 
   create_table "search_conditions", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", options: "ENGINE=InnoDB ROW_FORMAT=DYNAMIC", force: :cascade do |t|

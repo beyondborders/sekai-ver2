@@ -1,12 +1,12 @@
 object false
 
 child({@project => :project}, {:object_root => false}) do
-  attributes :id, :name, :address, :latitude, :longitude, :building_type, :number_of_floors, :number_of_units, :description
+  attributes :id, :name, :address, :building_type, :number_of_floors, :number_of_units, :description
 
-  node(:price){|o| "#{currency_format_jp(o.converted_price_min)}~#{currency_format_jp(o.converted_price_max)}"}
+  node(:latitude){|o| o.latitude.to_f }
+  node(:longitude){|o| o.longitude.to_f }
+
   node(:constructed_at){|o| o.constructed_year }
-  node(:square_meter){|o| "#{o.square_meter_min}~#{o.square_meter_max}" }
-  node(:number_of_bedrooms){|o| "#{o.bedrooms_min}~#{o.bedrooms_max}" }
   node(:country){|o| o.country.try(:name) }
   node(:country_en){|o| o.country.try(:name_en) }
   node(:prefecture){|o| o.prefecture.try(:name_en) }
@@ -17,6 +17,10 @@ child({@project => :project}, {:object_root => false}) do
 end
 
 child({@property => :property}, {:object_root => false}) do
+  node(:price){|o| "#{currency_format_jp(o.converted_price_min)}~#{currency_format_jp(o.converted_price_max)}"}
+  node(:square_meter){|o| "#{o.square_meter_min}~#{o.square_meter_max}" }
+  node(:yield_rate){|o| "#{o.yield_rate_min}~#{o.yield_rate_max}" }
+  node(:number_of_bedrooms){|o| "#{o.bedrooms_min}~#{o.bedrooms_max}" }
   attributes :ownership, :video_url, :expected_move_in_period, :immediate_move_in
   node(:expected_move_in_year){|o| o.expected_move_in_at.try(:year)}
   node(:expected_move_in_month){|o| o.expected_move_in_at.try(:month)}

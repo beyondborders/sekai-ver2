@@ -1,0 +1,49 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price_max: 9.99
+  price_min: 9.99
+  square_meter_max: 9.99
+  square_meter_min: 9.99
+  constructed_at: 2024-01-04
+  bedrooms_max: 1
+  bedrooms_min: 1
+  title_ja: MyString
+  title_en: MyString
+  country_id: 1
+  city_id: 1
+  prefecture_id: 1
+  searchable: one
+  searchable_type: Searchable
+  yield_rate_max: 9.99
+  yield_rate_min: 9.99
+  building_type_mid: 1
+  score: 1
+  priority: 1
+  show_to_jpn: false
+  is_rent: false
+  sold: false
+
+two:
+  price_max: 9.99
+  price_min: 9.99
+  square_meter_max: 9.99
+  square_meter_min: 9.99
+  constructed_at: 2024-01-04
+  bedrooms_max: 1
+  bedrooms_min: 1
+  title_ja: MyString
+  title_en: MyString
+  country_id: 1
+  city_id: 1
+  prefecture_id: 1
+  searchable: two
+  searchable_type: Searchable
+  yield_rate_max: 9.99
+  yield_rate_min: 9.99
+  building_type_mid: 1
+  score: 1
+  priority: 1
+  show_to_jpn: false
+  is_rent: false
+  sold: false

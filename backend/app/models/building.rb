@@ -13,6 +13,8 @@ class Building < ApplicationRecord
   enum building_type_mid: [:store_type, :store_house, :house_store, :office, :store_office, :office_bldg, :factory, :mansion_condo, :storage, :apartment, :jpn_style_hotel, :hotel, :dormitory, :cottage, :resort, :culture_house, :other_type]
   enum foundation: [:wooden, :block, :steel, :rc, :src, :pc, :hpc, :lgs, :others]
 
+  scope :exclude_project, -> { where(project: false) }
+
   def building_type?(type)
     building_type.try(:downcase) == type.downcase
   end
