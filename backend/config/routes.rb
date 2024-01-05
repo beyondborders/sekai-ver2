@@ -27,11 +27,13 @@ Rails.application.routes.draw do
         resources :projects, only: [:show]
         resources :properties, only: [:show]
 
+        match '/property_searches/search', to: 'property_searches#search', via: :post
+
         match '/property_materials/search', to: 'property_materials#search', via: :post
 
         match '/guides/search', to: 'guides#search', via: :post
         match '/guides/url', to: 'guides#show_by_url', via: :get
-      
+
       end
 
     end

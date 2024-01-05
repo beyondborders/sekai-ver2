@@ -29,4 +29,8 @@ class Country < ApplicationRecord
     OVERIDE_CURRENCY_CODES.dig(country_code) || ISO3166::Country.find_country_by_alpha3(country_code)&.currency_code
   end
 
+  def self.currency_from_locale(locale)
+    ISO3166::Country.find_country_by_gec(locale)&.currency_code
+  end
+
 end

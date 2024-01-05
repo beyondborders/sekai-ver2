@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_04_120638) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_05_122024) do
   create_table "about_sekais", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", options: "ENGINE=InnoDB ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "member_number"
     t.string "member_number_as_of"
@@ -973,8 +973,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_04_120638) do
   end
 
   create_table "property_searches", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", options: "ENGINE=InnoDB ROW_FORMAT=DYNAMIC", force: :cascade do |t|
-    t.decimal "price_max", precision: 20, scale: 4
-    t.decimal "price_min", precision: 20, scale: 4
+    t.decimal "price_max_usd", precision: 20, scale: 4
+    t.decimal "price_min_usd", precision: 20, scale: 4
+    t.decimal "price_max_jpy", precision: 20, scale: 4
+    t.decimal "price_min_jpy", precision: 20, scale: 4
     t.decimal "square_meter_max", precision: 8, scale: 2
     t.decimal "square_meter_min", precision: 8, scale: 2
     t.date "constructed_at"
@@ -995,8 +997,12 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_04_120638) do
     t.boolean "show_to_jpn"
     t.boolean "is_rent"
     t.boolean "sold"
+    t.datetime "data_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_property_searches_on_city_id"
+    t.index ["country_id"], name: "index_property_searches_on_country_id"
+    t.index ["prefecture_id"], name: "index_property_searches_on_prefecture_id"
     t.index ["searchable_type", "searchable_id"], name: "index_property_searches_on_searchable"
   end
 
@@ -1269,4 +1275,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_04_120638) do
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
 
+  add_foreign_key "property_searches", "cities"
+  add_foreign_key "property_searches", "countries"
+  add_foreign_key "property_searches", "prefectures"
 end
